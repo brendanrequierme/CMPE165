@@ -7,7 +7,7 @@ $db="information";
 
 $conn = new mysqli($servername,$username,$password,$db);
 if($conn->connect_error) {
-	die(mysql_fatal_error("Cant connent to MySQL"));
+	die(mysql_fatal_error("Cant connect to MySQL"));
 }
 
 $query ="CREATE TABLE IF NOT EXISTS loginInfo(
