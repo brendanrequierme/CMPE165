@@ -1,4 +1,6 @@
 <?php
+
+?>
 <!DOCTYPE html>
 
 <head>
@@ -35,4 +37,3 @@
 
 </body>
 </html>
-?>
