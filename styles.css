@@ -1,0 +1,19 @@
+.logo {
+    text-decoration:none;
+    color: red;
+    font-size: 30px;
+    padding-right: 270px;
+}
+
+.top, td, th {
+    padding-bottom: 10px;
+}
+
+.bottom, th, td, a{
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+a:visited:not(.logo) { 
+ color: black; 
+}
