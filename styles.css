@@ -1,19 +1,60 @@
+body {
+    background-image: url('images/background.jpg');
+    background-size: 200%;
+    text-indent: 400px;
+}
+
+table {
+    margin-left: 400px;
+}
+
+.redTextRPad {
+    color: red;
+    padding-right: 40px;
+}
+
+.clearDecorAndRPad {
+    text-decoration:none;
+    padding-right: 30px;
+}
+
+.rPad {
+    padding-right: 50px;
+}
+
+.rPad2 {
+    padding-right: 170px;
+}
+
+.noMargin {
+    margin: 0px;
+}
+
+.noBotMargin {
+    margin-bottom: 0px;
+}
+
 .logo {
     text-decoration:none;
     color: red;
     font-size: 30px;
-    padding-right: 270px;
+    padding-right: 570px;
 }
 
-.top, td, th {
+.top {
     padding-bottom: 10px;
+    text-decoration:none;
 }
 
-.bottom, th, td, a{
-    padding-right: 10px;
-    text-decoration: none;
+.bottom {
+    padding-top: 20px;
 }
 
 a:visited:not(.logo) { 
  color: black; 
+}
+
+.hotels {
+    padding: -20px;
+    margin: 0px;
 }
