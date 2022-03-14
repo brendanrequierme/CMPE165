@@ -59,7 +59,6 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
     if($stmt = $conn->prepare($query)){
             // Bind variables to the prepared statement as parameters
         $stmt->bind_param("ss",$param_username,$param_password);
-            //mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
             // Set parameters
             $param_username = $username;
             // Creates a password hash
@@ -77,7 +76,6 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
     }
     
     // Close connection
-   // $result->close();
     $conn->close();
 }
 ?>
