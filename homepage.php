@@ -5,21 +5,21 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Spartan DeathCoder Hotel</title>
+    <title>Spartan Death Hotel</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
 </head>
 
 <body>
 
-    <h1>Welcome to the Spartan DeathCoder Hotel</h1>
+    <h1>Welcome to the Spartan Death Hotel</h1>
     <!-- This table is for the top part of the header -->
     <table style margin = "400px" class = "top">
         <tr>
-            <th><a class = "logo" href = "http://127.0.0.1:3000/">Spartan DeathCoder Hotel</a></th>
+            <th><a class = "logo" href = "http://127.0.0.1:3000/">Spartan Death Hotel</a></th>
             <td class = redTextRPad>USD</td>
             <td class = redTextRPad>Help</td>
             <td class = redTextRPad>Trips</td>
-            <td><a class = "clearDecorAndRed" href = "http://localhost/cmpe165/login.php">Sign In</a></td>
+            <td><a class = "clearDecorAndRed" href = "http://localhost/CMPE165/login.php">Sign In</a></td>
         </tr> 
     </table>
 
@@ -42,7 +42,7 @@
 
     <table align = "center">
         <tr>
-            <h3>Why book with Spartan DeathCoder Hotel?</h3>
+            <h3>Why book with Spartan Death Hotel?</h3>
         </tr>
         <tr>
             <td class = "rPad">Free Cancelation</td>
