@@ -19,7 +19,7 @@
             <td class = redTextRPad>USD</td>
             <td class = redTextRPad>Help</td>
             <td class = redTextRPad>Trips</td>
-            <td class = redTextRPad>Sign In</td>
+            <td><a class = "clearDecorAndRed" href = "http://localhost/cmpe165/login.php">Sign In</a></td>
         </tr> 
     </table>
 
