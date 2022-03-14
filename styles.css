@@ -13,9 +13,20 @@ table {
     padding-right: 40px;
 }
 
+.redTextRPad2 {
+    text-decoration: none;
+    color: red;
+    padding-right: 40px;
+}
+
 .clearDecorAndRPad {
-    text-decoration:none;
+    text-decoration: none;
     padding-right: 30px;
+}
+
+.clearDecorAndRed {
+    text-decoration:none;
+    color: red;
 }
 
 .rPad {
@@ -50,7 +61,7 @@ table {
     padding-top: 20px;
 }
 
-a:visited:not(.logo) { 
+a:visited:not(.logo):not(.clearDecorAndRed) { 
  color: black; 
 }
 
