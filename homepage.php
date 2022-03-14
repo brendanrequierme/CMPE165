@@ -15,11 +15,11 @@
     <!-- This table is for the top part of the header -->
     <table style margin = "400px" class = "top">
         <tr>
-            <th><a class = "logo" href = "http://localhost/CMPE165/homepage.php">Spartan Death Hotel</a></th>
+            <th><a class = "logo" href = "homepage.php">Spartan Death Hotel</a></th>
             <td class = redTextRPad>USD</td>
             <td class = redTextRPad>Help</td>
             <td class = redTextRPad>Trips</td>
-            <td><a class = "clearDecorAndRed" href = "http://localhost/CMPE165/login.php">Sign In</a></td>
+            <td><a class = "clearDecorAndRed" href = "login.php">Sign In</a></td>
             <td><a class = redTextRPad href = "logout.php">Sign Out</a></td>
         </tr> 
     </table>
