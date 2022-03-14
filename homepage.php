@@ -19,8 +19,8 @@
             <td class = redTextRPad>USD</td>
             <td class = redTextRPad>Help</td>
             <td class = redTextRPad>Trips</td>
-            <td><a class = "clearDecorAndRed" href = "login.php">Sign In</a></td>
-            <td><a class = redTextRPad href = "logout.php">Sign Out</a></td>
+            <td class = redTextRPad2><a class = "clearDecorAndRed" href = "login.php">Sign In</a></td>
+            <td class = redTextRPad2><a class = clearDecorAndRed href = "logout.php">Sign Out</a></td>
         </tr> 
     </table>
 
