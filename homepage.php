@@ -15,7 +15,7 @@
     <!-- This table is for the top part of the header -->
     <table style margin = "400px" class = "top">
         <tr>
-            <th><a class = "logo" href = "http://127.0.0.1:3000/">Spartan Death Hotel</a></th>
+            <th><a class = "logo" href = "http://localhost/CMPE165/homepage.php">Spartan Death Hotel</a></th>
             <td class = redTextRPad>USD</td>
             <td class = redTextRPad>Help</td>
             <td class = redTextRPad>Trips</td>
