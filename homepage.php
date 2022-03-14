@@ -20,6 +20,7 @@
             <td class = redTextRPad>Help</td>
             <td class = redTextRPad>Trips</td>
             <td><a class = "clearDecorAndRed" href = "http://localhost/CMPE165/login.php">Sign In</a></td>
+            <td class = redTextRPad>Sign Out</td>
         </tr> 
     </table>
 
