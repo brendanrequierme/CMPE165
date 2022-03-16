@@ -1,11 +1,70 @@
 body {
-    background-image: url('images/background.jpg');
+    background-color: rgba(197, 235, 254);
+    height: 100%;
+    width: 100%;
+    max-width: 1895px;
+    min-width: 480px;
+    height: 200px;
     background-size: 200%;
     text-indent: 400px;
 }
 
-table {
+a:visited:not(.logo):not(.clearDecorAndRed):not(.redTextRPad) { 
+    color: black; 
+}
+   
+   a:not(.logo):not(.clearDecorAndRed):not(.redTextRPad) { 
+       color: black; 
+}
+
+hr {
+    height: 1px;
+    border: none;
+    width: 100%;
+}
+
+table, input, label, button, textarea {
     margin-left: 400px;
+}
+
+.noMargin {
+    margin: 0px;
+}
+
+.noBotMargin {
+    margin-bottom: 0px;
+}
+
+.noTopMargin {
+    margin-top: 0px;
+}
+
+
+/* homepage */
+
+.bottom {
+    padding-top: 20px;
+}
+
+.clearDecorAndRed {
+    text-decoration:none;
+    color: red;
+}
+
+.clearDecorAndRPad {
+    text-decoration: none;
+    padding-right: 30px;
+}
+
+.hotels {
+    padding: -20px;
+    margin: 0px;
+}
+
+.logo {
+    font-size: 30px;
+    font-family: Nosifer;
+    padding-right: 380px;
 }
 
 .redTextRPad {
@@ -19,16 +78,6 @@ table {
     padding-right: 40px;
 }
 
-.clearDecorAndRPad {
-    text-decoration: none;
-    padding-right: 30px;
-}
-
-.clearDecorAndRed {
-    text-decoration:none;
-    color: red;
-}
-
 .rPad {
     padding-right: 50px;
 }
@@ -37,35 +86,30 @@ table {
     padding-right: 170px;
 }
 
-.noMargin {
-    margin: 0px;
-}
 
-.noBotMargin {
-    margin-bottom: 0px;
-}
+/* Payment Page */
 
-.logo {
-    text-decoration:none;
+
+/* About Page */
+
+.specialText {
+    font-size: 11px;
+    font-family: nosifer;
     color: red;
-    font-size: 30px;
-    padding-right: 570px;
 }
 
-.top {
-    padding-bottom: 10px;
-    text-decoration:none;
+/* Contact Page */
+
+.submitButton {
+    width: 5%;
+    font-weight: bold;
+    outline: none;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
 }
 
-.bottom {
-    padding-top: 20px;
-}
-
-a:visited:not(.logo):not(.clearDecorAndRed) { 
- color: black; 
-}
-
-.hotels {
-    padding: -20px;
-    margin: 0px;
+.submitButton:hover {
+    background-color: rgb(214, 226, 236);
 }
