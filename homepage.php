@@ -1,48 +1,14 @@
 <?php
-
+    include 'header.php';
 ?>
 
 <!DOCTYPE html>
 
     <head>
-        <script src='http://use.edgefonts.net/nosifer.js'></script>
         <title>Spartan Death Hotel</title>
-        <link rel="stylesheet" type="text/css" href="./styles.css" />
     </head>
 
     <body>
-
-        <!-- This div is for the top part of the header -->
-        <div>
-            <table>
-                <tr>
-                    <th class = "logo"><a class = "clearDecorAndRed" href = "homepage.php">Spartan Death Hotel</a></th>
-                    <td class = redTextRPad><a class = "clearDecorAndRed" href = "payment.php">USD</td>
-                    <td class = redTextRPad>Help</td>
-                    <td class = redTextRPad>Trips</td>
-                    <td class = redTextRPad2><a class = "clearDecorAndRed" href = "login.php">Sign In</a></td>
-                    <td class = redTextRPad2><a class = clearDecorAndRed href = "logout.php">Sign Out</a></td>
-                </tr> 
-            </table>
-            <hr class = "lineHeight" class = "noTopMargin" color = "gray">
-        </div>
-
-        <!-- This div is for the bottom part of the header -->
-        <div>
-            <table align = "center">
-                <tr>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Deals</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Vacation Rentals</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Car Rental</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Groups & Meetings</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Gift Cards</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">List Your Property</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Rewards</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Credit Card</a></td>
-                </tr>
-            </table>
-            <hr color = "gray">
-        </div>
 
         <img src = "images/lakePicture.jpg" width = 100% height = "500"/>
         <!-- This is for body/searchbar -->
@@ -140,14 +106,7 @@
             <p class = noTopMargin>We have over 50 million happy members and have given away over 25 million reward nights around the world. Here's what our members have to say</p>
         </div>
 
-        <hr class = "lineHeight" class = "noTopMargin" color = "gray">
-        <!-- This div is for the bottom part of the page -->
-        <div>
-            <table align = "center">
-                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "aboutpage.php">About Us</a></td>
-                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "aboutpage.php">List Your Property</a></td>
-                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "contactpage.php">Conact Us</a></td>
-            </table>
-        </div>
+        <?php include 'footer.php'?>
+
     </body>
 </html>
