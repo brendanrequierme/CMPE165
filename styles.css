@@ -58,3 +58,11 @@ a:visited:not(.logo) {
     padding: -20px;
     margin: 0px;
 }
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+

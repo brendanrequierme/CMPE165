@@ -19,7 +19,7 @@
             <td class = redTextRPad>USD</td>
             <td class = redTextRPad>Help</td>
             <td class = redTextRPad>Trips</td>
-            <td class = redTextRPad>Sign In</td>
+            <td><a class = "clearDecorAndRed" href = "http://localhost/cmpe165/login.php">Sign In</a></td>
         </tr> 
     </table>
 
@@ -37,10 +37,21 @@
         </tr>
     </table>
 
+<div>
     <img src = "images/lakePicture.jpg" width = 100% height = "500"/>
-    <!-- This is for body/searchbar -->
 
-    <table align = "center">
+    <label class = "centered" for="start">Check-In Date:
+        <input type="date" id="start" name="res-start">
+    </label>
+    
+    <label for="end">Check-Out Date:
+        <input type="date" id="end" name="res-end">
+    </label>
+</div>
+    
+
+
+<table align = "center">
         <tr>
             <h3>Why book with Spartan DeathCoder Hotel?</h3>
         </tr>
@@ -128,6 +139,5 @@
         <td>List Your Property</td>
         <td>Conact Us</td>
     </table>
-
 </body>
 </html>
