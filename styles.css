@@ -1,29 +1,30 @@
 body {
-    background-image: url('images/background.jpg');
+    background-color: rgba(197, 235, 254);
+    height: 100%;
+    width: 100%;
+    max-width: 1895px;
+    min-width: 480px;
+    height: 200px;
     background-size: 200%;
     text-indent: 400px;
 }
 
-table {
+a:visited:not(.logo):not(.clearDecorAndRed):not(.redTextRPad) { 
+    color: black; 
+}
+   
+   a:not(.logo):not(.clearDecorAndRed):not(.redTextRPad) { 
+       color: black; 
+}
+
+hr {
+    height: 1px;
+    border: none;
+    width: 100%;
+}
+
+table, input, label, button, textarea {
     margin-left: 400px;
-}
-
-.redTextRPad {
-    color: red;
-    padding-right: 40px;
-}
-
-.clearDecorAndRPad {
-    text-decoration:none;
-    padding-right: 30px;
-}
-
-.rPad {
-    padding-right: 50px;
-}
-
-.rPad2 {
-    padding-right: 170px;
 }
 
 .noMargin {
@@ -34,24 +35,25 @@ table {
     margin-bottom: 0px;
 }
 
-.logo {
-    text-decoration:none;
-    color: red;
-    font-size: 30px;
-    padding-right: 570px;
+.noTopMargin {
+    margin-top: 0px;
 }
 
-.top {
-    padding-bottom: 10px;
-    text-decoration:none;
-}
+
+/* homepage */
 
 .bottom {
     padding-top: 20px;
 }
 
-a:visited:not(.logo) { 
- color: black; 
+.clearDecorAndRed {
+    text-decoration:none;
+    color: red;
+}
+
+.clearDecorAndRPad {
+    text-decoration: none;
+    padding-right: 30px;
 }
 
 .hotels {
