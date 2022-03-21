@@ -13,8 +13,8 @@ a:visited:not(.logo):not(.clearDecorAndRed):not(.redTextRPad) {
     color: black; 
 }
    
-   a:not(.logo):not(.clearDecorAndRed):not(.redTextRPad) { 
-       color: black; 
+a:not(.logo):not(.clearDecorAndRed):not(.redTextRPad) { 
+    color: black; 
 }
 
 hr {
@@ -61,10 +61,55 @@ table, input, label, button, textarea {
     margin: 0px;
 }
 
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.logo {
+    font-size: 30px;
+    font-family: Nosifer;
+    padding-right: 380px;
+}
 
+.redTextRPad {
+    color: red;
+    padding-right: 40px;
+}
+
+.redTextRPad2 {
+    text-decoration: none;
+    color: red;
+    padding-right: 40px;
+}
+
+.rPad {
+    padding-right: 50px;
+}
+
+.rPad2 {
+    padding-right: 170px;
+}
+
+
+/* Payment Page */
+
+
+/* About Page */
+
+.specialText {
+    font-size: 11px;
+    font-family: nosifer;
+    color: red;
+}
+
+/* Contact Page */
+
+.submitButton {
+    width: 5%;
+    font-weight: bold;
+    outline: none;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: rgb(214, 226, 236);
+}
