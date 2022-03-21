@@ -5,6 +5,8 @@
 <!DOCTYPE html>
 
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Payment Page</title>
     </head>
 
@@ -63,30 +65,59 @@
         <!-- This div is for the payment picker part of the page -->
         <div>
             <h2 class = "noBotMargin">Payment Details</h2>
+           
             <hr class = "lineHeight" class = "noTopMargin" color = "gray">
-            <label for = "payment">Please Pick A Payment Method:</label>
-
-            <select name = "payment" id = "payment">
-            <option value = "" disable selected>Please Select a Method</option>
-            <option value = "Card">Credit / Debit Card</option>
-            <option value = "Google Pay">Google Pay</option>
-            <option value = "PayPal">PayPal</option>
-            <option value = "Gift Card">Gift Card</option>
-            </select>
-
-            <p>We never charge any credit card fees</p>
+        <!--
             <p>First Name*</p>
             <input type = "text" name = "fname" placeholder = "Enter your First Name">
             <p>Please give us the name of one of the people staying in this room.</p>
             <p>Last Name*</p>
             <input type = "text" name = "lname" placeholder = "Enter your Last Name">
-            <p>Credit Card Number*</p>
-            <input type = "text" name = "cardnum" placeholder = "0000 0000 0000 0000">
-            <p>Expiration Date*</p>
-            <input type = "text" name = "expiration" placeholder = "MM/YY">
-            <p>Security Code*</p>
-            <input type = "text" name = "seccode" placeholder = "000">
         </div>
+        -->
+        <div id="smart-button-container">
+        <div id="paypal-button-container"></div>
+        </div>
+        </div>
+        <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+        <script>
+            function initPayPalButton() {
+            paypal.Buttons({
+            style: {
+            shape: 'pill',
+            color: 'blue',
+            layout: 'vertical',
+            label: 'pay',
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"amount":{"currency_code":"USD","value":1}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+                onError: function(err) {
+                console.log(err);
+                }
+            }).render('#paypal-button-container');
+            }
+            initPayPalButton();
+        </script>
 
         <!-- This div is for the payment information part of the page -->
         <div>
