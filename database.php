@@ -17,7 +17,7 @@ CREATE TABLE "city" (
 	"state"	varchar(128) NOT NULL UNIQUE,
 	"country"	varchar(128) NOT NULL UNIQUE,
 	PRIMARY KEY("city_id" AUTOINCREMENT)
-)"
+)
 
 
 $query ="
@@ -29,7 +29,7 @@ CREATE TABLE "hotel" (
 	"city_id"	INTEGER NOT NULL,
 	PRIMARY KEY("hotel_id" AUTOINCREMENT),
 	FOREIGN Key ("city_id") REFERENCES city
-)"
+)
 
 $query ="
 CREATE TABLE "room" (
@@ -42,7 +42,7 @@ CREATE TABLE "room" (
 	"hotel_id"	INTEGER NOT NULL,
 	PRIMARY KEY("room_id" AUTOINCREMENT),
 	FOREIGN Key ("hotel_id") REFERENCES hotel
-)"
+)
 
 $query ="
 CREATE TABLE "room_reserved" (
@@ -57,7 +57,7 @@ CREATE TABLE "room_reserved" (
 	FOREIGN Key ("room_id") REFERENCES room,
 	FOREIGN Key ("price") REFERENCES room,
 	FOREIGN Key ("user_id") REFERENCES userInfo
-)"
+)
 
 $query ="
 CREATE TABLE "userInfo" (
@@ -65,7 +65,7 @@ CREATE TABLE "userInfo" (
 	"username"	varchar(128) NOT NULL,
 	"password"	varchar(128) NOT NULL,
 	PRIMARY KEY("user_id" AUTOINCREMENT)
-)"
+)
 
 $query ="
 CREATE TABLE "invoice" (
@@ -79,7 +79,7 @@ CREATE TABLE "invoice" (
 	PRIMARY KEY("invoice_id" AUTOINCREMENT),
 	FOREIGN Key ("user_id") REFERENCES userInfo,
 	FOREIGN Key ("reserved_id") REFERENCES room_reserved
-)"
+)
 
 $result = $conn->query($query) or die(mysql_fatal_error("Could not create MYSQL TABLE"));
 if(!$result){ 
