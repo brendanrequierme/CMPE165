@@ -10,8 +10,11 @@
         <title>Payment Page</title>
     </head>
 
+    <script src="script.js"></script>
+
     <body>
  
+        <form name = "form1" action="#" onsubmit="required()">
          <!-- This div is for the information details-->
          <div>
                 <h2 class = "noBotMargin">Your Details</h2>
@@ -147,7 +150,8 @@
             <p class = "noTopMargin">will apply regardless of COVID-19, subject to any local consumer laws.</p>
         </div>
 
-        <button type="button">Book Now!</button>
+        <input type = "submit" name = "submit" value = "Book Now" />
+        </form>
 
         <?php include 'footer.php'?>
 
