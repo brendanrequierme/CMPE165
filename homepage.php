@@ -15,14 +15,17 @@
         <img src = "images/lakePicture.jpg" width = 100% height = "500"/>
         <!-- This is for body/searchbar -->
         
-        <label class = "centered" for="start">Check-In Date:
-        <input type="date" id="start" name="res-start">
-        </label>
-    
-        <label for="end">Check-Out Date:
-        <input type="date" id="end" name="res-end">
-        </label>
+        <table>
+            <tr>
+            <td><label for="start">Check-In Date:</td>
+            <td><input type="date" id="start" name="res-start">
+            </td></label>
 
+            <tr>
+            <td><label for="end">Check-Out Date:</td>
+            <td><input type="date" id="end" name="res-end">
+            </td></label>
+        </table>
 
         <div>
             <table align = "center">
