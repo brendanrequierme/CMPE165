@@ -71,7 +71,7 @@ CREATE TABLE userInfo (
 CREATE TABLE invoice (
 	invoice_id	INTEGER NOT NULL UNIQUE,
 	total_price	decimal(10,2) NOT NULL,
-	time_paid		timestamp	NOT NULL,
+	time_paid	timestamp NOT NULL,
 	time_cancelled	timestamp,
 	
 	user_id	INTEGER NOT NULL,
@@ -81,9 +81,5 @@ CREATE TABLE invoice (
 	FOREIGN Key (reserved_id) REFERENCES room_reserved
 );"
 
-$result = $conn->query($query) or die(mysql_fatal_error("Could not create MYSQL TABLE"));
-if(!$result){ 
-	die(mysql_fatal_error("Could not create MYSQL TABLE"));
 
-}
 ?>
