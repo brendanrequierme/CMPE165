@@ -78,6 +78,23 @@
             <input type = "text" name = "lname" placeholder = "Enter your Last Name">
         </div>
         -->
+        <h3>Pay with Credit/Debit Card Now</h3>
+        <p>* required fields</p>
+        <h4 class = "noBotMargin">First Name*</h4>
+        <input type = "text" name = "fname" placeholder = "Enter your First Name">
+        <h4 class = "noBotMargin">Last Name*</h4>
+        <input type = "text" name = "lname" placeholder = "Enter your Last Name">
+        <h4 class = "noBotMargin">Card Number*</h4>
+        <input type = "text" name = "card" placeholder = "Enter your Card Number">
+        <h4 class = "noBotMargin">Expiration Date*</h4>
+        <input type = "text" name = "expiration" placeholder = "Enter your Expiration Date">
+        <h4 class = "noBotMargin">Security Code*</h4>
+        <input type = "text" name = "expiration" placeholder = "Enter your Security Code">
+        <h4 class = "noBotMargin">ZIP Code*</h4>
+        <p class = "noMargin">We'll use this to verify your credit card details</p>
+        <input type = "text" name = "zipcode" placeholder = "12345">
+
+        <h3>Easier Payment Powered by PayPal.</h3>
         <div id="smart-button-container">
         <div id="paypal-button-container"></div>
         </div>
@@ -121,15 +138,6 @@
             }
             initPayPalButton();
         </script>
-
-        <!-- This div is for the payment information part of the page -->
-        <div>
-            <h2 class = "noBotMargin">Billing Address</h2>
-            <hr class = "lineHeight" class = "noTopMargin" color = "gray">
-            <h4 class = "noMargin">ZIP Code*</h4>
-            <p class = "noTopMargin">We'll use this to verify your credit card details</p>
-            <input type = "text" name = "zipcode">
-        </div>
 
         <!-- This div is for the Rewards Field -->
         <div>

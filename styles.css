@@ -6,7 +6,8 @@ body {
     min-width: 480px;
     height: 200px;
     background-size: 200%;
-    text-indent: 400px;
+    /*text-indent: 400px;*/
+    text-indent: 10%;
 }
 
 a:visited:not(.logo):not(.clearDecorAndRed):not(.redTextRPad) { 
@@ -24,7 +25,8 @@ hr {
 }
 
 table, input, button, textarea {
-    margin-left: 400px;
+    /* margin-left: 400px; */
+    margin-left: 10%;
 }
 
 .noMargin {

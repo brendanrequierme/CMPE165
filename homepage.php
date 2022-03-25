@@ -28,7 +28,7 @@
         </table>
 
         <div>
-            <table align = "center">
+            <table>
                 <tr>
                     <h3>Why book with Spartan Death Hotel?</h3>
                 </tr>
@@ -41,7 +41,7 @@
         </div>
 
         <div>
-            <table align = "center">
+            <table>
                 <tr>
                     <h3>A snapshot of the world's most picture-perfect properties</h3>
                     <td>Check out some of our favorite unique stays</td>
@@ -58,7 +58,7 @@
 
         <!-- This div is for the the hotel examples -->
         <div>
-            <table align = "center">
+            <table>
                 <tr>
                     <td><img src = "images/hotel1.jpg" width = "300" height = "300"/></td>
                     <td><img src = "images/hotel2.jpg" width = "300" height = "300"/></td>
@@ -81,7 +81,7 @@
 
         <!-- This div is for ... -->
         <div>
-            <table align = "center">
+            <table>
                 <h3>Travel with Confidence</h3>
                 <tr>
                     <td>Many properties have updated us about their enhanced health and safety measures. So, during your search, you may find details like:</td>
@@ -91,7 +91,7 @@
 
         <!-- This div is for the ... -->
         <div>
-            <table align = "center">
+            <table>
                 <tr>
                     <td><h4 class = "noBotMargin">Official health standards</h4></td>
                     <td><h4 class = "noBotMargin">Social distancing</h4></td>
