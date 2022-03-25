@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement to get from database
-        $query = "SELECT id, username, password FROM loginInfo WHERE username = ?";
+        $query = "SELECT user_id, username, password FROM userInfo WHERE username = ?";
         if($stmt = $conn->prepare($query)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
