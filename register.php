@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
-        $query = "SELECT id FROM loginInfo WHERE username = ?";
+        $query = "SELECT user_id FROM userInfo WHERE username = ?";
         if($stmt = $conn->prepare($query)){
             // Bind variables to the prepared statement as parameters
            $stmt->bind_param("s",$param_username);
@@ -55,7 +55,7 @@ if(empty(trim($_POST["confirm_password"]))){
     // Check input errors before inserting in database
 if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         // Prepare an insert statement
-    $query = "INSERT INTO loginInfo (username, password) VALUES (?, ?)";
+    $query = "INSERT INTO userInfo (username, password) VALUES (?, ?)";
     if($stmt = $conn->prepare($query)){
             // Bind variables to the prepared statement as parameters
         $stmt->bind_param("ss",$param_username,$param_password);
