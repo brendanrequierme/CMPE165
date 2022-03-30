@@ -28,14 +28,14 @@
 
         <!-- This div is for the bottom part of the header -->
         <div>
-            <table align = "center">
+            <table>
                 <tr>
                     <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Deals</a></td>
                     <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Vacation Rentals</a></td>
                     <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Car Rental</a></td>
                     <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Groups & Meetings</a></td>
                     <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Gift Cards</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">List Your Property</a></td>
+                    <td><a class = "clearDecorAndRPad" href = "listpropertiespage.php">List Your Property</a></td>
                     <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Rewards</a></td>
                     <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Credit Card</a></td>
                     <td><a class = "clearDecorAndRPad" href = "search.php">Search</a></td>

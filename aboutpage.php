@@ -10,6 +10,14 @@
         <title>About Us Page</title>
     </head>
 
+    <style>
+    #footer {
+        position: absolute;
+        bottom: 0%;
+        width: 100%;
+    }
+    </style>
+
     <body>
         
         <!-- Brendan is Evil and He Killed Us All Please Help-->
@@ -32,14 +40,12 @@
             <p>They are all currently attending SJSU as happy students and they are all definitely still alive.</p>
         </div>
 
-        <hr class = "lineHeight" class = "noTopMargin" color = "gray">
         <!-- This div is for the bottom part of the page -->
         <div>
-            <table align = "center">
-                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "aboutpage.php">About Us</a></td>
-                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "aboutpage.php">List Your Property</a></td>
-                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "contactpage.php">Conact Us</a></td>
-            </table>
+            <footer id = "footer">
+                <?php include 'footer.php'?>
+            </footer>
         </div>
+
     </body>
 </html>

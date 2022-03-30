@@ -14,7 +14,7 @@
 
     <body>
  
-        <form name = "form1" action="#" onsubmit="required()">
+        <form name = "form1" action="finishbookingpage.php" onsubmit="return required()">
          <!-- This div is for the information details-->
          <div>
                 <h2 class = "noBotMargin">Your Details</h2>
@@ -81,15 +81,15 @@
         <h3>Pay with Credit/Debit Card Now</h3>
         <p>* required fields</p>
         <h4 class = "noBotMargin">First Name*</h4>
-        <input type = "text" name = "fname" placeholder = "Enter your First Name">
+        <input type = "text" name = "fname2" placeholder = "Enter your First Name">
         <h4 class = "noBotMargin">Last Name*</h4>
-        <input type = "text" name = "lname" placeholder = "Enter your Last Name">
+        <input type = "text" name = "lname2" placeholder = "Enter your Last Name">
         <h4 class = "noBotMargin">Card Number*</h4>
         <input type = "text" name = "card" placeholder = "Enter your Card Number">
         <h4 class = "noBotMargin">Expiration Date*</h4>
         <input type = "text" name = "expiration" placeholder = "Enter your Expiration Date">
         <h4 class = "noBotMargin">Security Code*</h4>
-        <input type = "text" name = "expiration" placeholder = "Enter your Security Code">
+        <input type = "text" name = "seccode" placeholder = "Enter your Security Code">
         <h4 class = "noBotMargin">ZIP Code*</h4>
         <p class = "noMargin">We'll use this to verify your credit card details</p>
         <input type = "text" name = "zipcode" placeholder = "12345">

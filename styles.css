@@ -24,6 +24,7 @@ hr {
     width: 100%;
 }
 
+
 table, input, button, textarea {
     /* margin-left: 400px; */
     margin-left: 10%;
@@ -40,7 +41,6 @@ table, input, button, textarea {
 .noTopMargin {
     margin-top: 0px;
 }
-
 
 /* homepage */
 
@@ -114,4 +114,16 @@ table, input, button, textarea {
 
 .submitButton:hover {
     background-color: rgb(214, 226, 236);
+}
+
+/* List Properties Page */
+
+.bookButton {
+    width: 5%;
+    font-weight: bold;
+    outline: none;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
 }

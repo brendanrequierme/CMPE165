@@ -3,16 +3,18 @@
 ?>
 
 <!DOCTYPE html>
-    <body>
 
-    <hr class = "lineHeight" class = "noTopMargin" color = "gray">
+    <body>
         <!-- This div is for the footer part of the page -->
         <div>
-            <table align = "center">
+            <footer id = "footer">
+            <hr class = "lineHeight" class = "noTopMargin" color = "gray">
+            <table>
                 <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "aboutpage.php">About Us</a></td>
-                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "aboutpage.php">List Your Property</a></td>
+                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "listpropertiespage.php">List Your Property</a></td>
                 <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "contactpage.php">Contact Us</a></td>
             </table>
+            </footer>
         </div>
     </body>
 </html>

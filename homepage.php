@@ -120,7 +120,9 @@
             <p class = noTopMargin>We have over 50 million happy members and have given away over 25 million reward nights around the world. Here's what our members have to say</p>
         </div>
 
+        <footer id = "footer">
         <?php include 'footer.php'?>
-
+        </footer>
+        
     </body>
 </html>
