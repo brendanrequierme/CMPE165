@@ -38,6 +38,7 @@
                     <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">List Your Property</a></td>
                     <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Rewards</a></td>
                     <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Credit Card</a></td>
+                    <td><a class = "clearDecorAndRPad" href = "search.php">Search</a></td>
                 </tr>
             </table>
             <hr color = "gray">
