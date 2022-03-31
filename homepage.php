@@ -7,6 +7,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- https://fonts.google.com/icons?selected=Material+Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>Spartan Death Hotel</title>
     </head>
 
@@ -33,9 +35,9 @@
                     <h3>Why book with Spartan Death Hotel?</h3>
                 </tr>
                 <tr>
-                    <td class = "rPad">Free Cancelation</td>
-                    <td class = "rPad">Our price guarantee</td>
-                    <td class = "rPad">Get a reward night</td>
+                    <td class = "rPad"><span class="material-icons cancelicon">clear</span>Free Cancelation</td>
+                    <td class = "rPad"><span class="material-icons verifiedicon">verified</span>Our price guarantee</td>
+                    <td class = "rPad"><span class="material-icons rewardicon">vpn_key</span>Get a reward night</td>
                 </tr>
             </table>
         </div>
