@@ -59,7 +59,7 @@
                            <!-- <input type="submit" name="submitSearch" value="Search"> -->
                         </td>
                         <td>
-                            <a href="#" ><span style = "padding-left:10px" class="material-icons">search</span></a>
+                            <a href="#" ><span style = "padding-left:10px" class="searchicon">search</span></a>
                         </td>
                     </tr>
                 </table>
