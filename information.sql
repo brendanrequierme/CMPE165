@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2022 at 02:50 AM
+-- Generation Time: Mar 31, 2022 at 04:58 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -52,18 +52,19 @@ CREATE TABLE `hotel` (
   `hotel_id` int(11) NOT NULL,
   `hotel_name` varchar(128) NOT NULL,
   `description` text DEFAULT NULL,
-  `city_id` int(11) NOT NULL
+  `city_id` int(11) NOT NULL,
+  `usd` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `hotel`
 --
 
-INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `description`, `city_id`) VALUES
-(1, 'Beachview Inn', 'Within easy reach of Santa Cruz Beach Boardwalk', 1),
-(2, 'Casablanca On The Beach', '3.5-star beach hotel with restaurant, near Santa Cruz Beach Boardwalk', 1),
-(3, 'Bellagio', 'Luxury hotel with 18 restaurants, near Bellagio Conservatory & Botanical Gardens', 2),
-(4, 'The Paramount Hotel', '3.5-star hotel with 24-hour health club, near Washington State Convention Center', 3);
+INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`) VALUES
+(1, 'Beachview Inn', 'Within easy reach of Santa Cruz Beach Boardwalk', 1, '237.00'),
+(2, 'Casablanca On The Beach', '3.5-star beach hotel with restaurant, near Santa Cruz Beach Boardwalk', 1, '589.00'),
+(3, 'Bellagio', 'Luxury hotel with 18 restaurants, near Bellagio Conservatory & Botanical Gardens', 2, '394.00'),
+(4, 'The Paramount Hotel', '3.5-star hotel with 24-hour health club, near Washington State Convention Center', 3, '179.00');
 
 -- --------------------------------------------------------
 
@@ -156,6 +157,13 @@ CREATE TABLE `userinfo` (
   `username` varchar(128) NOT NULL,
   `password` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `userinfo`
+--
+
+INSERT INTO `userinfo` (`user_id`, `username`, `password`) VALUES
+(1, 'user', '$2y$10$YTr/kjkrcb5gxyMoyukRbOn3cxBOLXCxHeRWgrpyWos5.nE6rBP3u');
 
 --
 -- Indexes for dumped tables
@@ -260,7 +268,7 @@ ALTER TABLE `state`
 -- AUTO_INCREMENT for table `userinfo`
 --
 ALTER TABLE `userinfo`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
