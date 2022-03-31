@@ -45,32 +45,26 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- https://fonts.google.com/icons?selected=Material+Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-        <h2>Search hotel here</h2>
-        <div class="search-bar">
-            <form method="post">
-                <div class="row">
-                    <input type="text" name="input" placeholder="Search...">
-                    <input type="submit" name="search" value="Search">
-                </div>
-            </form>
-        </div>
-
-        <div class="card-body">
-            <form method="GET">
-                <div class="group">
-                    <select name="sort_numeric" class="form-control">
-                        <option value="">-------</option>
-                        <option value="low-high" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "low-high") {echo "selected";}?> >low - high</option>
-                        <option value="high-low" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "high-low") {echo "selected";}?> >high - low</option>
-                    </select>
-                    <button type="submit">Filter</button>
-                </div>
-            </form>
-        </div>
-
-
+        <h2 class = "searchText">Search hotel here</h2>
+        <form method="post">
+            <div class="searchBox">
+                <table class = "searchContainer">
+                    <tr>
+                        <td>
+                            <input type="text" class="search" placeholder="Search...">
+                           <!-- <input type="submit" name="submitSearch" value="Search"> -->
+                        </td>
+                        <td>
+                            <a href="#" ><span style = "padding-left:10px" class="material-icons">search</span></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </form>
     </body>
 
 
