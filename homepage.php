@@ -64,10 +64,10 @@
         <div>
             <table>
                 <tr>
-                    <td><img class = "picBorder" src = "images/hotel1(1).jpg" bordered = 1px width = "300" height = "300"/></td>
-                    <td><img class = "picBorder" src = "images/hotel2(1).jpg" width = "300" height = "300"/></td>
-                    <td><img class = "picBorder" src = "images/hotel3.webp" width = "300" height = "300"/></td>
-                    <td><img class = "picBorder" src = "images/hotel4.jpg" width = "300" height = "300"/></td>
+                    <td><img class = "picBorder" src = "images/beachview.jpg" bordered = 1px width = "300" height = "300"/></td>
+                    <td><img class = "picBorder" src = "images/casablanca.jpg" width = "300" height = "300"/></td>
+                    <td><img class = "picBorder" src = "images/bellagio.jpg" width = "300" height = "300"/></td>
+                    <td><img class = "picBorder" src = "images/paramount.jpg" width = "300" height = "300"/></td>
                 </tr>
                     <td><h4 class = "noMargin">Beachview Inn</h4></td>
                     <td><h4 class = "noMargin">Casablanca on the Beach</h4></td>
