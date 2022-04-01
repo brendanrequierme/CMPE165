@@ -62,10 +62,10 @@ CREATE TABLE `hotel` (
 --
 
 INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`) VALUES
-(1, 'Beachview Inn', 'Within easy reach of Santa Cruz Beach Boardwalk', 1, '237.00'),
-(2, 'Casablanca On The Beach', '3.5-star beach hotel with restaurant, near Santa Cruz Beach Boardwalk', 1, '589.00'),
-(3, 'Bellagio', 'Luxury hotel with 18 restaurants, near Bellagio Conservatory & Botanical Gardens', 2, '394.00'),
-(4, 'The Paramount Hotel', '3.5-star hotel with 24-hour health club, near Washington State Convention Center', 3, '179.00');
+(1, 'Beachview Inn', 'Within easy reach of Santa Cruz Beach Boardwalk', 1, '237.00','beachview.jpg'),
+(2, 'Casablanca On The Beach', '3.5-star beach hotel with restaurant, near Santa Cruz Beach Boardwalk', 1, '589.00','casablanca.jpg'),
+(3, 'Bellagio', 'Luxury hotel with 18 restaurants, near Bellagio Conservatory & Botanical Gardens', 2, '394.00','bellagio.jpg'),
+(4, 'The Paramount Hotel', '3.5-star hotel with 24-hour health club, near Washington State Convention Center', 3, '179.00','paramount.jpg');
 
 -- --------------------------------------------------------
 
