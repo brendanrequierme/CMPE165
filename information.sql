@@ -53,7 +53,8 @@ CREATE TABLE `hotel` (
   `hotel_name` varchar(128) NOT NULL,
   `description` text DEFAULT NULL,
   `city_id` int(11) NOT NULL,
-  `usd` decimal(10,2) DEFAULT NULL
+  `usd` decimal(10,2) DEFAULT NULL,
+  `image` text NOT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
