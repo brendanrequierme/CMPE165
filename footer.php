@@ -11,7 +11,7 @@
             <hr class = "lineHeight" class = "noTopMargin" color = "gray">
             <table>
                 <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "aboutpage.php">About Us</a></td>
-                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "listpropertiespage.php">List Your Property</a></td>
+                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "bookingpage.php">Booking</a></td>
                 <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "contactpage.php">Contact Us</a></td>
             </table>
             </footer>

@@ -22,7 +22,7 @@
                 <form method="post">
                     <div class="searchBox">
                             <td><input type="text" class="search" placeholder="Search..."></td>
-                            <!-- <input type="submit" name="submitSearch" value="Search"> -->
+                            <td><input type="submit" name="submitSearch" value="Search"></td>
                     </div>
                 </form>
                     <td><label for="start">Check-In Date:</label></td>

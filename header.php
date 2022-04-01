@@ -17,7 +17,6 @@
                 <tr>
                     <th class = "logo"><a class = "clearDecorAndRed" href = "homepage.php">Spartan Death Hotel</a></th>
                     <td class = redTextRPad><a class = "clearDecorAndRed" href = "helppage.php">Help</a></td>
-                    <td class = redTextRPad>Trips</td>
                     <td class = redTextRPad2><a class = "clearDecorAndRed" href = "login.php">Sign In</a></td>
                     <td class = redTextRPad2><a class = clearDecorAndRed href = "logout.php">Sign Out</a></td>
                 </tr> 
@@ -29,11 +28,9 @@
         <div>
             <table>
                 <tr>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Deals</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Vacation Rentals</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "listpropertiespage.php">List Your Property</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Rewards</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "https://www.w3schools.com/">Credit Card</a></td>
+                    <td><a class = "clearDecorAndRPad" href = "homepage.php">Home</a></td>
+                    <td><a class = "clearDecorAndRPad" href = "bookingpage.php">Booking</a></td>
+                    <td><a class = "clearDecorAndRPad" href = "rewardspage.php">Rewards</a></td>
                     <td><a class = "clearDecorAndRPad" href = "search.php">Search</a></td>
                 </tr>
             </table>
