@@ -17,13 +17,14 @@
                     <tr>
                         <th>hotel_name</th>
                         <th>description</th>
+                        <th>usd<td>
                     </tr>
             ";
 
             if(mysqli_num_rows($res) < 1) {
                 $output .="
                     <tr>
-                    <td codspan='6' class='text-center'>No data found </td>
+                        <td codspan='6' class='text-center'>No data found </td>
                     </tr>
                 ";
             } else {
@@ -33,6 +34,8 @@
                         <tr>
                             <td>".$row['hotel_name']."<td>
                             <td>".$row['description']."<td>
+                            <td>".$row['usd']."<td>
+                        </tr>
                     ";
                 }
             }
@@ -50,21 +53,40 @@
     </head>
     <body>
         <h2 class = "searchText">Search hotel here</h2>
-        <form method="post">
-            <div class="searchBox">
-                <table class = "searchContainer">
+            <form method="post">
+                    <div class="row">
+                        <table class="searchContainer">
+                            <tr>
+                                <td>
+                                    <input type="text" name="input" placeholder="Search...">                                    
+                                </td>
+                                <td>
+                                    <input type="submit" name="search" value="Search">                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+            </form>
+            <div class="card-body">
+            <form method="GET">
+                <div class="group">
+                <table class="filterContainer">
                     <tr>
                         <td>
-                            <input type="text" class="search" placeholder="Search...">
-                           <!-- <input type="submit" name="submitSearch" value="Search"> -->
+                            <select name="sort_numeric" class="form-control">
+                                <option value="">-------</option>
+                                <option value="low-high" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "low-high") {echo "selected";}?> >low - high</option>
+                                <option value="high-low" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "high-low") {echo "selected";}?> >high - low</option>
+                            </select>                            
                         </td>
                         <td>
-                            <a href="#" ><span style = "padding-left:10px" class="searchicon">search</span></a>
+                            <button type="submit">Filter</button>                            
                         </td>
                     </tr>
-                </table>
-            </div>
-        </form>
+                <table>
+                </div>
+            </form>
+        </div>
     </body>
 
 
