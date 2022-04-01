@@ -7,6 +7,8 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- https://fonts.google.com/icons?selected=Material+Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>Spartan Death Hotel</title>
     </head>
 
@@ -15,17 +17,23 @@
         <img src = "images/lakePicture.jpg" width = 100% height = "500"/>
         <!-- This is for body/searchbar -->
         
-        <table>
-            <tr>
-            <td><label for="start">Check-In Date:</td>
-            <td><input type="date" id="start" name="res-start">
-            </td></label>
+        <div class = "white">
+            <table class = "test">
+                <form method="post">
+                    <div class="searchBox">
+                            <td><input type="text" class="search" placeholder="Search..."></td>
+                            <!-- <input type="submit" name="submitSearch" value="Search"> -->
+                    </div>
+                </form>
+                    <td><label for="start">Check-In Date:</label></td>
+                    <td><input type="date" id="start" name="res-start" style = margin-right:25px></td>
+                    <td><label for="end">Check-Out Date:</label></td>
+                    <td><input type="date" id="end" name="res-end"></td>
+                    <td><a href="#" ><span style = "padding-left:20px" class="material-icons searchicon">search</span></a></td>
+            </table>
+        </div>
 
-            <tr>
-            <td><label for="end">Check-Out Date:</td>
-            <td><input type="date" id="end" name="res-end">
-            </td></label>
-        </table>
+
 
         <div>
             <table>
@@ -33,9 +41,9 @@
                     <h3>Why book with Spartan Death Hotel?</h3>
                 </tr>
                 <tr>
-                    <td class = "rPad">Free Cancelation</td>
-                    <td class = "rPad">Our price guarantee</td>
-                    <td class = "rPad">Get a reward night</td>
+                    <td class = "rPad"><span class="material-icons cancelicon">clear</span>Free Cancelation</td>
+                    <td class = "rPad"><span class="material-icons verifiedicon">verified</span>Our price guarantee</td>
+                    <td class = "rPad"><span class="material-icons rewardicon">vpn_key</span>Get a reward night</td>
                 </tr>
             </table>
         </div>
@@ -120,7 +128,7 @@
             <p class = noTopMargin>We have over 50 million happy members and have given away over 25 million reward nights around the world. Here's what our members have to say</p>
         </div>
 
-        <footer id = "footer">
+        <footer">
         <?php include 'footer.php'?>
         </footer>
         
