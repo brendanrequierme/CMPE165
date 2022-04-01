@@ -82,9 +82,31 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign Up</title>
+    <title>Sign Up</title>  
 </head>
+
+<style>
+    body {
+        background-color: rgba(197, 235, 254);
+    }
+    .content {
+    position: absolute;
+    margin: auto;
+    background: rgba(245, 245, 245);
+    text-align: center;
+    height: 350px;
+    width: 500px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #e07777;
+    border-radius: 25%;
+    padding: 10px;
+}
+</style>
+
 <body>
+    <div class = "content">
     <div class="wrapper">
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
@@ -114,6 +136,7 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
     </div>    
+    </div>
 </body>
 </html>
 

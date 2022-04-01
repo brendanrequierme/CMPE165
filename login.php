@@ -82,7 +82,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
+
+<style>
+    body {
+        background-color: rgba(197, 235, 254);
+    }
+    .content {
+    position: absolute;
+    margin: auto;
+    background: rgba(245, 245, 245);
+    text-align: center;
+    height: 350px;
+    width: 500px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #e07777;
+    border-radius: 25%;
+    padding: 10px;
+}
+</style>
+
 <body>
+    <div class = "content">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" autocomplete="off">

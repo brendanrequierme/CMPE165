@@ -25,8 +25,8 @@
                     <td><label for="start">Check-In Date:</label></td>
                     <td><input type="date" id="start" name="res-start" style = margin-right:25px></td>
                     <td><label for="end">Check-Out Date:</label></td>
-                    <td><input type="date" id="end" name="res-end"></td>
-                    <td><input type="submit" name = "searchs" value = "SEARCH"></td>
+                    <td><input type="date" style = "margin-right:20px" id="end" name="res-end"></td>
+                    <td><input type="submit" class = "searchButton" name = "searchs" value = "SEARCH"></td>
                     </form>
             </table>
         </div>
