@@ -18,9 +18,9 @@
         
         <div class = "white">
             <table class = "test">
-                <form method="post">
+                <form method="post" action = "search.php">
                     <div class="searchBox">
-                            <td><input type="text" class="search" placeholder="Search..."></td>
+                            <td><input type="text" class="search" placeholder="Search..." name="inputHere"></td>
                     </div>
                     <td><label for="start">Check-In Date:</label></td>
                     <td><input type="date" id="start" name="res-start" style = margin-right:25px></td>

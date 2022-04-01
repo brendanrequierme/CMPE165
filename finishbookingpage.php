@@ -16,12 +16,28 @@
         bottom: 0%;
         width: 100%;
     }
+
+    h2 {
+        margin-left: 28%;
+    }
+
+    img { 
+        margin-left: 42%;
+    }
+
+    b {
+        margin-left: 33%;
+        font-size: 30px;
+        font-family: nosifer;
+        color: red;
+    }
+
     </style>
 
     <body>
-        <div>
-            <p>There is no information to give for helping currently.</p>
-        </div>
+        <img src = "images/cat.gif" />
+        <h2>Thank you for booking with Spartan Death Hotel.</h2>
+        <b>We hope you enjoy your stay.</b>
         
         <!-- This div is for the bottom part of the page -->
         <div>
