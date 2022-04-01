@@ -20,7 +20,7 @@
 
     <body>
         <div>
-            <p>There is no information to give for helping currently.</p>
+            <p>Rewards has not been implemented yet.</p>
         </div>
         
         <!-- This div is for the bottom part of the page -->

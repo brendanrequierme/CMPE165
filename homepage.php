@@ -3,7 +3,6 @@
 ?>
 
 <!DOCTYPE html>
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,10 +18,9 @@
         
         <div class = "white">
             <table class = "test">
-                <form method="post" action="search.php">
+                <form method="post">
                     <div class="searchBox">
-                            <td><input type="text" class="search" placeholder="Search..." name="inputHere"></td>
-                            <!-- <input type="submit" name="submitSearch" value="Search"> -->
+                            <td><input type="text" class="search" placeholder="Search..."></td>
                     </div>
                     <td><label for="start">Check-In Date:</label></td>
                     <td><input type="date" id="start" name="res-start" style = margin-right:25px></td>
@@ -32,8 +30,6 @@
                     </form>
             </table>
         </div>
-
-
 
         <div>
             <table>
@@ -68,21 +64,21 @@
         <div>
             <table>
                 <tr>
-                    <td><img src = "images/hotel1.jpg" width = "300" height = "300"/></td>
-                    <td><img src = "images/hotel2.jpg" width = "300" height = "300"/></td>
-                    <td><img src = "images/hotel3.jpg" width = "300" height = "300"/></td>
-                    <td><img src = "images/hotel4.jpeg" width = "300" height = "300"/></td>
+                    <td><img class = "picBorder" src = "images/hotel1(1).jpg" bordered = 1px width = "300" height = "300"/></td>
+                    <td><img class = "picBorder" src = "images/hotel2(1).jpg" width = "300" height = "300"/></td>
+                    <td><img class = "picBorder" src = "images/hotel3.webp" width = "300" height = "300"/></td>
+                    <td><img class = "picBorder" src = "images/hotel4.jpg" width = "300" height = "300"/></td>
                 </tr>
-                    <td><h4 class = "noMargin">Grand Calvez</h4></td>
-                    <td><h4 class = "noMargin">Baglioni Hotel</h4></td>
-                    <td><h4 class = "noMargin">L Hotel</h4></td>
-                    <td><h4 class = "noMargin">Omni Hotels & Resorts</h4></td>
+                    <td><h4 class = "noMargin">Beachview Inn</h4></td>
+                    <td><h4 class = "noMargin">Casablanca on the Beach</h4></td>
+                    <td><h4 class = "noMargin">Bellagio</h4></td>
+                    <td><h4 class = "noMargin">The Paramount Hotel</h4></td>
                 </tr>
                 <tr>
-                    <td>Galveston, Texas</td>
-                    <td>London, UK</td>
-                    <td>Khon Kaen, Thailand</td>
-                    <td>Atlanta, Georgia</td>
+                    <td>Santa Cruz, CA</td>
+                    <td>Santa Cruz, CA</td>
+                    <td>Las Vegas, NV</td>
+                    <td>Portland, OR</td>
                 </tr>
             </table>
         </div>

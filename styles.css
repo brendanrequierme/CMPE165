@@ -24,7 +24,6 @@ hr {
     width: 100%;
 }
 
-
 table:not(.searchContainer):not(.test), input:not(.search), button, textarea {
     /* margin-left: 400px; */
     margin-left: 10%;
@@ -41,6 +40,9 @@ table:not(.searchContainer):not(.test), input:not(.search), button, textarea {
 .noTopMargin {
     margin-top: 0px;
 }
+
+/* header */
+
 
 /* homepage */
 
@@ -66,7 +68,7 @@ table:not(.searchContainer):not(.test), input:not(.search), button, textarea {
 .logo {
     font-size: 30px;
     font-family: Nosifer;
-    padding-right: 380px;
+    padding-right: 540px;
 }
 
 .redTextRPad {
@@ -86,6 +88,10 @@ table:not(.searchContainer):not(.test), input:not(.search), button, textarea {
 
 .rPad2 {
     padding-right: 170px;
+}
+
+.picBorder {
+    border: 2px solid black;
 }
 
 .checkicon {

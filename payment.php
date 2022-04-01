@@ -14,7 +14,7 @@
 
     <body>
  
-        <form name = "form1" action="finishbookingpage.php" onsubmit="return required()">
+        <form name = "form1" action="finishbookingpage.php" autocomplete="off" onsubmit="return required()">
          <!-- This div is for the information details-->
          <div>
                 <h2 class = "noBotMargin">Your Details</h2>
