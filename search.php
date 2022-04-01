@@ -14,10 +14,12 @@
 
             echo "
             <div id='organize'>
-            <h3>$hotelName</h3>
-            <h3>Description: $hotelDescription</h3>
-            <h3>Hotel Price: $hotelPrice</h3>
-            <img src = 'images/$hotelImage' width='180' height='180' />
+            <table>
+                <h3>$hotelName</h3>
+                <h3>Description: $hotelDescription</h3>
+                <h3>Hotel Price: $hotelPrice</h3>
+                <td><img src = 'images/$hotelImage' width='180' height='180' /></td>
+            </table>
             </div>
             "; 
         }
@@ -25,5 +27,13 @@
             echo("No Data Found");
         }
     }
+
 ?>
 
+<!DOCTYPE html>
+        <body>
+            <form action = "payment.php">
+                <input style = margin-left:2%; type = "submit" class = "bookButton"  value = "Book Now!" />
+            </form>
+        </body>
+</html>
