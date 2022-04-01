@@ -8,6 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- https://fonts.google.com/icons?selected=Material+Icons -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
         <title>Spartan Death Hotel</title>
     </head>
 
@@ -22,10 +26,31 @@
                     <div class="searchBox">
                             <td><input type="text" class="search" placeholder="Search..." name="inputHere"></td>
                     </div>
-                    <td><label for="start">Check-In Date:</label></td>
-                    <td><input type="date" id="start" name="res-start" style = margin-right:25px></td>
-                    <td><label for="end">Check-Out Date:</label></td>
-                    <td><input type="date" style = "margin-right:20px" id="end" name="res-end"></td>
+                    <td><label for="start">Choose Date: </label></td>
+                    <td>
+                        <input type="text" name="datefilter" value="" />
+                    </td>
+                    <script type="text/javascript">
+                        $(function() {
+
+                        $('input[name="datefilter"]').daterangepicker({
+                            autoUpdateInput: false,
+                            locale: {
+                                cancelLabel: 'Clear'
+                            }
+                        });
+
+                        $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+                            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+                        });
+
+                        $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+                            $(this).val('');
+                        });
+
+                        });
+                    </script>
+
                     <td><input type="submit" class = "searchButton" name = "searchs" value = "SEARCH"></td>
                     </form>
             </table>
