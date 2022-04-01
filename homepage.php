@@ -19,17 +19,17 @@
         
         <div class = "white">
             <table class = "test">
-                <form method="post">
+                <form method="post" action="search.php">
                     <div class="searchBox">
-                            <td><input type="text" class="search" placeholder="Search..."></td>
-                            <td><input type="submit" name="submitSearch" value="Search"></td>
+                            <td><input type="text" class="search" placeholder="Search..." name="inputHere"></td>
+                            <!-- <input type="submit" name="submitSearch" value="Search"> -->
                     </div>
-                </form>
                     <td><label for="start">Check-In Date:</label></td>
                     <td><input type="date" id="start" name="res-start" style = margin-right:25px></td>
                     <td><label for="end">Check-Out Date:</label></td>
                     <td><input type="date" id="end" name="res-end"></td>
-                    <td><a href="#" ><span style = "padding-left:20px" class="material-icons searchicon">search</span></a></td>
+                    <td><input type="submit" name = "searchs" value = "SEARCH"></td>
+                    </form>
             </table>
         </div>
 
