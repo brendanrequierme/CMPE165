@@ -115,18 +115,21 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
                 <label>Username</label>
                 <br>
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>" placeholder="Enter your Username">
+                <br>
                 <span class="help-block" style = color:red><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password</label>
                 <br>
                 <input type="password" name="password" class="form-control" value="<?php echo $password; ?>" placeholder="Create a Password">
+                <br>
                 <span class="help-block" style = color:red><?php echo $password_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                 <label>Confirm Password</label>
                 <br>
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>" placeholder="Confirm Password">
+                <br>
                 <span class="help-block" style = color:red><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">

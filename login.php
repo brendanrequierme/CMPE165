@@ -111,11 +111,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>" placeholder = "Enter your Username">
+                <br>
                 <span class="help-block" style = color:red><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control" placeholder = "Enter your Password">
+                <br>
                 <span class="help-block" style = color:red><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
