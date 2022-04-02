@@ -7,17 +7,14 @@ $db="information";
 
 $conn = new mysqli($servername,$username,$password,$db);
 if($conn->connect_error) {
-	die(mysql_fatal_error("Cant connect to MySQL"));
+    die(mysql_fatal_error("Cant connect to MySQL"));
 }
 
-$query ="CREATE TABLE IF NOT EXISTS loginInfo(
-id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-username VARCHAR(20) NOT NULL UNIQUE,
-password VARCHAR(255) NOT NULL)";
+$sql = file_get_contents('information.sql');
 
-$result = $conn->query($query) or die(mysql_fatal_error("Could not create MYSQL TABLE"));
-if(!$result){ 
-	die(mysql_fatal_error("Could not create MYSQL TABLE"));
+$mysqli = new mysqli("localhost", "root", "", "information");
 
-}
+/* execute multi query */
+$mysqli->multi_query($sql);
+
 ?>
