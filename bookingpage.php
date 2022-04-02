@@ -14,7 +14,7 @@
         <td style>
             <input type='text' name='datefilter' value='' style = margin-right:30px;/>
         </td>
-        
+
         <td><input type='submit' class = 'searchButton' name = 'searchs' value = 'SEARCH'></td>
         </form>
     </table>
@@ -49,7 +49,7 @@
                 </tr>
             </table>
             </div>
-            "; 
+            ";
         }
 
     include 'footer.php';
