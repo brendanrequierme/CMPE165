@@ -1,41 +1,55 @@
 <?php
     include 'header.php';
-?>
+    include 'database.php';
 
-<!DOCTYPE html>
+    echo "
+    <div class = 'searchBarOuter2'>
+    <table class = 'test'>
+        <form method='post' action = 'search.php' >
+            <div class='searchBox'>
+                    <td><input type='text' class='search' placeholder='Search...' name='inputHere'></td>
+            </div>
+            <td><label for='start'>Check-In Date:</label></td>
+            <td><input type='date' id='start' name='res-start' style = margin-right:25px></td>
+            <td><label for='end'>Check-Out Date:</label></td>
+            <td><input type='date' style = 'margin-right:20px' id='end' name='res-end'></td>
+            <td><input type='submit' class = 'searchButton' name = 'searchs' value = 'SEARCH'></td>
+            </form>
+    </table>
+    </div>
+    ";
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Book Your Hotel!</title>
-    </head>
+        $stmt = mysqli_query($conn,"SELECT * FROM hotel");
+        while ($row = mysqli_fetch_array($stmt)) {
+                $hotelName = $row['hotel_name'];
+                $hotelDescription = $row['description'];
+                $hotelPrice = $row['usd'];
+                $hotelImage = $row['image'];
+                $stmt2 = mysqli_query($conn,"SELECT SUM(bed_count) AS bedcount FROM room WHERE hotel_id IN (SELECT hotel_id FROM hotel WHERE hotel_name LIKE '%$hotelName%')");
+                while ($rows = mysqli_fetch_array($stmt2)) {
+                    $hotelRoom = $rows['bedcount'];
+                }
 
-    <body>
-        <form action = "payment.php">
-        <!--  Need to include the search bar in this and all the check in check out and guest stuff -->
-        <div>
-            <!-- Temp hold until we can get all the database stuff figured out -->
-            <h2> Pismo Beach, California, United States of America</h2>
-            <hr class = "lineHeight" class = "noTopMargin" color = "gray">
+            echo "
             <table>
+                <td><img src = 'images/$hotelImage' width='180' height='180' /></td>
+                <td>
+                <h2>$hotelName</h2>
+                <h3>Description: $hotelDescription</h3>
+                <h3>Number of Rooms Available: $hotelRoom</h3>
+                <h3>Hotel Price: $$hotelPrice</h3>
+                </td>
                 <tr>
-                    <td style = padding-right:70px><h3 class = "noMargin">Motel 6 Pismo Beach, CA</h3></td>
-                    <td><h3 class = "noMargin">$139</h3></td>
-                </tr>
-                <tr>
-                    <td>860 4th Street, Pismo Beach, </br>93449, CA</td>
-                    <td>total $159</td>
+                <td><form action = 'payment.php'>
+                <input style = width:110px; type = 'submit' class = 'bookButton'  value = 'Book Now!' />
+                </form>
+                </td>
                 </tr>
             </table>
-                <input style = margin-left:23.5% type = "submit" class = "bookButton"  value = "Book Now!" />
-            </form>
-        </div>
+            </div>
+            "; 
+        }
 
-   
-            
-  
-        
-    <?php include 'footer.php'?>
+    include 'footer.php';
 
-    </body>
-</html>
+?>

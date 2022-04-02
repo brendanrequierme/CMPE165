@@ -26,7 +26,7 @@ function required() {
         alert("Zip Code is in Incorrect Format")
         return false;
     } else {
-        alert("Thanks for Booking with Spartan Death Hotel");
+        alert("Thanks for Booking with Spartan Death Hotel!");
         location.href = 'finishbookingpage.php';
         return true;
     }
