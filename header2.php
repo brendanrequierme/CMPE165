@@ -21,7 +21,7 @@
                 <tr>
                     <th class = "logo"><a class = "clearDecorAndRed" href = "homepage.php">Spartan Death Hotel</a></th>
                     <td class = redTextRPad><a class = "clearDecorAndRed" href = "helppage.php">Help</a></td>
-                    <td class = redTextRPad2><a class = "clearDecorAndRed" href = "login.php">Sign In</a></td>
+                    <td class = redTextRPad2><a class = clearDecorAndRed href = "logout.php">Sign Out</a></td>
                 </tr> 
             </table>
             <hr class = "lineHeight" class = "noTopMargin" color = "gray">

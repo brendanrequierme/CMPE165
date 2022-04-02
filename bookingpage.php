@@ -1,5 +1,12 @@
 <?php
-    include 'header.php';
+    // Initialize the session
+    session_start();
+
+    if (!$_SESSION) {
+        include 'header.php';
+    } else {
+        include 'header2.php';
+    }
     include 'database.php';
 
     global $datefilter;
@@ -14,7 +21,7 @@
         <td style>
             <input type='text' name='datefilter' value='' style = margin-right:30px;/>
         </td>
-
+        
         <td><input type='submit' class = 'searchButton' name = 'searchs' value = 'SEARCH'></td>
         </form>
     </table>
@@ -49,7 +56,7 @@
                 </tr>
             </table>
             </div>
-            ";
+            "; 
         }
 
     include 'footer.php';
