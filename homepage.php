@@ -66,7 +66,7 @@
                     <h3>Why book with Spartan Death Hotel?</h3>
                 </tr>
                 <tr>
-                    <td class = "rPad"><span class="material-icons cancelicon">clear</span>Free Cancelation</td>
+                    <td class = "rPad"><span class="material-icons cancelicon">clear</span>Free Cancellation</td>
                     <td class = "rPad"><span class="material-icons verifiedicon">verified</span>Our price guarantee</td>
                     <td class = "rPad"><span class="material-icons rewardicon">vpn_key</span>Get a reward night</td>
                 </tr>
