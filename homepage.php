@@ -150,7 +150,7 @@
         <!-- This div is for ... -->
         <div>
             <h3 class = noBotMargin>Overheard from our loyalty members</h3>
-            <p class = noTopMargin>We have over 50 million happy members and have given away over 25 million reward nights around the world. Here's what our members have to say</p>
+            <p class = noTopMargin>We have over 50 million happy members and have given away over 25 million reward nights around the world.</p>
         </div>
 
         <footer">
