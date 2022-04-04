@@ -62,7 +62,9 @@
             "; 
         }
         if(mysqli_num_rows($stmt) < 1) {
-            echo("No Data Found");
+            echo "
+                <h2> No Record Found </h2>
+            ";
             }
         }
 
