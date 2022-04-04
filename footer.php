@@ -10,9 +10,8 @@
             <footer id = "footer">
             <hr class = "lineHeight" class = "noTopMargin" color = "gray">
             <table>
-                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "aboutpage.php">About Us</a></td>
-                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "bookingpage.php">Booking</a></td>
-                <td style = padding-right:20px><a class = "clearDecorAndRPad" href = "contactpage.php">Contact Us</a></td>
+                <td style = padding-right:5px><a class = "clearDecorAndRPad" href = "aboutpage.php">About Us</a></td>
+                <td><a class = "clearDecorAndRPad" href = "contactpage.php">Contact Us</a></td>
             </table>
             </footer>
         </div>
