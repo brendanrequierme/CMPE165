@@ -1,5 +1,12 @@
 <?php
+// Initialize the session
+session_start();
+
+if (!$_SESSION) {
     include 'header.php';
+} else {
+    include 'header2.php';
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +50,13 @@
         <!-- This div is for the bottom part of the page -->
         <div>
             <footer id = "footer">
-                <?php include 'footer.php'?>
+                <?php 
+        if (!$_SESSION) {
+            include 'footer.php';
+        } else {
+            include 'footer2.php';
+        }
+    ?>
             </footer>
         </div>
 

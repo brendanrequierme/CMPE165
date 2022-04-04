@@ -1,5 +1,12 @@
 <?php
-    include 'header.php';
+    // Initialize the session
+    session_start();
+
+    if (!$_SESSION) {
+        include 'header.php';
+    } else {
+        include 'header2.php';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -8,10 +15,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- https://fonts.google.com/icons?selected=Material+Icons -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
         <title>Spartan Death Hotel</title>
     </head>
 
@@ -62,7 +65,7 @@
                     <h3>Why book with Spartan Death Hotel?</h3>
                 </tr>
                 <tr>
-                    <td class = "rPad"><span class="material-icons cancelicon">clear</span>Free Cancelation</td>
+                    <td class = "rPad"><span class="material-icons cancelicon">clear</span>Free Cancellation</td>
                     <td class = "rPad"><span class="material-icons verifiedicon">verified</span>Our price guarantee</td>
                     <td class = "rPad"><span class="material-icons rewardicon">vpn_key</span>Get a reward night</td>
                 </tr>
@@ -146,11 +149,17 @@
         <!-- This div is for ... -->
         <div>
             <h3 class = noBotMargin>Overheard from our loyalty members</h3>
-            <p class = noTopMargin>We have over 50 million happy members and have given away over 25 million reward nights around the world. Here's what our members have to say</p>
+            <p class = noTopMargin>We have over 50 million happy members and have given away over 25 million reward nights around the world.</p>
         </div>
 
         <footer">
-        <?php include 'footer.php'?>
+        <?php 
+        if (!$_SESSION) {
+            include 'footer.php';
+        } else {
+            include 'footer2.php';
+        }
+    ?>
         </footer>
         
     </body>
