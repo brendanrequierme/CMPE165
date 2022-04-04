@@ -41,7 +41,7 @@ if (!$_SESSION) {
             <p><b class = "specialText">Seyoung Oh</b> (Documentation/SW Developer (Backend))</p>
             <p><b class = "specialText">Sushi (Xu) Shi</b> (SW Testing/SW Developer (Backend))</p>
             <p><b class = "specialText">Tyrell Strong</b> (SW Testing/SW Developer (Backend))</p>
-            <p><b class = "specialText">Honghao Ma</b> (SW Testing/SW Developer (Frontend))</p>
+            <p><b class = "specialText">Honghao Ma</b> (Documentation/SW Testing)</p>
             <b><p>Where are they currently at?</p></b>
             <strike><p class = "specialText">Deceased due to their project manager forcing them to code 24/7.</p></strike>
             <p>They are all currently attending SJSU as happy students and they are all definitely still alive.</p>
