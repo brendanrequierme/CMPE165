@@ -50,13 +50,13 @@ if (!$_SESSION) {
         <!-- This div is for the bottom part of the page -->
         <div>
             <footer id = "footer">
-                <?php 
-        if (!$_SESSION) {
-            include 'footer.php';
-        } else {
-            include 'footer2.php';
-        }
-    ?>
+            <?php 
+            if (!$_SESSION) {
+                include 'footer.php';
+            } else {
+                include 'footer2.php';
+            }
+            ?>
             </footer>
         </div>
 

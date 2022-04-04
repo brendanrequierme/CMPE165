@@ -6,7 +6,8 @@
         include 'header.php';
     } else {
         include 'header2.php';
-    }
+}
+    $saveUser = $_GET['id'];
     include 'database.php';
 
     global $datefilter;
@@ -147,7 +148,7 @@
 
 
 
-     
+        $username =$saveUser;
         if (!$_SESSION) {
             include 'footer.php';
         } else {
