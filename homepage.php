@@ -63,7 +63,7 @@
         <div>
             <table>
                 <tr>
-                    <h3>Why book with Spartan Death Hotel?</h3>
+                    <h3>Why Book with Spartan Death Hotel?</h3>
                 </tr>
                 <tr>
                     <td class = "rPad"><span class="material-icons cancelicon">clear</span>Free Cancellation</td>
@@ -76,8 +76,8 @@
         <div>
             <table>
                 <tr>
-                    <h3>A snapshot of the world's most picture-perfect properties</h3>
-                    <td>Check out some of our favorite unique stays</td>
+                    <h3>A Snapshot of the World's Most Picture-Perfect Properties</h3>
+                    <td>Check Out Some of our Favorite Unique Stays</td>
                 </tr>
             </table>
         </div>
@@ -126,8 +126,8 @@
         <div>
             <table>
                 <tr>
-                    <td><h4 class = "noBotMargin">Official health standards</h4></td>
-                    <td><h4 class = "noBotMargin">Social distancing</h4></td>
+                    <td><h4 class = "noBotMargin">Official Health Standards</h4></td>
+                    <td><h4 class = "noBotMargin">Social Distancing</h4></td>
                 </tr>
                 <tr>
                     <td class = "rPad2">Properties adhering to corporate/organization <br>
@@ -136,8 +136,8 @@
                     <br>distancing measure.</td>
                 </tr>
                 <tr>
-                    <td><h4 class = "noBotMargin">Hygiene and sanitization</h4></td>
-                    <td><h4 class = "noBotMargin">Essentials at the property</h4></td>
+                    <td><h4 class = "noBotMargin">Hygiene and Sanitization</h4></td>
+                    <td><h4 class = "noBotMargin">Essentials at the Property</h4></td>
                 </tr>
                 <tr>
                     <td class = "rPad2">The use of disinfectant and whether properties <br>
@@ -149,7 +149,7 @@
 
         <!-- This div is for ... -->
         <div>
-            <h3 class = noBotMargin>Overheard from our loyalty members</h3>
+            <h3 class = noBotMargin>Overheard From Our Loyalty Members</h3>
             <p class = noTopMargin>We have over 50 million happy members and have given away over 25 million reward nights around the world.</p>
         </div>
 
