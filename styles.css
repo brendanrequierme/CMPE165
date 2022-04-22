@@ -6,13 +6,13 @@ body {
  }
 
  .header {
-    background-color: #987554;
+    background-color: #987554c0;
     padding-top: 25px;
     position: relative;
  }
 
 .home {
-    background-image: url("images/163-1637308_romantic-hotels-in-india.jpg");
+    background-image: url("./images/151578-interior_design-cabin.jpg");
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -64,7 +64,7 @@ table:not(.searchContainer):not(.test), input:not(.search):not(.bookButton), but
 
 .clearDecorAndRed {
     text-decoration:none;
-    color: hotpink;
+    color: rgba(26, 77, 41, 0.842);
 }
 
 .clearDecorAndRPad {
