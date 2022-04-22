@@ -1,8 +1,5 @@
 <?php 
-if(isset($_GET['id'])){
-    $username = $_GET['id'];
-    echo 'Welcome: '.$username;
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -22,8 +19,8 @@ if(isset($_GET['id'])){
            <div>
             <table>
                 <tr>
-                    <th class = "logo"><a class = "clearDecorAndRed" href = "homepage.php?id=<?php echo $username?>">Spartan Death Hotel</a></th>
-                    <td class = redTextRPad><a class = "clearDecorAndRed" href = "helppage.php?id=<?php echo $username?>">Help</a></td>
+                    <th class = "logo"><a class = "clearDecorAndRed" href = "homepage.php">Spartan Death Hotel</a></th>
+                    <td class = redTextRPad><a class = "clearDecorAndRed" href = "helppage.php">Help</a></td>
                     <td class = redTextRPad2><a class = clearDecorAndRed href = "logout.php">Sign Out</a></td>
                 </tr> 
             </table>
@@ -34,9 +31,10 @@ if(isset($_GET['id'])){
         <div>
             <table>
                 <tr>
-                    <td><a class = "clearDecorAndRPad" href = "homepage.php?id=<?php echo $username?>">Home</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "bookingpage.php?id=<?php echo $username?>">Booking</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "rewardspage.php?id=<?php echo $username?>">Rewards</a></td>
+                    <td><a class = "clearDecorAndRPad" href = "homepage.php">Home</a></td>
+                    <td><a class = "clearDecorAndRPad" href = "bookingpage.php">Booking</a></td>
+                    <td><a class = "clearDecorAndRPad" href = "booked.php">Booked</a></td>
+                    <td><a class = "clearDecorAndRPad" href = "rewardspage.php">Rewards</a></td>
                 </tr>
             </table>
             <hr color = "gray">

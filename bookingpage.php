@@ -6,12 +6,12 @@
         include 'header.php';
     } else {
         include 'header2.php';
-}
-    $saveUser = $_GET['id'];
+    }
     include 'database.php';
 
     global $datefilter;
 ?>
+
 <!DOCTYPE HTML>
     <script type='text/javascript'>
         $(function() {
@@ -38,7 +38,7 @@
         <table class = 'test'>
         <form method='post' action = 'search.php'>
         <div class='searchBox'>
-                <td><input type='text' class='search' placeholder='Search...' name='inputHere'></td>
+                <td><input type='text' class='search2' placeholder='Search...' name='inputHere' style = margin-right:180px></td>
         </div>
         <td><label for='start'>Choose Date: </label></td>
         <td style>
@@ -85,26 +85,26 @@
                 $hotelDescription = $row['description'];
                 $hotelPrice = $row['usd'];
                 $hotelImage = $row['image'];
+                $nice = $hotelName;
 
                 $stmt2 = mysqli_query($conn,"SELECT SUM(bed_count) AS bedcount FROM room WHERE hotel_id IN (SELECT hotel_id FROM hotel WHERE hotel_name LIKE '%$hotelName%')");
                 while ($rows = mysqli_fetch_array($stmt2)) {
                     $hotelRoom = $rows['bedcount'];
                 }
                 echo "
-                <table>
-                    <td><img src = 'images/$hotelImage' width='180' height='180' /></td>
+                <div>
+                <table style = margin-left:500px>
+                    <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='280' height='280'/></td>
                     <td>
-                    <h2>$hotelName</h2>
-                    <h3>Description: $hotelDescription</h3>
-                    <h3>Number of Rooms Available: $hotelRoom</h3>
-                    <h3>Hotel Price: $$hotelPrice</h3>
-                    </td>
-                    <tr>
-                    <td><form action = 'payment.php'>
-                    <input style = width:110px; type = 'submit' class = 'bookButton'  value = 'Book Now!' />
+                    <h1 style = margin:0px>$hotelName</h1>
+                    <p style = margin:0px;font-size:18px>$hotelDescription</p>
+                    <p style = font-size:18px>Rating 7.5 Excellent</p>
+                    <p style = font-size:18px>Number of Rooms Available: $hotelRoom</p>
+                    <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
+                    <form action = 'bookingroom.php' method = 'post'>
+                    <input style = width:110px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Book Now!' />
                     </form>
                     </td>
-                    </tr>
                 </table>
                 </div>
                 ";
@@ -144,16 +144,5 @@
         //     </div>
         //     ";
         // }
-
-
-
-
-        $username =$saveUser;
-        if (!$_SESSION) {
-            include 'footer.php';
-        } else {
-            include 'footer2.php';
-        }
-
 
 ?>

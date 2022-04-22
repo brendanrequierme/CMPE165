@@ -68,8 +68,6 @@
             }
         }
 
-    include 'footer.php';
-
 ?>
 
 <!DOCTYPE HTML>
