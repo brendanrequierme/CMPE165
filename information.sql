@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2022 at 06:27 AM
+-- Generation Time: Apr 24, 2022 at 07:54 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -67,10 +67,10 @@ CREATE TABLE `hotel` (
 --
 
 INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`, `image`, `rating`) VALUES
-(1, 'Beachview Inn', 'Within easy reach of Santa Cruz Beach Boardwalk', 1, '237.00', 'beachview.jpg', NULL),
-(2, 'Casablanca On The Beach', '3.5-star beach hotel with restaurant, near Santa Cruz Beach Boardwalk', 1, '589.00', 'casablanca.jpg', NULL),
-(3, 'Bellagio', 'Luxury hotel with 18 restaurants, near Bellagio Conservatory & Botanical Gardens', 2, '394.00', 'bellagio.jpg', NULL),
-(4, 'The Paramount Hotel', '3.5-star hotel with 24-hour health club, near Washington State Convention Center', 3, '179.00', 'paramount.jpg', NULL),
+(1, 'Beachview Inn', 'Within easy reach of Santa Cruz Beach Boardwalk', 1, '237.00', 'beachview.jpg', '7.6'),
+(2, 'Casablanca On The Beach', '3.5-star beach hotel with restaurant, near Santa Cruz Beach Boardwalk', 1, '589.00', 'casablanca.jpg', '8.8'),
+(3, 'Bellagio', 'Luxury hotel with 18 restaurants, near Bellagio Conservatory & Botanical Gardens', 2, '394.00', 'bellagio.jpg', '8.9'),
+(4, 'The Paramount Hotel', '3.5-star hotel with 24-hour health club, near Washington State Convention Center', 3, '179.00', 'paramount.jpg', '8.1'),
 (5, 'Best Western Plus South Bay Hotel LAX', '15000 Hawthorne Boulevard Lawndale, California,, LAX ? Los Angeles International Airport, Los Angeles (CA), United States, 90260', 4, '140.00', '//pix8.agoda.net/hotelImages/108625/0/fb27c202359803099fd15beb43465e0c.jpg?ca=7&ce=1&s=1024x768', '7.7'),
 (6, 'JW Marriott Santa Monica Le Merigot', '1740 Ocean Avenue, Santa Monica, Los Angeles (CA), United States, 90401', 4, '431.00', '//pix8.agoda.net/hotelImages/471/47167/47167_08091300010012091.jpg?ca=0&ce=1&s=1024x768', '8.3'),
 (7, 'Andaz West Hollywood', '8401 Sunset Boulevard, West Hollywood, Los Angeles (CA), United States, 90069', 4, '272.00', '//pix8.agoda.net/hotelImages/2450480/0/a6868916137b7e801e70b6b040f1a36a.jpg?ca=7&ce=1&s=1024x768', '9.0'),
