@@ -99,7 +99,37 @@ INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`, 
 (30, 'Omni Los Angeles at California Plaza', '251 South Olive Street, Downtown Los Angeles, Los Angeles (CA), United States, 90012', 4, '263.00', '30.jpg', '8.6'),
 (31, 'The Hoxton Downtown LA', '1060 South Broadway, Downtown Los Angeles, Los Angeles (CA), United States, 90015', 4, '235.00', '31.jpg', '9.2');
 
-
+INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`, `image`, `rating`) VALUES
+(61, 'The Donatello', '501 Post Street, San Francisco Downtown, San Francisco (CA), United States, 94102', 6, '276.00', '61.jpg', '8.7'),
+(62, 'The Inn at Union Square', '440 Post Street, San Francisco Downtown, San Francisco (CA), United States, 94102', 6, '260.00', '62.jpg', '9.1'),
+(63, 'Omni San Francisco Hotel', '500 California Street, San Francisco Downtown, San Francisco (CA), United States, 94104', 6, '203.00', '63.jpg', '9.2'),
+(64, 'Hyatt Centric Fishermans Wharf', '555 North Point St, Fisherman\'s Wharf, San Francisco (CA), United States, 94133', 6, '299.00', '64.jpg', '8.3'),
+(65, 'Hyatt Place Emeryville/San Francisco Bay Area', '5700 Bay Street, Oakland, San Francisco (CA), United States, 94608', 6, '199.00', '65.jpg', '8.6'),
+(66, 'Hotel Abri Union Square', '127 Ellis Street, San Francisco Downtown, San Francisco (CA), United States, 94102', 6, '191.00', '66.jpg', '8.3'),
+(67, 'Extended Stay America Premier Suites - Oakland - Alameda', '1350 Marina Village Pkwy, Oakland, San Francisco (CA), United States, 94501', 6, '138.00', '67.jpg', '7.2'),
+(68, 'Axiom Hotel San Francisco', '28 Cyril Magnin ST, San Francisco Downtown, San Francisco (CA), United States, 94109', 6, '239.00', '68.jpg', '8.3'),
+(69, 'Courtyard San Francisco Union Square', '761 Post Street, San Francisco Downtown, San Francisco (CA), United States, 94109', 6, '219.00', '69.jpg', '7.8'),
+(70, 'Chancellor Hotel on Union Square', '433 Powell Street, San Francisco Downtown, San Francisco (CA), United States, 94102', 6, '182.00', '70.jpg', '9.3'),
+(71, 'Holiday Inn San Francisco - Golden Gateway', '1500 Van Ness Avenue, San Francisco Downtown, San Francisco (CA), United States, 94109', 6, '206.00', '71.jpg', '8.0'),
+(72, 'Executive Inn & Suites Oakland', '1755 Embarcadero, Oakland, San Francisco (CA), United States, 94606', 6, '161.00', '72.jpg', '8.6'),
+(73, 'Handlery Union Square Hotel', '351 Geary Street, San Francisco Downtown, San Francisco (CA), United States, 94102', 6, '244.00', '73.jpg', '8.3'),
+(74, 'Hampton Inn San Francisco Downtown Convention Center', '942 Mission Street, South of Market, San Francisco (CA), United States, 94103', 6, '220.00', '74.jpg', '8.4'),
+(75, 'Hilton Garden Inn San Francisco - Oakland Bay Bridge Hotel', '1800 Powell Street, Oakland, San Francisco (CA), United States, 94608', 6, '203.00', '75.jpg', '8.2'),
+(76, 'Executive Hotel Vintage Court', '650 Bush Street, San Francisco Downtown, San Francisco (CA), United States, 94108', 6, '199.00', '76.jpg', '7.7'),
+(77, 'The Pickwick Hotel', '85 Fifth Street, South of Market, San Francisco (CA), United States, 94103', 6, '155.00', '77.jpg', '7.5'),
+(78, 'The Westin St. Francis San Francisco on Union Square', '335 Powell Street , San Francisco Downtown, San Francisco (CA), United States, 94102', 6, '206.00', '78.jpg', '8.3'),
+(79, 'InterContinental San Francisco', '888 Howard Street, South of Market, San Francisco (CA), United States, 94103', 6, '246.00', '79.jpg', '8.5'),
+(80, 'Pacifica Lighthouse Hotel Trademark Collection by Wyndham', '105 Rockaway Beach Ave, Pacifica, San Francisco (CA), United States, 94044', 6, '189.00', '80.jpg', '7.9'),
+(81, 'Hotel Zephyr San Francisco', '250 Beach Street, Fisherman\'s Wharf, San Francisco (CA), United States, 94133', 6, '341.00', '81.jpg', '8.3'),
+(82, 'Grand Hyatt at SFO', '55 South McDonnell Rd, San Francisco International Airport, San Francisco (CA), United States, 94128', 6, '289.00', '82.jpg', '9.3'),
+(83, 'Embassy Suites San Rafael Marin County Hotel', '101 Mcinnis Parkway, Marin County, San Francisco (CA), United States, 94903', 6, '194.00', '83.jpg', '8.2'),
+(84, 'Casa Madrona Hotel and Spa', '801 Bridgeway, Marin County, San Francisco (CA), United States, 94965', 6, '416.00', '84.jpg', '8.5'),
+(85, 'Courtyard Oakland Downtown', '988 Broadway, Oakland, San Francisco (CA), United States, 94607', 6, '191.00', '85.jpg', '8.5'),
+(86, 'Hotel Emblem San Francisco, a Viceroy Urban Retreat', '562 Sutter Street, San Francisco Downtown, San Francisco (CA), United States, 94102', 6, '203.00', '86.jpg', '9.0'),
+(87, 'Inn Redwood City', '1818 El Camino Real, San Francisco International Airport, San Francisco (CA), United States, 94063-2111', 6, '127.00', '87.jpg', '7.7'),
+(88, 'Club Quarters Hotel in San Francisco', '424 Clay Street, San Francisco Downtown, San Francisco (CA), United States, 94111', 6, '188.00', '88.jpg', '8.3'),
+(89, 'Hotel Zoe Fisherman\'s Wharf', '425 NORTH POINT STREET, Fisherman\'s Wharf, San Francisco (CA), United States, 94133', 6, '281.00', '89.jpg', '8.6'),
+(90, 'Hyatt House Emeryville San Francisco Bay Area', '5800 Shellmound Street, Oakland, San Francisco (CA), United States, 94608', 6, '196.00', '90.jpg', '8.6');
 
 -- --------------------------------------------------------
 
