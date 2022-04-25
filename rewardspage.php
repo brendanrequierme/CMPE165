@@ -1,5 +1,12 @@
 <?php
-    include 'header.php';
+    // Initialize the session
+    session_start();
+
+    if (!$_SESSION) {
+        include 'header.php';
+    } else {
+        include 'header2.php';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +30,5 @@
             <p>Rewards has not been implemented yet.</p>
         </div>
         
-        <!-- This div is for the bottom part of the page -->
-        <div>
-            <footer id = "footer">
-                <?php include 'footer.php'?>
-            </footer>
-        </div>
     </body>
 </html>
