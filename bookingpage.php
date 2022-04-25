@@ -55,7 +55,7 @@
 <!DOCTYPE HTML>
     <div class="card-body" style = margin-bottom:10px;>
         <form method="GET">
-            <div class="group" style = padding-left:2px;>
+            <div class="group" style = padding-left:348px;>
                 <select name="sort_numeric" class="form-control">
                     <option value="">-------</option>
                     <option value="low-high" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "low-high") {echo "selected";}?> >low - high</option>
@@ -83,6 +83,8 @@
             foreach($query_run as $row) {
                 $hotelName = $row['hotel_name'];
                 $hotelDescription = $row['description'];
+                $hotelCity = $row['city_id'];
+                $hotelRating = $row['rating'];
                 $hotelPrice = $row['usd'];
                 $hotelImage = $row['image'];
                 $nice = $hotelName;
@@ -98,7 +100,7 @@
                     <td>
                     <h1 style = margin:0px>$hotelName</h1>
                     <p style = margin:0px;font-size:18px>$hotelDescription</p>
-                    <p style = font-size:18px>Rating 7.5 Excellent</p>
+                    <p style = font-size:18px>Rating: $hotelRating</p>
                     <p style = font-size:18px>Number of Rooms Available: $hotelRoom</p>
                     <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
                     <form action = 'bookingroom.php' method = 'post'>
