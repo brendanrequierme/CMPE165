@@ -67,7 +67,7 @@ CREATE TABLE `hotel` (
 --
 
 INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`, `image`, `rating`) VALUES
-(1, 'Best Western Plus South Bay Hotel LAX', '15000 Hawthorne Boulevard Lawndale, California,, LAX ? Los Angeles International Airport, Los Angeles (CA), United States, 90260', 4, '140.00', '1.jpg', '7.7'),
+(1, 'Best Western Plus South Bay Hotel LAX', '15000 Hawthorne Boulevard Lawndale, California,, LAX Los Angeles International Airport, Los Angeles (CA), United States, 90260', 4, '140.00', '1.jpg', '7.7'),
 (2, 'JW Marriott Santa Monica Le Merigot', '1740 Ocean Avenue, Santa Monica, Los Angeles (CA), United States, 90401', 4, '431.00', '2.jpg', '8.3'),
 (3, 'Andaz West Hollywood', '8401 Sunset Boulevard, West Hollywood, Los Angeles (CA), United States, 90069', 4, '272.00', '3.jpg', '9.0'),
 (4, 'Alhambra Hotel', '2221 W Commonwealth Ave, East Los Angeles, Los Angeles (CA), United States, 91803', 4, '92.00', '4.jpg', '8.4'),
@@ -91,8 +91,8 @@ INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`, 
 (22, 'Sheraton Los Angeles San Gabriel', '303 East Valley Boulevard, East Los Angeles, Los Angeles (CA), United States, 91776', 4, '197.00', '22.jpg', '8.8'),
 (23, 'The Hollywood Roosevelt', '7000 Hollywood Boulevard, Hollywood, Los Angeles (CA), United States, 90028', 4, '288.00', '23.jpg', '8.6'),
 (24, 'Hyatt Place At Anaheim Resort Conv', '2035 South Harbor Boulevard, Anaheim, Los Angeles (CA), United States, 92802', 4, '239.00', '24.jpg', '8.7'),
-(25, 'La Quinta Inn & Suites by Wyndham LAX', '5249 W Century Boulevard, LAX ? Los Angeles International Airport, Los Angeles (CA), United States, 90045', 4, '138.00', '25.jpg', '7.7'),
-(26, 'Embassy Suites Los Angeles International Airport South Hotel', '1440 E. Imperial Avenue, LAX ? Los Angeles International Airport, Los Angeles (CA), United States, 90245', 4, '167.00', '26.jpg', '7.9'),
+(25, 'La Quinta Inn & Suites by Wyndham LAX', '5249 W Century Boulevard, LAX Los Angeles International Airport, Los Angeles (CA), United States, 90045', 4, '138.00', '25.jpg', '7.7'),
+(26, 'Embassy Suites Los Angeles International Airport South Hotel', '1440 E. Imperial Avenue, LAX Los Angeles International Airport, Los Angeles (CA), United States, 90245', 4, '167.00', '26.jpg', '7.9'),
 (27, 'Hotel Figueroa, an Unbound Collection by Hyatt', '939 South Figueroa Street, Downtown Los Angeles, Los Angeles (CA), United States, 90015', 4, '279.00', '27.jpg', '8.8'),
 (28, 'Kimpton Hotel Wilshire', '6317 Wilshire Boulevard, West Hollywood, Los Angeles (CA), United States, 90048', 4, '339.00', '28.jpg', '8.1'),
 (29, 'The Moment Hotel', '7370 Sunset Boulevard, Hollywood, Los Angeles (CA), United States, 90046', 4, '282.00', '29.jpg', '7.5'),

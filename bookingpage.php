@@ -73,21 +73,21 @@
         if(isset($_GET['sort_numeric'])) {
             if($_GET['sort_numeric'] == "low-high") {
                 $sort_option = "ASC";
-            } elseif($_GET['sort_numeric'] == "high-low") 
-            $sort_option = "DESC";
+            } elseif($_GET['sort_numeric'] == "high-low")
+                $sort_option = "DESC";
         }
         $query = "SELECT * From hotel ORDER BY usd $sort_option";
         $query_run = mysqli_query($conn, $query);
 
         if(mysqli_num_rows($query_run) > 0) {
             foreach($query_run as $row) {
+                $hotelID = $row['hotel_id'];
                 $hotelName = $row['hotel_name'];
                 $hotelDescription = $row['description'];
                 $hotelCity = $row['city_id'];
                 $hotelRating = $row['rating'];
                 $hotelPrice = $row['usd'];
                 $hotelImage = $row['image'];
-                $nice = $hotelName;
 
                 $stmt2 = mysqli_query($conn,"SELECT SUM(bed_count) AS bedcount FROM room WHERE hotel_id IN (SELECT hotel_id FROM hotel WHERE hotel_name LIKE '%$hotelName%')");
                 while ($rows = mysqli_fetch_array($stmt2)) {
@@ -104,7 +104,7 @@
                     <p style = font-size:18px>Number of Rooms Available: $hotelRoom</p>
                     <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
                     <form action = 'bookingroom.php' method = 'post'>
-                    <input style = width:110px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Book Now!' />
+                    <input style = width:110px; name = '$hotelID' type = 'submit' class = 'bookButton'  value = 'Book Now!' />
                     </form>
                     </td>
                 </table>

@@ -6,7 +6,9 @@
         include 'header.php';
     } else {
         include 'header2.php';
-}
+    }
+    include 'database.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +24,23 @@
     <body>
  
         <form name = "form1" action="finishbookingpage.php" autocomplete="off" onsubmit="return required()">
+
+        <?php
+        $stmt = mysqli_query($conn,"SELECT * FROM hotel WHERE hotel_id = 1");
+        while ($row = mysqli_fetch_array($stmt)) {
+            $hotelPrice = $row['usd'];
+
+            echo "
+            <div>
+            <table style = margin-left:500px>
+                <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
+                </td>
+            </table>
+            </div>
+            "; 
+        }
+        ?>
+
          <!-- This div is for the information details-->
          <div>
                 <h2 class = "noBotMargin">Your Details</h2>
@@ -168,9 +187,6 @@
         <input type = "submit" name = "submit" value = "Book Now" />
         </form>
 
-        <?php include 'footer.php'?>
-
     </body>
 
 </html>
-
