@@ -1,5 +1,6 @@
 <?php
 require_once "database.php";
+
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 
@@ -37,7 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 if(empty(trim($_POST["password"]))){
     $password_err = "Please enter a password.";     
 } elseif(strlen(trim($_POST["password"])) < 6){
-    $password_err = "Password must have atleast 6 characters.";
+    $password_err = "Password must have at least 6 characters.";
 } else{
     $password = trim($_POST["password"]);
 }
@@ -83,62 +84,36 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>  
+    <link rel="stylesheet" type="text/css" href="./styleRegister.css" />
 </head>
-
-<style>
-    body {
-        background-color: rgba(197, 235, 254);
-    }
-    .content {
-    position: absolute;
-    margin: auto;
-    background: rgba(245, 245, 245);
-    text-align: center;
-    height: 350px;
-    width: 500px;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    border: 5px solid #e07777;
-    border-radius: 25%;
-    padding: 10px;
-}
-</style>
-
 <body>
     <div class = "content">
-    <div class="wrapper">
-        <h2>Sign Up</h2>
-        <p>Please fill this form to create an account.</p>
+        <h2><center>Spartan Hotel Registration</center></h2>
+        <p><center>Please fill this form to create an account.</center></p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" autocomplete="off">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
-                <br>
+                <label><b>Username:</b></label>
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>" placeholder="Enter your Username">
                 <br>
                 <span class="help-block" style = color:red><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
-                <br>
+                <label><b>Password:</b></label>
                 <input type="password" name="password" class="form-control" value="<?php echo $password; ?>" placeholder="Create a Password">
                 <br>
                 <span class="help-block" style = color:red><?php echo $password_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label>Confirm Password</label>
-                <br>
+                <label><b>Confirm Password:</b></label>
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>" placeholder="Confirm Password">
                 <br>
                 <span class="help-block" style = color:red><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
-                <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="login.php">Login here</a>.</p>
+            <p><center>Already have an account? <a href="login.php">Login here</a>.</center></p>
         </form>
-    </div>    
     </div>
 </body>
 </html>

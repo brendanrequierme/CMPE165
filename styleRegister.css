@@ -21,6 +21,7 @@
 	text-align: center;
 }
 
+
 h2 {
 	font-size: 30px;
 	font-weight: bold;
@@ -29,7 +30,7 @@ h2 {
 body { 
 	font-size: 14px; 
 	font: sans-serif; 
-	background-image: url("images/loginroom.jpg");
+	background-image: url("images/registerBack.jpg");
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
   	-moz-background-size: cover;
