@@ -64,14 +64,17 @@
                 <h5>Filter 
                     <button type="submit">Search</button>
                 </h5>
-                <div class="group" style = padding-left:348px;>
-                <select name="sort_numeric" class="form-control">
-                    <option value="">-------</option>
-                    <option value="low-high" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "low-high") {echo "selected";}?> >low - high</option>
-                    <option value="high-low" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "high-low") {echo "selected";}?> >high - low</option>
-                </select>
- <!--               <button type="submit" style = margin-left:10px;>Filter</button> -->
-            </div>
+                <h6>
+                    price
+                    <div class="group" style = padding-left:348px;>
+                        <select name="sort_numeric" class="form-control">
+                            <option value="">-------</option>
+                            <option value="low-high" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "low-high") {echo "selected";}?> >low - high</option>
+                            <option value="high-low" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "high-low") {echo "selected";}?> >high - low</option>
+                        </select>
+    <!--               <button type="submit" style = margin-left:10px;>Filter</button> -->
+                    </div>
+                </h6>
             </div>
             <div class="city-body">
                 <h6>City List</h6>
