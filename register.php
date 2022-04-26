@@ -104,7 +104,7 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
                 <span class="help-block" style = color:red><?php echo $password_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <label><b>Confirm Password:</b></label>
+                <label><b style = margin-left:-57px>Confirm Password:</b></label>
                 <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>" placeholder="Confirm Password">
                 <br>
                 <span class="help-block" style = color:red><?php echo $confirm_password_err; ?></span>
@@ -117,4 +117,3 @@ if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
     </div>
 </body>
 </html>
-
