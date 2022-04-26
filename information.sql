@@ -44,7 +44,7 @@ CREATE TABLE `bookedhotel` (
 --
 
 INSERT INTO `bookedhotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`, `image`, `rating`, `start_date`, `end_date`) VALUES
-(1, 'Best Western Plus South Bay Hotel LAX', '15000 Hawthorne Boulevard Lawndale, California,, LAX Los Angeles International Airport, Los Angeles (CA), United States, 90260', 4, '140.00', '1.jpg', '7.7', NULL, NULL),
+(1, 'Best Western Plus South Bay Hotel LAX', '15000 Hawthorne Boulevard Lawndale, California, LAX Los Angeles International Airport, Los Angeles (CA), United States, 90260', 4, '140.00', '1.jpg', '7.7', NULL, NULL),
 (2, 'JW Marriott Santa Monica Le Merigot', '1740 Ocean Avenue, Santa Monica, Los Angeles (CA), United States, 90401', 4, '431.00', '2.jpg', '8.3', NULL, NULL),
 (3, 'Andaz West Hollywood', '8401 Sunset Boulevard, West Hollywood, Los Angeles (CA), United States, 90069', 4, '272.00', '3.jpg', '9.0', NULL, NULL),
 (4, 'Alhambra Hotel', '2221 W Commonwealth Ave, East Los Angeles, Los Angeles (CA), United States, 91803', 4, '92.00', '4.jpg', '8.4', NULL, NULL),
