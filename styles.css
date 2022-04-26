@@ -245,3 +245,7 @@ table:not(.searchContainer):not(.test), input:not(.search):not(.bookButton), but
 .card-body {
     margin-bottom: 400px;
 }
+
+table {
+    border: 1px solid black;
+}
