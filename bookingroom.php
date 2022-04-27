@@ -12,64 +12,49 @@
     global $datefilter;
 ?>
 
-<!DOCTYPE HTML>
-    <div class="card-body" style = margin-bottom:10px;>
-        <form method="GET">
-            <div class="group" style = padding-left:2px;>
-                <select name="sort_numeric" class="form-control">
-                    <option value="">-------</option>
-                    <option value="low-high" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "low-high") {echo "selected";}?> >low - high</option>
-                    <option value="high-low" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "high-low") {echo "selected";}?> >high - low</option>
-                </select>
-                <button type="submit" style = margin-left:10px;>Filter</button>
-            </div>
-        </form>
-    </div>
-</html>
-
 <?php
-        echo $_POST["mainName"];
-        $sort_option = "";
-        $stmt = mysqli_query($conn,"SELECT * FROM room WHERE hotel.hotel_name IS '%mainName%'");
-        if(isset($_GET['sort_numeric'])) {
-            if($_GET['sort_numeric'] == "low-high") {
-                $sort_option = "ASC";
-            } elseif($_GET['sort_numeric'] == "high-low") 
-            $sort_option = "DESC";
-        }
-
-        $query = "SELECT * From room ORDER BY room_price $sort_option";
-        $query_run = mysqli_query($conn, $query);
-
-        if(mysqli_num_rows($query_run) > 0) {
-            foreach($query_run as $row) {
-                $roomName = $row['room_name'];
-                $roomDescription = $row['description'];
-                $roomBedCount = $row['bed_count'];
-                $roomPrice = $row['room_price'];
-
-                echo "
-                <table>
-                    <td>
-                    <h2>Hotel Name: </h2>
-                    <h2>$roomName</h2>
-                    <h3>Description: $roomDescription</h3>
-                    <h3>Bed Count: $roomBedCount</h3>
-                    <h3>Hotel Price: $$roomPrice</h3>
-                    </td>
-                    <tr>
-                    <td><form action = 'payment.php'>
-                    <input style = width:110px type = 'submit' class = 'bookButton'  value = 'Book Now!' />
-                    </form>
-                    </td>
-                    </tr>
-                </table>
-                </div>
-                ";
+        $stmt = mysqli_query($conn,"SELECT * FROM hotel WHERE hotel_id = 1");
+        while ($row = mysqli_fetch_array($stmt)) {
+            $hotelID = $row['hotel_id'];
+            $hotelName = $row['hotel_name'];
+            $hotelDescription = $row['description'];
+            $hotelCity = $row['city_id'];
+            $hotelRating = $row['rating'];
+            $hotelPrice = $row['usd'];
+            $hotelImage = $row['image'];
             }
-        } else {
-            ?>
-            <h2> No Record Found </h2>
-            <?php
+
+            echo "
+            <div>
+            <table style = margin-left:300px>
+                <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='280' height='280'/></td>
+                <td>
+                <h1 style = margin:0px>$hotelName</h1>
+                <p style = margin:0px;font-size:18px>$hotelDescription</p>
+                <p style = font-size:18px>Rating: $hotelRating</p>
+                <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
+                <form action = 'payment.php' method = 'post'>
+                <input style = width:110px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Pay Now!' />
+                </form>
+                </td>
+            </table>
+            <td><p style = font-size:18px>Nearby Food Places</p></td>
+            ";
+
+            $stmt2 = mysqli_query($conn,"SELECT * FROM restaurant INNER JOIN hotel ON restaurant.hotel_id = hotel.hotel_id WHERE restaurant.hotel_id = '$hotelID'");
+            while ($row2 = mysqli_fetch_array($stmt2)) {
+                $restaurantName = $row2['restaurant_name'];
+                $restaurantImage = $row2['restaurant_image']; 
+
+            echo"
+            <table style = text-align:center;margin-left:280px>
+                <td><p style = font-size:18px>$restaurantName</p></td>
+            <tr>
+                <td><img class = 'picBorder' src = 'images/$restaurantImage' width='180' height='180' /><td>
+            </tr>
+            </table>
+            </div>
+            "; 
         }
+
 ?>
