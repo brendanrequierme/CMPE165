@@ -65,12 +65,14 @@
                     <button type="submit">Search</button>
                 </h5>
                 <h6>
-                    price
+                    Price
                     <div class="group" style = padding-left:348px;>
                         <select name="sort_numeric" class="form-control">
                             <option value="">-------</option>
-                            <option value="low-high" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "low-high") {echo "selected";}?> >low - high</option>
-                            <option value="high-low" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "high-low") {echo "selected";}?> >high - low</option>
+                            <option value="price: low-high" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "price: low-high") {echo "selected";}?> >price: low - high</option>
+                            <option value="price: high-low" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "price: high-low") {echo "selected";}?> >price: high - low</option>
+                            <option value="rating: low-high" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "rating: low-high") {echo "selected";}?> >rating: low - high</option>
+                            <option value="rating: high-low" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "rating: high-low") {echo "selected";}?> >rating: high - low</option>
                         </select>
     <!--               <button type="submit" style = margin-left:10px;>Filter</button> -->
                     </div>
@@ -110,15 +112,6 @@
             </div>
                 <div class="city-body-row">
                     <?php
-                        //price filter
-                        $sort_option = "";
-                        $stmt = mysqli_query($conn,"SELECT * FROM hotel");
-                        if(isset($_GET['sort_numeric'])) {
-                            if($_GET['sort_numeric'] == "low-high") {
-                                $sort_option = "ASC";
-                            } elseif($_GET['sort_numeric'] == "high-low")
-                                $sort_option = "DESC";
-                        }
                         if(isset($_GET['cities']))
                         {
                             $citychecked = [];
@@ -126,7 +119,25 @@
                             foreach($citychecked as $rowcity)
                             {
                                 // echo $rowcity;
-                                $hotels = "SELECT * FROM hotel WHERE city_id IN($rowcity) ORDER BY usd $sort_option";
+                                //price and rating filter
+                                $sort_price = "";
+                                $sort_option= "";
+                                $stmt = mysqli_query($conn,"SELECT * FROM hotel");
+                                if(isset($_GET['sort_numeric'])) {
+                                    if($_GET['sort_numeric'] == "price: low-high") {
+                                        $sort_price = "ASC";
+                                        $hotels = "SELECT * FROM hotel WHERE city_id IN($rowcity) ORDER BY usd $sort_price";  
+                                    } elseif($_GET['sort_numeric'] == "price: high-low") {
+                                        $sort_price = "DESC";
+                                        $hotels = "SELECT * FROM hotel WHERE city_id IN($rowcity) ORDER BY usd $sort_price";  
+                                    } elseif($_GET['sort_numeric'] == "rating: low-high") {
+                                        $sort_option = "ASC";
+                                        $hotels = "SELECT * FROM hotel WHERE city_id IN($rowcity) ORDER BY rating $sort_option";  
+                                    } elseif($_GET['sort_numeric'] == "rating: high-low") {
+                                        $sort_option = "DESC";
+                                        $hotels = "SELECT * FROM hotel WHERE city_id IN($rowcity) ORDER BY rating $sort_option";  
+                                    }                          
+                                }
                                 $hotels_run = mysqli_query($conn, $hotels);
                                 if(mysqli_num_rows($hotels_run) > 0)
                                 {
@@ -161,21 +172,29 @@
                         }
                         else
                         {
-                            //price filter
-                            $sort_option = "";
+                            $sort_price = "";
+                            $sort_option= "";
                             $stmt = mysqli_query($conn,"SELECT * FROM hotel");
                             if(isset($_GET['sort_numeric'])) {
-                                if($_GET['sort_numeric'] == "low-high") {
+                                if($_GET['sort_numeric'] == "price: low-high") {
+                                    $sort_price = "ASC";
+                                    $hotels = "SELECT * FROM hotel ORDER BY usd $sort_price";  
+                                } elseif($_GET['sort_numeric'] == "price: high-low") {
+                                    $sort_price = "DESC";
+                                    $hotels = "SELECT * FROM hotel ORDER BY usd $sort_price";  
+                                } elseif($_GET['sort_numeric'] == "rating: low-high") {
                                     $sort_option = "ASC";
-                                } elseif($_GET['sort_numeric'] == "high-low")
+                                    $hotels = "SELECT * FROM hotel ORDER BY rating $sort_option";  
+                                } elseif($_GET['sort_numeric'] == "rating: high-low") {
                                     $sort_option = "DESC";
+                                    $hotels = "SELECT * FROM hotel ORDER BY rating $sort_option";  
+                                }                          
                             }
-                            $query = "SELECT * From hotel ORDER BY usd $sort_option";
-                            $query_run = mysqli_query($conn, $query);
+                            $hotels_run = mysqli_query($conn, $hotels);
 
-                            if(mysqli_num_rows($query_run) > 0)
+                            if(mysqli_num_rows($hotels_run) > 0)
                             {
-                                foreach($query_run as $hotelitems) :
+                                foreach($hotels_run as $hotelitems) :
                                     $hotelID = $hotelitems['hotel_id'];
                                     $hotelName = $hotelitems['hotel_name'];
                                     $hotelDescription = $hotelitems['description'];
