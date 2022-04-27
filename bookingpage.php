@@ -136,8 +136,10 @@
                                     } elseif($_GET['sort_numeric'] == "rating: high-low") {
                                         $sort_option = "DESC";
                                         $hotels = "SELECT * FROM hotel WHERE city_id IN($rowcity) ORDER BY rating $sort_option";  
+                                    }else{
+                                        $hotels = "SELECT * FROM hotel WHERE city_id IN($rowcity)";
                                     }                          
-                                }
+                                } 
                                 $hotels_run = mysqli_query($conn, $hotels);
                                 if(mysqli_num_rows($hotels_run) > 0)
                                 {
@@ -188,7 +190,9 @@
                                 } elseif($_GET['sort_numeric'] == "rating: high-low") {
                                     $sort_option = "DESC";
                                     $hotels = "SELECT * FROM hotel ORDER BY rating $sort_option";  
-                                }                          
+                                } else{
+                                    $hotels = "SELECT * FROM hotel";
+                                }                            
                             }
                             $hotels_run = mysqli_query($conn, $hotels);
 
