@@ -6,7 +6,13 @@
         include 'header.php';
     } else {
         include 'header2.php';
-}
+    }
+    include 'database.php';
+
+    if(isset($_POST['submit'])){ 
+        "INSERT INTO userInfo (username, password, reward_points) VALUES ('trash', 'trash','75' )";
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +27,29 @@
 
     <body>
  
-        <form name = "form1" action="finishbookingpage.php" autocomplete="off" onsubmit="return required()">
+        <form method = "POST" name = "form1" action="finishbookingpage.php" autocomplete="off" onsubmit="return required()">
+
+        <?php
+        $stmt = mysqli_query($conn,"SELECT * FROM userinfo");
+        while ($row = mysqli_fetch_array($stmt)) {
+            $rewardPoints = $row['reward_points'];
+        }
+
+        $stmt2 = mysqli_query($conn,"SELECT * FROM hotel WHERE hotel_id = 1");
+        while ($row = mysqli_fetch_array($stmt2)) {
+            $hotelPrice = $row['usd'];
+            $totalPrice = $hotelPrice - $rewardPoints;
+            echo "
+            <div>
+            <table style = margin-left:500px>
+                <p style = font-size:18px>Hotel Price: $$totalPrice</p>
+                </td>
+            </table>
+            </div>
+            "; 
+        }
+        ?>
+
          <!-- This div is for the information details-->
          <div>
                 <h2 class = "noBotMargin">Your Details</h2>
@@ -168,9 +196,6 @@
         <input type = "submit" name = "submit" value = "Book Now" />
         </form>
 
-        <?php include 'footer.php'?>
-
     </body>
 
 </html>
-

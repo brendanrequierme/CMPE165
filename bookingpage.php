@@ -53,96 +53,150 @@
 ?>
 
 <!DOCTYPE HTML>
-    <div class="card-body" style = margin-bottom:10px;>
+    <div style = margin-bottom:-30px; class="card-body">
         <form method="GET">
-            <div class="group" style = padding-left:2px;>
-                <select name="sort_numeric" class="form-control">
+    </div>
+        
+        <body>
+            <div class="city-header">
+                <p style>Filter<p>
+                <div class="group">
+                    <select name="sort_numeric" class="form-control">
                     <option value="">-------</option>
                     <option value="low-high" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "low-high") {echo "selected";}?> >low - high</option>
                     <option value="high-low" <?php if(isset($_GET['sort_numeric']) && $_GET['sort_numeric'] == "high-low") {echo "selected";}?> >high - low</option>
-                </select>
-                <button type="submit" style = margin-left:10px;>Filter</button>
+                    </select>
+                </div>
             </div>
-        </form>
-    </div>
-</html>
 
-<?php
+            <div class="city-body">
+                <p>City List</p>
+                <?php
+                    $city_query = "SELECT * FROM city";
+                    $city_query_run  = mysqli_query($conn, $city_query);
+        
+                    if(mysqli_num_rows($city_query_run) > 0) {
+                        foreach($city_query_run as $citylist) {
+                            $checked = [];
+                                if(isset($_GET['cities'])) {
+                                    $checked = $_GET['cities'];
+                                }
+                            ?>
+                
+                <div>
+                    <input style = margin-left:0px type="checkbox" name="cities[]" value="<?= $citylist['city_id']; ?>" 
+                        <?php if(in_array($citylist['city_id'], $checked)){ echo "checked"; } ?>
+                        />
+                        <?= $citylist['city_name']; ?>
+                </div>
+                <?php            
+                }
+            } else {
+            echo "No cities Found";
+            }
+        ?>
+        <button type="submit">Search</button>
+        </div>
+
+        <div class="city-body-row">
+                    <?php
+                    //price filter
         $sort_option = "";
         $stmt = mysqli_query($conn,"SELECT * FROM hotel");
         if(isset($_GET['sort_numeric'])) {
             if($_GET['sort_numeric'] == "low-high") {
                 $sort_option = "ASC";
-            } elseif($_GET['sort_numeric'] == "high-low") 
-            $sort_option = "DESC";
+            } elseif($_GET['sort_numeric'] == "high-low")
+                $sort_option = "DESC";
         }
-        $query = "SELECT * From hotel ORDER BY usd $sort_option";
-        $query_run = mysqli_query($conn, $query);
+        if(isset($_GET['cities']))
+                        {
+                            $citychecked = [];
+                            $citychecked = $_GET['cities'];
+                            foreach($citychecked as $rowcity)
+                            {
+                                // echo $rowcity;
+                                $hotels = "SELECT * FROM hotel WHERE city_id IN($rowcity) ORDER BY usd $sort_option";
+                                $hotels_run = mysqli_query($conn, $hotels);
+                                if(mysqli_num_rows($hotels_run) > 0)
+                                {
+                                    foreach($hotels_run as $hotelitems) :
+                                        $hotelID = $hotelitems['hotel_id'];
+                                        $hotelName = $hotelitems['hotel_name'];
+                                        $hotelDescription = $hotelitems['description'];
+                                        $hotelCity = $hotelitems['city_id'];
+                                        $hotelRating = $hotelitems['rating'];
+                                        $hotelPrice = $hotelitems['usd'];
+                                        $hotelImage = $hotelitems['image'];
+                                        echo "
+                                        <div>
+                                        <table style = margin-left:500px>
+                                            <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='280' height='280'/></td>
+                                            <td>
+                                            <h1 style = margin:0px>$hotelName</h1>
+                                            <p style = margin:0px;font-size:18px>$hotelDescription</p>
+                                            <p style = font-size:18px>Rating: $hotelRating</p>
+                                            <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
+                                            <form action = 'bookingroom.php' method = 'post'>
+                                            <input style = width:110px; name = '$hotelID' type = 'submit' class = 'bookButton'  value = 'Book Now!' />
+                                            </form>
+                                            </td>
+                                        </table>
+                                        </div>
+                                        ";
+                                    endforeach;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //price filter
+                            $sort_option = "";
+                            $stmt = mysqli_query($conn,"SELECT * FROM hotel");
+                            if(isset($_GET['sort_numeric'])) {
+                                if($_GET['sort_numeric'] == "low-high") {
+                                    $sort_option = "ASC";
+                                } elseif($_GET['sort_numeric'] == "high-low")
+                                    $sort_option = "DESC";
+                            }
+                            $query = "SELECT * From hotel ORDER BY usd $sort_option";
+                            $query_run = mysqli_query($conn, $query);
 
-        if(mysqli_num_rows($query_run) > 0) {
-            foreach($query_run as $row) {
-                $hotelName = $row['hotel_name'];
-                $hotelDescription = $row['description'];
-                $hotelPrice = $row['usd'];
-                $hotelImage = $row['image'];
-                $nice = $hotelName;
-
-                $stmt2 = mysqli_query($conn,"SELECT SUM(bed_count) AS bedcount FROM room WHERE hotel_id IN (SELECT hotel_id FROM hotel WHERE hotel_name LIKE '%$hotelName%')");
-                while ($rows = mysqli_fetch_array($stmt2)) {
-                    $hotelRoom = $rows['bedcount'];
-                }
-                echo "
-                <div>
-                <table style = margin-left:500px>
-                    <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='280' height='280'/></td>
-                    <td>
-                    <h1 style = margin:0px>$hotelName</h1>
-                    <p style = margin:0px;font-size:18px>$hotelDescription</p>
-                    <p style = font-size:18px>Rating 7.5 Excellent</p>
-                    <p style = font-size:18px>Number of Rooms Available: $hotelRoom</p>
-                    <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
-                    <form action = 'bookingroom.php' method = 'post'>
-                    <input style = width:110px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Book Now!' />
-                    </form>
-                    </td>
-                </table>
+                            if(mysqli_num_rows($query_run) > 0)
+                            {
+                                foreach($query_run as $hotelitems) :
+                                    $hotelID = $hotelitems['hotel_id'];
+                                    $hotelName = $hotelitems['hotel_name'];
+                                    $hotelDescription = $hotelitems['description'];
+                                    $hotelCity = $hotelitems['city_id'];
+                                    $hotelRating = $hotelitems['rating'];
+                                    $hotelPrice = $hotelitems['usd'];
+                                    $hotelImage = $hotelitems['image'];
+                                    echo "
+                                    <div>
+                                    <table style = margin-left:500px>
+                                        <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='280' height='280'/></td>
+                                        <td>
+                                        <h1 style = margin:0px>$hotelName</h1>
+                                        <p style = margin:0px;font-size:18px>$hotelDescription</p>
+                                        <p style = font-size:18px>Rating: $hotelRating</p>
+                                        <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
+                                        <form action = 'bookingroom.php' method = 'post'>
+                                        <input style = width:110px; name = '$hotelID' type = 'submit' class = 'bookButton'  value = 'Book Now!' />
+                                        </form>
+                                        </td>
+                                    </table>
+                                    </div>
+                                    ";
+                                endforeach;
+                            }
+                            else
+                            {
+                                echo "No Items Found";
+                            }
+                        }
+                    ?>
                 </div>
-                ";
-            }
-        } else {
-            ?>
-            <h2> No Record Found </h2>
-            <?php
-        }
-                
-        // while ($row = mysqli_fetch_array($stmt)) {
-        //         $hotelName = $row['hotel_name'];
-        //         $hotelDescription = $row['description'];
-        //         $hotelPrice = $row['usd'];
-        //         $hotelImage = $row['image'];
-        //         $stmt2 = mysqli_query($conn,"SELECT SUM(bed_count) AS bedcount FROM room WHERE hotel_id IN (SELECT hotel_id FROM hotel WHERE hotel_name LIKE '%$hotelName%')");
-        //         while ($rows = mysqli_fetch_array($stmt2)) {
-        //             $hotelRoom = $rows['bedcount'];
-        //         }
-
-        //     echo "
-        //     <table>
-        //         <td><img src = 'images/$hotelImage' width='180' height='180' /></td>
-        //         <td>
-        //         <h2>$hotelName</h2>
-        //         <h3>Description: $hotelDescription</h3>
-        //         <h3>Number of Rooms Available: $hotelRoom</h3>
-        //         <h3>Hotel Price: $$hotelPrice</h3>
-        //         </td>
-        //         <tr>
-        //         <td><form action = 'payment.php'>
-        //         <input style = width:110px; type = 'submit' class = 'bookButton'  value = 'Book Now!' />
-        //         </form>
-        //         </td>
-        //         </tr>
-        //     </table>
-        //     </div>
-        //     ";
-        // }
-
-?>
+        </form>>
+    </body>
+</html>

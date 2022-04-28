@@ -31,3 +31,5 @@ function required() {
         return true;
     }
 }
+
+//Create a new function that stores the name of the variable and based of that changes on a button to see if the people want to subtract price or not

@@ -10,18 +10,18 @@
     include 'database.php';
 
     global $datefilter;
+    
     echo "
         <div class = 'searchBarOuter2'>
         <table class = 'test'>
         <form method='post' action = 'search.php'>
         <div class='searchBox'>
-                <td><input type='text' class='search' placeholder='Search...' name='inputHere'></td>
+                <td><input type='text' class='search2' placeholder='Search...' name='inputHere' style = margin-right:180px></td>
         </div>
         <td><label for='start'>Choose Date: </label></td>
         <td>
             <input type='text' name='datefilter' value=''  style = margin-right:30px;/>
         </td>
-        
         <td><input type='submit' class = 'searchButton' name = 'searchs' value = 'SEARCH'></td>
         </form>
     </table>
@@ -32,31 +32,31 @@
         $searchQuery = $_POST['inputHere'];
         $stmt = mysqli_query($conn,"SELECT * FROM hotel WHERE hotel_name LIKE '%$searchQuery%'");
         while ($row = mysqli_fetch_array($stmt)) {
-                $hotelName = $row['hotel_name'];
-                $hotelDescription = $row['description'];
-                $hotelPrice = $row['usd'];
-                $hotelImage = $row['image'];
+            $hotelName = $row['hotel_name'];
+            $hotelDescription = $row['description'];
+            $hotelCity = $row['city_id'];
+            $hotelRating = $row['rating'];
+            $hotelPrice = $row['usd'];
+            $hotelImage = $row['image'];
                 $stmt2 = mysqli_query($conn,"SELECT SUM(bed_count) AS bedcount FROM room WHERE hotel_id IN (SELECT hotel_id FROM hotel WHERE hotel_name LIKE '%$hotelName%')");
                 while ($rows = mysqli_fetch_array($stmt2)) {
                     $hotelRoom = $rows['bedcount'];
                 }
 
             echo "
-            <div id='organize'>
-            <table>
-                <td><img src = 'images/$hotelImage' width='180' height='180' /></td>
+            <div>
+            <table style = margin-left:500px>
+                <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='280' height='280'/></td>
                 <td>
-                <h2>$hotelName</h2>
-                <h3>Description: $hotelDescription</h3>
-                <h3>Number of Rooms Available: $hotelRoom</h3>
-                <h3>Hotel Price: $$hotelPrice</h3>
-                </td>
-                <tr>
-                <td><form action = 'payment.php'>
-                <input style = width:110px; type = 'submit' class = 'bookButton'  value = 'Book Now!' />
+                <h1 style = margin:0px>$hotelName</h1>
+                <p style = margin:0px;font-size:18px>$hotelDescription</p>
+                <p style = font-size:18px>Rating: $hotelRating</p>
+                <p style = font-size:18px>Number of Rooms Available: $hotelRoom</p>
+                <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
+                <form action = 'bookingroom.php' method = 'post'>
+                <input style = width:110px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Book Now!' />
                 </form>
                 </td>
-                </tr>
             </table>
             </div>
             "; 
