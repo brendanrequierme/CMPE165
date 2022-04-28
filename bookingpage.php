@@ -118,6 +118,7 @@
                             {
                                 // echo $rowcity;
                                 //price and rating filter
+                                $hotels = "SELECT * FROM hotel WHERE city_id IN($rowcity)";
                                 $sort_price = "";
                                 $sort_option= "";
                                 $stmt = mysqli_query($conn,"SELECT * FROM hotel");
@@ -134,8 +135,6 @@
                                     } elseif($_GET['sort_numeric'] == "rating: high-low") {
                                         $sort_option = "DESC";
                                         $hotels = "SELECT * FROM hotel WHERE city_id IN($rowcity) ORDER BY rating $sort_option";  
-                                    }else{
-                                        $hotels = "SELECT * FROM hotel WHERE city_id IN($rowcity)";
                                     }                          
                                 } 
                                 $hotels_run = mysqli_query($conn, $hotels);
@@ -172,12 +171,14 @@
                         }
                         else
                         {
+                            $hotels = "SELECT * FROM hotel";
                             $sort_price = "";
                             $sort_option= "";
                             $stmt = mysqli_query($conn,"SELECT * FROM hotel");
                             if(isset($_GET['sort_numeric'])) {
                                 if($_GET['sort_numeric'] == "price: low-high") {
                                     $sort_price = "ASC";
+                                    $sort_option = "ASC";
                                     $hotels = "SELECT * FROM hotel ORDER BY usd $sort_price";  
                                 } elseif($_GET['sort_numeric'] == "price: high-low") {
                                     $sort_price = "DESC";
@@ -188,9 +189,7 @@
                                 } elseif($_GET['sort_numeric'] == "rating: high-low") {
                                     $sort_option = "DESC";
                                     $hotels = "SELECT * FROM hotel ORDER BY rating $sort_option";  
-                                } else{
-                                    $hotels = "SELECT * FROM hotel";
-                                }                            
+                                }                          
                             }
                             $hotels_run = mysqli_query($conn, $hotels);
 
