@@ -10,10 +10,13 @@
     include 'database.php';
 
     global $datefilter;
+
+    $hotelsId = $_GET['hotelID'];
+
 ?>
 
 <?php
-        $stmt = mysqli_query($conn,"SELECT * FROM hotel WHERE hotel_id = 1");
+        $stmt = mysqli_query($conn,"SELECT * FROM hotel WHERE hotel_id = $hotelsId");
         while ($row = mysqli_fetch_array($stmt)) {
             $hotelID = $row['hotel_id'];
             $hotelName = $row['hotel_name'];

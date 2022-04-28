@@ -10,6 +10,7 @@
     include 'database.php';
 
     global $datefilter;
+
     
     echo "
         <div class = 'searchBarOuter2'>
@@ -38,10 +39,7 @@
             $hotelRating = $row['rating'];
             $hotelPrice = $row['usd'];
             $hotelImage = $row['image'];
-                $stmt2 = mysqli_query($conn,"SELECT SUM(bed_count) AS bedcount FROM room WHERE hotel_id IN (SELECT hotel_id FROM hotel WHERE hotel_name LIKE '%$hotelName%')");
-                while ($rows = mysqli_fetch_array($stmt2)) {
-                    $hotelRoom = $rows['bedcount'];
-                }
+            $hotelID = $row['hotel_id'];
 
             echo "
             <div>
@@ -51,9 +49,8 @@
                 <h1 style = margin:0px>$hotelName</h1>
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
                 <p style = font-size:18px>Rating: $hotelRating</p>
-                <p style = font-size:18px>Number of Rooms Available: $hotelRoom</p>
                 <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
-                <form action = 'bookingroom.php' method = 'post'>
+                <form action = 'bookingroom.php?hotelID=$hotelID' method = 'post'>
                 <input style = width:110px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Book Now!' />
                 </form>
                 </td>
