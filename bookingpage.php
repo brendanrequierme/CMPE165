@@ -61,11 +61,9 @@
 
     <body>
             <div class="city-header">
-                <h5>Filter 
                     <button type="submit">Search</button>
-                </h5>
-                <h6>
-                    Price
+                <h5>
+                    Filter
                     <div class="group" style = padding-left:348px;>
                         <select name="sort_numeric" class="form-control">
                             <option value="">-------</option>
@@ -76,10 +74,10 @@
                         </select>
     <!--               <button type="submit" style = margin-left:10px;>Filter</button> -->
                     </div>
-                </h6>
+                </h5>
             </div>
             <div class="city-body">
-                <h6>City List</h6>
+                <h5>City List</h5>
                 <hr>
                 <?php
                     $city_query = "SELECT * FROM city";
