@@ -10,7 +10,6 @@
     include 'database.php';
 
     global $datefilter;
-
     
     echo "
         <div class = 'searchBarOuter2'>
