@@ -249,3 +249,9 @@ table:not(.searchContainer):not(.test), input:not(.search):not(.bookButton), but
 table {
     border: 1px solid black;
 }
+
+#restaurantAllign {
+    float: left;
+	margin-left: 0px;
+	padding:10px;
+}

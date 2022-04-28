@@ -50,12 +50,14 @@
                 $restaurantImage = $row2['restaurant_image']; 
 
             echo"
-            <table style = text-align:center;margin-left:280px>
+            <div id = 'restaurantAllign'>
+            <table style = text-align:center;margin-left:10px>
                 <td><p style = font-size:18px>$restaurantName</p></td>
             <tr>
                 <td><img class = 'picBorder' src = 'images/$restaurantImage' width='180' height='180' /><td>
             </tr>
             </table>
+            </div>
             </div>
             "; 
         }
