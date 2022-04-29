@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2022 at 03:57 AM
+-- Generation Time: Apr 29, 2022 at 03:59 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -20,31 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `information`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `bookedhotel`
---
-
-CREATE TABLE `bookedhotel` (
-  `hotel_id` int(11) NOT NULL,
-  `hotel_name` varchar(255) DEFAULT NULL,
-  `description` text DEFAULT NULL,
-  `city_id` int(11) NOT NULL,
-  `usd` decimal(10,2) DEFAULT NULL,
-  `image` text NOT NULL,
-  `rating` decimal(10,1) DEFAULT NULL,
-  `start_date` date DEFAULT NULL,
-  `end_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `bookedhotel`
---
-
-INSERT INTO `bookedhotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`, `image`, `rating`, `start_date`, `end_date`) VALUES
-(1, 'Best Western Plus South Bay Hotel LAX', '15000 Hawthorne Boulevard Lawndale, California, LAX Los Angeles International Airport, Los Angeles (CA), United States, 90260', 2, '140.00', '1.jpg', '7.7', '2022-04-29', '2022-05-26');
 
 -- --------------------------------------------------------
 
@@ -985,14 +960,6 @@ INSERT INTO `userinfo` (`user_id`, `username`, `password`, `reward_points`) VALU
 --
 
 --
--- Indexes for table `bookedhotel`
---
-ALTER TABLE `bookedhotel`
-  ADD PRIMARY KEY (`hotel_id`),
-  ADD UNIQUE KEY `hotel_id` (`hotel_id`),
-  ADD KEY `city_id` (`city_id`);
-
---
 -- Indexes for table `city`
 --
 ALTER TABLE `city`
@@ -1071,12 +1038,6 @@ ALTER TABLE `userinfo`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `bookedhotel`
---
-ALTER TABLE `bookedhotel`
-  MODIFY `hotel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT for table `city`
