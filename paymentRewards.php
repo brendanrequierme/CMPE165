@@ -37,10 +37,9 @@
             $userId = $row['user_id'];
             $rewardPoints = $row['reward_points'];
         if($rewardPoints >= $hotelsPrice) {
-            $rewardSubtraction = $rewardPoints - $rewardPoints;
-            }
-        if($rewardPoints <= $hotelsPrice) {
-            $rewardSubtraction = $hotelsPrice - $rewardPoints;
+            $totalPriceToPay = 0;
+        } else {
+            $totalPriceToPay = $hotelsPrice - $rewardPoints;
             }
         }
 
@@ -61,7 +60,7 @@
                 <h1 style = margin:0px>$hotelName</h1>
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
                 <p style = font-size:18px>Rating: $hotelRating</p>
-                <p style = font-size:18px>Room Price: $$rewardSubtraction</p>
+                <p style = font-size:18px>Room Price: $$totalPriceToPay</p>
                 </td>
             </table>
             </div>
