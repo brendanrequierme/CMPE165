@@ -9,9 +9,13 @@
     }
     include 'database.php';
 
-    if(isset($_POST['submit'])){ 
-        "INSERT INTO userInfo (username, password, reward_points) VALUES ('trash', 'trash','75' )";
-    }
+    $hotelsId = $_GET['hotelID'];
+    $hotelsName = $_GET['hotelNAME'];
+    $hotelsDescription = $_GET['hotelDESCRIPTION'];
+    $hotelsCity = $_GET['hotelCITY'];
+    $hotelsPrice = $_GET['hotelPRICE'];
+    $hotelsImage = $_GET['hotelIMAGE'];
+    $hotelsRating = $_GET['hotelRATING'];
 
 ?>
 
@@ -26,27 +30,37 @@
     <script src="script.js"></script>
 
     <body>
- 
-        <form method = "POST" name = "form1" action="finishbookingpage.php" autocomplete="off" onsubmit="return required()">
-
         <?php
+
         $stmt = mysqli_query($conn,"SELECT * FROM userinfo");
         while ($row = mysqli_fetch_array($stmt)) {
             $rewardPoints = $row['reward_points'];
         }
 
-        $stmt2 = mysqli_query($conn,"SELECT * FROM hotel WHERE hotel_id = 1");
+        $stmt2 = mysqli_query($conn,"SELECT * FROM hotel WHERE hotel_id = $hotelsId");
         while ($row = mysqli_fetch_array($stmt2)) {
+            $hotelID = $row['hotel_id'];
+            $hotelName = $row['hotel_name'];
+            $hotelDescription = $row['description'];
+            $hotelCity = $row['city_id'];
+            $hotelRating = $row['rating'];
             $hotelPrice = $row['usd'];
+            $hotelImage = $row['image'];
             $totalPrice = $hotelPrice - $rewardPoints;
             echo "
             <div>
-            <table style = margin-left:500px>
-                <p style = font-size:18px>Hotel Price: $$totalPrice</p>
+            <table>
+            <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='170' height='170'/></td>
+            <td>
+                <h1 style = margin:0px>$hotelName</h1>
+                <p style = margin:0px;font-size:18px>$hotelDescription</p>
+                <p style = font-size:18px>Rating: $hotelRating</p>
+                <p style = font-size:18px>Room Price: $$hotelPrice</p>
                 </td>
             </table>
             </div>
-            "; 
+            <form action='finishbookingpage.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
+            ";
         }
         ?>
 
@@ -54,16 +68,16 @@
          <div>
                 <h2 class = "noBotMargin">Your Details</h2>
                 <hr class = "lineHeight" class = "noTopMargin" color = "gray">
-                <p>* required fields</p>
-                <p>First Name*</p>
+                <b><p>* required fields</p></b>
+                <b><p>First Name*</p></b>
                 <input type = "text" name = "fname" placeholder = "Enter your First Name">
                 <p>Please give us the name of one of the people staying in this room.</p>
-                <p>Last Name*</p>
+                <b><p>Last Name*</p></b>
                 <input type = "text" name = "lname" placeholder = "Enter your Last Name">
-                <p>Email Address*</p>
+                <b><p>Email Address*</p></b>
                 <p>Make sure to enter the correct email address.</p>
                 <input type = "text" name = "email" placeholder = "Enter your Email Address">
-                <p>Cell Phone Number*</p>
+                <b><p>Cell Phone Number*</p></b>
                 <p>We'll only contact you in an emergency.</p>
                 <input type = "text" name = "phone" placeholder = "Enter your Phone Number">
         </div>

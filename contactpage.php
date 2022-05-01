@@ -1,5 +1,12 @@
 <?php
-    include 'header.php';
+    // Initialize the session
+    session_start();
+
+    if (!$_SESSION) {
+        include 'header.php';
+    } else {
+        include 'header2.php';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -9,14 +16,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Contact Page</title>
     </head>
-
-    <style>
-    #footer {
-        position: absolute;
-        bottom: 0%;
-        width: 100%;
-    }
-    </style>
 
     <body>
         <form action = "https://formspree.io/f/xoqrlwyk" method = "POST">
@@ -45,12 +44,6 @@
         </form>
 
         <script src = "script.js"></script>
-        <!-- This div is for the bottom part of the page -->
-        <div>
-            <footer id = "footer">
-                <?php include 'footer.php'?>
-            </footer>
-        </div>
 
     </body>
 </html>

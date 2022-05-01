@@ -33,3 +33,10 @@ function required() {
 }
 
 //Create a new function that stores the name of the variable and based of that changes on a button to see if the people want to subtract price or not
+
+//Delete?
+function remove() {
+    $hotelsId = $_GET['hotelID'];
+    $removeHotel = "DELETE FROM bookedhotel WHERE hotel_id = 1";
+    return $removeHotel;
+}
