@@ -58,6 +58,13 @@
             </td>
         </table>
         </div>
+        <table>
+        <div>
+        <form action = 'delete.php?hotelID=$hotelID' method='POST' name='RemoveHotel'>
+        <td><input style = width:130px;margin-left:215px; name = 'remove' type = 'submit' class = 'bookButton' onclick='remove();' value = 'Cancel Hotel' /></td>
+        </form>
+        <td><input style = width:130px;margin-left:10px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Reschedule Hotel' /></td>
+        </div>
         "; 
     }
     if(mysqli_num_rows($stmt) < 1) {

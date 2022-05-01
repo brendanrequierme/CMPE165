@@ -36,7 +36,11 @@
         while ($row = mysqli_fetch_array($stmt)) {
             $userId = $row['user_id'];
             $rewardPoints = $row['reward_points'];
-            $rewardTotal = $rewardPoints + $hotelsPrice * 0.100;
+        if($rewardPoints >= $hotelsPrice) {
+            $totalPriceToPay = 0;
+        } else {
+            $totalPriceToPay = $hotelsPrice - $rewardPoints;
+            }
         }
 
         $stmt2 = mysqli_query($conn,"SELECT * FROM room INNER JOIN hotel ON room.hotel_id = hotel.hotel_id WHERE room.hotel_id = $hotelsId");
@@ -56,11 +60,11 @@
                 <h1 style = margin:0px>$hotelName</h1>
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
                 <p style = font-size:18px>Rating: $hotelRating</p>
-                <p style = font-size:18px>Room Price: $$hotelPrice</p>
+                <p style = font-size:18px>Room Price: $$totalPriceToPay</p>
                 </td>
             </table>
             </div>
-            <form action='finishbookingpage.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardTOTAL=$rewardTotal' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
+            <form action='finishbookingpage2.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardPOINTS=$rewardPoints' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
             ";
         }
         ?>
@@ -210,14 +214,6 @@
 
         <input type = "submit" name = "submit" value = "Book Now" />
         </form>
-
-        <?php
-        echo"
-        <form action='paymentRewards.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardTOTAL=$rewardTotal' method = 'POST'>
-            <input style = width:110px;margin-top:10px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Pay Now!' />
-        </form>
-        ";
-        ?>
 
     </body>
 
