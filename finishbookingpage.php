@@ -1,5 +1,26 @@
 <?php
-    include 'header.php';
+    // Initialize the session
+    session_start();
+
+    if (!$_SESSION) {
+        include 'header.php';
+    } else {
+        include 'header2.php';
+}
+
+include 'database.php';
+
+$hotelsId = $_GET['hotelID'];
+$hotelsName = $_GET['hotelNAME'];
+$hotelsDescription = $_GET['hotelDESCRIPTION'];
+$hotelsCity = $_GET['hotelCITY'];
+$hotelsPrice = $_GET['hotelPRICE'];
+$hotelsImage = $_GET['hotelIMAGE'];
+$hotelsRating = $_GET['hotelRATING'];
+
+$query = "INSERT INTO bookedhotel (hotel_id, hotel_name, description, city_id, usd, image, rating, start_date, end_date) VALUES ($hotelsId, '$hotelsName', '$hotelsDescription', $hotelsId, '$hotelsPrice', '$hotelsImage', '$hotelsRating', NULL, NULL)";
+$data = mysqli_query($conn,$query);
+
 ?>
 
 <!DOCTYPE html>
@@ -7,19 +28,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="refresh" content="60;url=homepage.php" />
+        <meta http-equiv="refresh" content="5;url=booked.php" />
         <title>Finished Booking</title>
     </head>
 
     <style>
-    #footer {
-        position: absolute;
-        bottom: 0%;
-        width: 100%;
-    }
 
     h2 {
-        margin-left: 28%;
+        margin-left: 25%;
     }
 
     img { 
@@ -27,7 +43,7 @@
     }
 
     b {
-        margin-left: 31.7%;
+        margin-left: 30.6%;
         font-size: 30px;
         font-family: nosifer;
         color: red;
@@ -40,13 +56,6 @@
         <h2>Thank you for booking with Spartan Death Hotel.</h2>
         <b>We hope you enjoy your stay.</b>
         </br>
-        <h2 style = margin-left:26.5%;>You will be redirected back to the homepage in 1 minute.</h2>
-        
-        <!-- This div is for the bottom part of the page -->
-        <div>
-            <footer id = "footer">
-                <?php include 'footer.php'?>
-            </footer>
-        </div>
+        <h2 style = margin-left:22%;>You will be redirected back to the homepage in 5 seconds.</h2>
     </body>
 </html>
