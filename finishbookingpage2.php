@@ -18,12 +18,17 @@ $hotelsPrice = $_GET['hotelPRICE'];
 $hotelsImage = $_GET['hotelIMAGE'];
 $hotelsRating = $_GET['hotelRATING'];
 $usersId = $_GET['userID'];
-$rewardsTotal = $_GET['rewardTOTAL'];
+$rewardsPoints = $_GET['rewardPOINTS'];
 
 $query = "INSERT INTO bookedhotel (hotel_id, hotel_name, description, city_id, usd, image, rating, start_date, end_date) VALUES ($hotelsId, '$hotelsName', '$hotelsDescription', $hotelsId, '$hotelsPrice', '$hotelsImage', '$hotelsRating', NULL, NULL)";
 $data = mysqli_query($conn,$query);
-$query2 = "UPDATE userinfo SET reward_points = '$rewardsTotal' WHERE user_id = $usersId";
-$data2 = mysqli_query($conn,$query2);
+if($rewardsPoints >= $hotelsPrice) {
+    $query2 = "UPDATE userinfo SET reward_points = '$rewardsPoints'-'$hotelsPrice' WHERE user_id = $usersId";
+    $data2 = mysqli_query($conn,$query2);
+} else {
+    $query2 = "UPDATE userinfo SET reward_points = '$rewardsPoints'-'$rewardsPoints' WHERE user_id = $usersId";
+    $data2 = mysqli_query($conn,$query2);
+}
 
 ?>
 
@@ -32,7 +37,7 @@ $data2 = mysqli_query($conn,$query2);
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="refresh" content="5;url=booked.php" />
+        <meta http-equiv="refresh" content="60;url=booked.php" />
         <title>Finished Booking</title>
     </head>
 

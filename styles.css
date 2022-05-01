@@ -246,9 +246,9 @@ table:not(.searchContainer):not(.test), input:not(.search):not(.bookButton), but
     margin-bottom: 400px;
 }
 
-
-
 #restaurantAlign {
     float: left;
 	padding:10px;
+    margin-left:230px;
+    margin-top:-35px;
 }
