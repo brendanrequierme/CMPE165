@@ -23,7 +23,7 @@ function required() {
         return false;
     }
     else if ((zipcode.length != 5) && (zipcode != (/^\d+$/))) {
-        alert("Zip Code is in Incorrect Format")
+        alert("Zip Code is in Incorrect Format");
         return false;
     } else {
         alert("Thanks for Booking with Spartan Death Hotel!");
@@ -40,3 +40,4 @@ function remove() {
     $removeHotel = "DELETE FROM bookedhotel WHERE hotel_id = 1";
     return $removeHotel;
 }
+

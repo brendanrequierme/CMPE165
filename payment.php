@@ -207,9 +207,33 @@
             <p class = "noMargin">If you change or cancel your booking you will not get a refund or credit to use for a future stay. This policy</p>
             <p class = "noTopMargin">will apply regardless of COVID-19, subject to any local consumer laws.</p>
         </div>
-
-        <input type = "submit" name = "submit" value = "Book Now" />
+        
+        <!-- This div is for the popup -->
+        <div>
+        <button onclick="openPopup()">Book Now</button>
+            <div class="popup" id="popup">   
+                <img src= "./images/x.png" >
+                <h2>Cancelation Policy</h2>
+                <p>All reservation cancelations must be done at least 24 hours before the reservation date for a full refund.</p>
+                <input type="submit" name="submit" onclick="closePopup()" value = "Book Now">
+            </div>
         </form>
+        </div>
+        <script>
+            let popup = document.getElementById("popup");
+        
+            function openPopup(){
+                popup.classList.add("open-popup");
+            }
+            function closePopup(){
+                popup.classList.remove("open-popup");
+            }
+            function waitPopup(){
+                openPopup();
+                
+                return false;
+            }
+        </script>
 
         <?php
         echo"
