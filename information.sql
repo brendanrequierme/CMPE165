@@ -36,15 +36,13 @@ CREATE TABLE `bookedhotel` (
   `image` text NOT NULL,
   `rating` decimal(10,1) DEFAULT NULL,
   `start_date` date DEFAULT NULL,
-  `end_date` date DEFAULT NULL
+  `end_date` date DEFAULT NULL,
+  `room_number` int DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `bookedhotel`
 --
-
-INSERT INTO `bookedhotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`, `image`, `rating`, `start_date`, `end_date`) VALUES
-(1, 'Best Western Plus South Bay Hotel LAX', '15000 Hawthorne Boulevard Lawndale, California, LAX Los Angeles International Airport, Los Angeles (CA), United States, 90260', 2, '140.00', '1.jpg', '7.7',  NOW(), '2022-05-26');
 
 -- --------------------------------------------------------
 

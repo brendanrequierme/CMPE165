@@ -16,6 +16,7 @@
     $hotelsPrice = $_GET['hotelPRICE'];
     $hotelsImage = $_GET['hotelIMAGE'];
     $hotelsRating = $_GET['hotelRATING'];
+    $roomNumber = $_GET['roomNUMBER'];
 
 ?>
 
@@ -60,11 +61,11 @@
                 <h1 style = margin:0px>$hotelName</h1>
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
                 <p style = font-size:18px>Rating: $hotelRating</p>
-                <p style = font-size:18px>Room Price: $$totalPriceToPay</p>
+                <p style = font-size:18px>Room Price: $$totalPriceToPay.00</p>
                 </td>
             </table>
             </div>
-            <form action='finishbookingpage2.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardPOINTS=$rewardPoints' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
+            <form action='finishbookingpage2.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardPOINTS=$rewardPoints&roomNUMBER=$roomNumber' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
             ";
         }
         ?>
@@ -85,38 +86,6 @@
                 <b><p>Cell Phone Number*</p></b>
                 <p>We'll only contact you in an emergency.</p>
                 <input type = "text" name = "phone" placeholder = "Enter your Phone Number">
-        </div>
-
-        <!-- This div is for the room details -->
-        <div>
-            <h2 class = "noBotMargin">Room Details</h2>
-            <hr class = "lineHeight" class = "noTopMargin" color = "gray">
-            <h3>Property Amenities</h3>
-            <table>
-                    <td>Pet-Friendly</td>
-                    <td>Pool</td>
-                    <td>Free WiFi</td>
-                    <td>Bathtub</td>
-                    <td>Bar</td>
-                    <td>Gym</td>
-            </table>
-            <h3>Room, 2 Queen Beds, Non smoking</h3>
-            <p>Any special requests?<p>
-            <p>Any accessible requests?<p>
-        </div>
-
-        <div>
-            <p>If you don't book now, this amazing deal could be gone</p>
-        </div>
-
-        <div>
-            <h2 class = "noBotMargin">Booking Protection</h2>
-            <hr class = "lineHeight" class = "noTopMargin" color = "gray">
-            <p>Why you might need it for your non-refundable stay:</p>
-            <p>1. Up to 100% booking reimbursement if you can't travel for a covered reasons</p>
-            <p>2. Up to 100% reimbursement on unused nights if you must leave early due to a covered sickness</p>
-            <p>3. Up to $150 for lodging and meals if delayed for covered reasons</p>
-            <P>4. Up to $150 for covered essentials if your baggage is delayed</p>
         </div>
 
         <!-- This div is for the payment picker part of the page -->
@@ -193,19 +162,10 @@
             initPayPalButton();
         </script>
 
-        <!-- This div is for the Rewards Field -->
-        <div>
-            <h2 class = "noBotMargin"><span style = color:purple>Join SpartanDeathHotels.com Rewards</span></h2>
-            <p class = "noTopMargin">(optional)</p>
-            <h4 class = "noBotMargin">Create password</h4>
-            <p class = "noMargin">6 to 20 letters, with at least 1 number</p>
-            <input type = "text" name = "password">
-        </div>
-
         <div>
             <h2 class = "noBotMargin">Cancellation Policy</h2>
             <hr class = "lineHeight" class = "noTopMargin" color = "gray">
-            <h3>Room, 2 Queen Beds, Non Smoking</h3>
+            <h3>Basic Room, 2 Twin Beds, Non Smoking</h3>
             <p>Non-refundable rate</p>
             <!-- Eventually turn this into a drop down -->
             <p class = "noMargin">If you change or cancel your booking you will not get a refund or credit to use for a future stay. This policy</p>

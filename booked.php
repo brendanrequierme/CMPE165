@@ -41,6 +41,7 @@
         $hotelRating = $row['rating'];
         $hotelPrice = $row['usd'];
         $hotelImage = $row['image'];
+        $roomNumber = $row['room_number'];
 
         echo "
         <div>
@@ -51,16 +52,13 @@
             <p style = margin:0px;font-size:18px>$hotelDescription</p>
             <p style = font-size:18px>Rating: $hotelRating</p>
             <p style = font-size:18px>Room Price: $$hotelPrice</p>
-            <form  action = 'delete.php?hotelID=$hotelID' method='POST' name='RemoveHotel'>
-            <td style = margin-top:50px><input style = width:110px;margin-top:220px;margin-left:-635px name = 'remove' type = 'submit' class = 'bookButton' onclick='remove();' value = 'Cancel Hotel' /></td>
-            </form>
-            <td><input style = width:130px;margin-top:220px;margin-left:-515px  name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Reschedule Hotel' /></td>
+            <p style = font-size:18px>Number of Rooms: $roomNumber</p>
             </td>
         </table>
         </div>
         <table>
         <div>
-        <form action = 'delete.php?hotelID=$hotelID' method='POST' name='RemoveHotel'>
+        <form action = 'delete.php?hotelID=$hotelID&hotelPRICE=$hotelPrice&roomNUMBER=$roomNumber' method='POST' name='RemoveHotel'>
         <td><input style = width:130px;margin-left:215px; name = 'remove' type = 'submit' class = 'bookButton' onclick='remove();' value = 'Cancel Hotel' /></td>
         </form>
         <td><input style = width:130px;margin-left:10px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Reschedule Hotel' /></td>

@@ -40,3 +40,7 @@ function remove() {
     $removeHotel = "DELETE FROM bookedhotel WHERE hotel_id = 1";
     return $removeHotel;
 }
+
+function alertBox() {
+    alert("You can not book 2 hotels on the same dates!");
+}

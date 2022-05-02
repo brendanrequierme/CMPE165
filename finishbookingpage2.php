@@ -19,6 +19,7 @@ $hotelsImage = $_GET['hotelIMAGE'];
 $hotelsRating = $_GET['hotelRATING'];
 $usersId = $_GET['userID'];
 $rewardsPoints = $_GET['rewardPOINTS'];
+$roomNumber = $_GET['roomNUMBER'];
 
 $query = "INSERT INTO bookedhotel (hotel_id, hotel_name, description, city_id, usd, image, rating, start_date, end_date) VALUES ($hotelsId, '$hotelsName', '$hotelsDescription', $hotelsId, '$hotelsPrice', '$hotelsImage', '$hotelsRating', NULL, NULL)";
 $data = mysqli_query($conn,$query);
