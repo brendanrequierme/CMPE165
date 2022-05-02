@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2022 at 07:03 AM
+-- Generation Time: May 02, 2022 at 07:30 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -40,6 +40,15 @@ CREATE TABLE `bookedhotel` (
   `start_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bookedhotel`
+--
+
+INSERT INTO `bookedhotel` (`booked_id`, `hotel_id`, `hotel_name`, `description`, `city_id`, `usd`, `numberOfRooms`, `image`, `rating`, `start_date`, `end_date`) VALUES
+(2, 2, 'test2', 'test2', 2, '0.00', NULL, '$hotelsImage', '0.0', '2022-05-04', '2022-05-06'),
+(152, 1, 'Best Western Plus South Bay Hotel LAX (Basic Room)', '15000 Hawthorne Boulevard Lawndale, California, LAX Los Angeles International Airport, Los Angeles (CA), United States, 90260', 1, '140.00', NULL, '1.jpg', '7.7', NULL, NULL),
+(153, 1, 'Best Western Plus South Bay Hotel LAX (Basic Room)', '15000 Hawthorne Boulevard Lawndale, California, LAX Los Angeles International Airport, Los Angeles (CA), United States, 90260', 1, '140.00', NULL, '1.jpg', '7.7', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -945,7 +954,7 @@ CREATE TABLE `userinfo` (
 --
 
 INSERT INTO `userinfo` (`user_id`, `username`, `password`, `reward_points`) VALUES
-(1, 'user', '$2y$10$YTr/kjkrcb5gxyMoyukRbOn3cxBOLXCxHeRWgrpyWos5.nE6rBP3u', 140);
+(1, 'user', '$2y$10$YTr/kjkrcb5gxyMoyukRbOn3cxBOLXCxHeRWgrpyWos5.nE6rBP3u', 254);
 
 --
 -- Indexes for dumped tables
@@ -957,7 +966,8 @@ INSERT INTO `userinfo` (`user_id`, `username`, `password`, `reward_points`) VALU
 ALTER TABLE `bookedhotel`
   ADD PRIMARY KEY (`booked_id`),
   ADD UNIQUE KEY `hotel_id` (`booked_id`),
-  ADD KEY `city_id` (`city_id`);
+  ADD KEY `city_id` (`city_id`),
+  ADD KEY `hotel_id_2` (`hotel_id`);
 
 --
 -- Indexes for table `city`
@@ -1029,7 +1039,7 @@ ALTER TABLE `userinfo`
 -- AUTO_INCREMENT for table `bookedhotel`
 --
 ALTER TABLE `bookedhotel`
-  MODIFY `booked_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `booked_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- AUTO_INCREMENT for table `city`
@@ -1082,6 +1092,12 @@ ALTER TABLE `userinfo`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `bookedhotel`
+--
+ALTER TABLE `bookedhotel`
+  ADD CONSTRAINT `bookedhotel_ibfk_1` FOREIGN KEY (`hotel_id`) REFERENCES `hotel` (`hotel_id`);
 
 --
 -- Constraints for table `city`
