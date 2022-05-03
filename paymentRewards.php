@@ -18,6 +18,8 @@
     $hotelsRating = $_GET['hotelRATING'];
     $rewardTotal = $_GET['rewardTOTAL'];
     $roomNumber = $_GET['roomNUMBER'];
+    $startDate = $_GET['startDATE'];
+    $endDate = $_GET['endDATE'];
 
 ?>
 
@@ -67,7 +69,7 @@
                 </td>
             </table>
             </div>
-            <form action='finishbookingpage2.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardPOINTS=$rewardPoints&roomNUMBER=$roomNumber&rewardTOTAL=$rewardTotal' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
+            <form action='finishbookingpage2.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardPOINTS=$rewardPoints&roomNUMBER=$roomNumber&rewardTOTAL=$rewardTotal&startDATE=$startDate&endDATE=$endDate' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
             ";
         }
         ?>
