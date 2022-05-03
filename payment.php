@@ -17,8 +17,8 @@
     $hotelsImage = $_GET['hotelIMAGE'];
     $hotelsRating = $_GET['hotelRATING'];
     $roomNumber = $_POST['roomNum'];
-    $startDate = $_POST['startDate'];
-    $endDate = $_POST['endDate'];
+    $startDate = $_GET['startDate'];
+    $endDate = $_GET['endDate'];
 
 ?>
 
