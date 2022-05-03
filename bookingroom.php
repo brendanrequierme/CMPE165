@@ -73,6 +73,11 @@
             echo "
             <div>
             <form action = '' method = 'post' onsubmit = 'dateRequired()'>
+            <script>
+            function dateRequired() {
+                alert('You Need to Confirm A Date First!');
+            }
+            </script>
             ";
             };
             if ($x == 1) {
