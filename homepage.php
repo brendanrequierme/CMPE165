@@ -19,14 +19,6 @@
         <title>Spartan Death Hotel</title>
     </head>
 
-    <style>
-    #footer {
-        position: absolute;
-        bottom: 0%;
-        width: 99%;
-    }
-    </style>
-
     <body class = "home">
 
         <!-- This is for body/searchbar -->
@@ -35,33 +27,8 @@
             <table class = "test">
                 <form method="post" action = "search.php">
                     <div class="searchBox">
-                            <td><input type="text" class="search" placeholder="Search..." name="inputHere"></td>
+                            <td><input type="text" class="search" placeholder="Search for Hotel Names Here" name="inputHere"></td>
                     </div>
-                    <td><label for="start">Choose Date: </label></td>
-                    <td>
-                        <input type="text" name="datefilter" value=""  style = margin-right:30px;/>
-                    </td>
-                    <script type="text/javascript">
-                        $(function() {
-
-                        $('input[name="datefilter"]').daterangepicker({
-                            autoUpdateInput: false,
-                            locale: {
-                                cancelLabel: 'Clear'
-                            }
-                        });
-
-                        $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-                            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-                        });
-
-                        $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-                            $(this).val('');
-                        });
-
-                        });
-                    </script>
-                    
                     <td><input type="submit" class = "searchButton" name = "searchs" value = "SEARCH"></td>
                     </form>
             </table>

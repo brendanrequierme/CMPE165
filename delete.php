@@ -10,8 +10,11 @@
     include 'database.php';
 
     $hotelsId = $_GET['hotelID'];
+    $bookedId = $_GET['bookedID'];
+    $hotelsPrice = $_GET['hotelPRICE'];
+    $roomNumber = $_GET['roomNUMBER'];
 
-    $query = "DELETE FROM bookedhotel WHERE hotel_id = '$hotelsId' ";
+    $query = "DELETE FROM bookedhotel WHERE booked_id = '$bookedId' ";
     $data = mysqli_query($conn,$query);
 
     if($data) {
@@ -19,6 +22,24 @@
     } else {
         echo "<p>Failed to Delete<p>";
     }
+
+    $stmt = mysqli_query($conn,"SELECT * FROM userinfo");
+    while ($row = mysqli_fetch_array($stmt)) {
+        $userId = $row['user_id'];
+        $rewardPoints = $row['reward_points'];
+    }
+
+    if($rewardPoints > 0) {
+        $query2 = "UPDATE userinfo SET reward_points = '$rewardPoints'-'$hotelsPrice'*'$roomNumber'*0.10 WHERE user_id = $userId";
+        $data2 = mysqli_query($conn,$query2);
+    } else {
+        $query2 = "UPDATE userinfo SET reward_points = '$rewardPoints'+'$hotelsPrice'*'$roomNumber' WHERE user_id = $userId";
+        $data2 = mysqli_query($conn,$query2);
+    }
+
+    $query3 = "UPDATE room SET room_count = room_count + '$roomNumber' WHERE hotel_id = $hotelsId";
+    $data3 = mysqli_query($conn,$query3);
+
 ?>
 
 <!DOCTYPE html>

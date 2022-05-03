@@ -9,28 +9,7 @@
     }
     include 'database.php';
 
-    global $datefilter;
 ?>
-
-<!DOCTYPE HTML>
-    <script type='text/javascript'>
-        $(function() {
-        $('input[name="datefilter"]').daterangepicker({
-                autoUpdateInput: false,
-                locale: {
-                            cancelLabel: 'Clear'
-                        }
-                    });
-                $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-            });
-
-            $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-                $(this).val('');
-            });
-        });
-    </script>
-</html>
 
 <?php
     echo "
@@ -38,17 +17,12 @@
         <table class = 'test'>
         <form method='post' action = 'search.php'>
         <div class='searchBox'>
-                <td><input type='text' class='search2' placeholder='Search...' name='inputHere' style = margin-right:180px></td>
+                <td><input type='text' class='search2' placeholder='Search...' name='inputHere' style = margin-right:20px;margin-left:65px;></td>
         </div>
-        <td><label for='start'>Choose Date: </label></td>
-        <td style>
-            <input type='text' name='datefilter' value='' style = margin-right:30px;/>
-        </td>
         <td><input type='submit' class = 'searchButton' name = 'searchs' value = 'SEARCH'></td>
         </form>
     </table>
     </div>
-    
     ";
 ?>
 
@@ -143,8 +117,6 @@
                                         <td>
                                         <h1 style = margin:0px>$hotelName</h1>
                                         <p style = margin:0px;font-size:18px>$hotelDescription</p>
-                                        <p style = margin:0px;font-size:18px>Date of Booking: $hotelStartDate</p>
-                                        <p style = margin:0px;font-size:18px>End Date of Booking: $hotelEndDate</p>
                                         <p style = font-size:18px>Rating: $hotelRating</p>
                                         <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
                                         <form action = 'bookingroom.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
@@ -201,8 +173,6 @@
                                         <td>
                                         <h1 style = margin:0px>$hotelName</h1>
                                         <p style = margin:0px;font-size:18px>$hotelDescription</p>
-                                        <p style = margin-bottom:0px;font-size:18px>Date of Booking: $hotelStartDate</p>
-                                        <p style = margin-top:0px;font-size:18px>End Date of Booking: $hotelEndDate</p>
                                         <p style = font-size:18px>Rating: $hotelRating</p>
                                         <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
                                         <form action = 'bookingroom.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
@@ -221,4 +191,12 @@
                         }
                     ?>
             </div>
+</html>
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Booking Page</title>
+    </head>
 </html>

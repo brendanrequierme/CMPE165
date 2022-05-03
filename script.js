@@ -26,7 +26,7 @@ function required() {
         alert("Zip Code is in Incorrect Format")
         return false;
     } else {
-        alert("Thanks for Booking with Spartan Death Hotel!");
+        alert("Thanks for Booking with Spartan Death Hotel!\nImportant Notice: Cancelation Fees will Be Applied when Canceling 24 Hours before Check-In Date!");
         location.href = 'finishbookingpage.php';
         return true;
     }
@@ -39,4 +39,8 @@ function remove() {
     $hotelsId = $_GET['hotelID'];
     $removeHotel = "DELETE FROM bookedhotel WHERE hotel_id = 1";
     return $removeHotel;
+}
+
+function alertBox() {
+    alert("You can not book 2 hotels on the same dates!");
 }

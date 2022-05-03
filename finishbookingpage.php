@@ -10,6 +10,8 @@
 
 include 'database.php';
 
+#<script>alert('Welcome to Geeks for Geeks')</script>
+
 $hotelsId = $_GET['hotelID'];
 $hotelsName = $_GET['hotelNAME'];
 $hotelsDescription = $_GET['hotelDESCRIPTION'];
@@ -19,11 +21,16 @@ $hotelsImage = $_GET['hotelIMAGE'];
 $hotelsRating = $_GET['hotelRATING'];
 $usersId = $_GET['userID'];
 $rewardsTotal = $_GET['rewardTOTAL'];
+$roomNumber = $_GET['roomNUMBER'];
+$startDate = $_GET['startDATE'];
+$endDate = $_GET['endDATE'];
 
-$query = "INSERT INTO bookedhotel (hotel_id, hotel_name, description, city_id, usd, image, rating, start_date, end_date) VALUES ($hotelsId, '$hotelsName', '$hotelsDescription', $hotelsId, '$hotelsPrice', '$hotelsImage', '$hotelsRating', NULL, NULL)";
+$query = "INSERT INTO bookedhotel (booked_id, hotel_id, hotel_name, description, city_id, usd, image, rating, start_date, end_date, room_number) VALUES (DEFAULT, $hotelsId, '$hotelsName', '$hotelsDescription', $hotelsId, '$hotelsPrice', '$hotelsImage', '$hotelsRating', '$startDate', '$endDate', '$roomNumber')";
 $data = mysqli_query($conn,$query);
 $query2 = "UPDATE userinfo SET reward_points = '$rewardsTotal' WHERE user_id = $usersId";
 $data2 = mysqli_query($conn,$query2);
+$query3 = "UPDATE room SET room_count = room_count - '$roomNumber' WHERE hotel_id = $hotelsId";
+$data3 = mysqli_query($conn,$query3);
 
 ?>
 

@@ -18,8 +18,8 @@
     $hotelsPrice = $_GET['hotelPRICE'];
     $hotelsImage = $_GET['hotelIMAGE'];
     $hotelsRating = $_GET['hotelRATING'];
-
-    
+    $bookedId = 0;
+    $x = 0;
 ?>
 
 <?php
@@ -37,7 +37,7 @@
             echo "
             <div>
             <table style = margin-left:300px>
-                <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='280' height='280'/></td>
+                <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='220' height='220'/></td>
                 <td>
                 <h1 style = margin:0px>$hotelName</h1>
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
@@ -55,35 +55,181 @@
 
             }
 
+            $stmt3 = mysqli_query($conn,"SELECT * FROM bookedhotel");
+            while ($row3 = mysqli_fetch_array($stmt3)) {
+                $bookedId = $row3['hotel_id'];
+            }
+
             echo "
             <div>
+            <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
             <table style = margin-left:300px>
-                <td><img style = margin-right:15px class = 'picBorder' src = 'images/basic room.jpg' width='150' height='150'/></td>
-                <td>
-                <p style = margin:0px;font-size:18px>$roomName</p>
-                <p style = font-size:18px>Room Count: $roomCount</p>
-                <label for='roomNum'>Choose # Rooms to Book:</label>
-                <select id='roomNum'>
-                    <option value='1'>1</option>
-                    <option value='2'>2</option>
-                    <option value='3'>3</option>
-                    <option value='4'>4</option>
-                    <option value='5'>5</option>
-                    <option value='6'>6</option>
-                    <option value='7'>7</option>
-                    <option value='8'>8</option>
-                    <option value='9'>9</option>
-                    <option value='10'>10</option>
-                </select>
-                <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
-                <input style = width:110px;margin-top:10px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Pay Now!' />
-                </form>
-                </td>
+            <td><img style = margin-right:15px class = 'picBorder' src = 'images/basic room.jpg' width='200' height='200'/></td>
+            <td>
+            <p style = margin-top:2px;margin-bottom:0px;font-size:18px>$roomName</p>
+            <p style = font-size:18px;margin-top:2px;margin-bottom:0px>Room Count: $roomCount</p>
+            <p style = margin-top:2px;margin-bottom:0px for='start'>Choose Start Date: </p>
+            <input required type='date' name='startDate' value = 'startDATE' style = padding-right:-150px/>
+            <p style = margin-top:2px;margin-bottom:0px for='start'>Choose End Date: </p>
+            <input  require type='date' name='endDate'/>
+            ";
+            #SCUFFED BUT IT'LL WORK?!?!?
+            if($roomCount != '0') {
+            echo "
+            <p for = 'roomNum'>Choose # Rooms to Book:</p>
+            ";
+            if($roomCount == '1') { 
+            echo "
+            <tr>
+            <select name = 'roomNum' id='roomNum'>
+                <option value='1'>1</option>
+            </select>
+            </tr>
+            ";
+            } else if ($roomCount == '2') { 
+            echo "
+            <select name = 'roomNum' id='roomNum'>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+            </select>
+            ";
+            } else if ($roomCount == '3') { 
+            echo "
+            <select name = 'roomNum' id='roomNum'>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+            </select>
+            ";
+            } else if ($roomCount == '4') {
+            echo "
+            <select name = 'roomNum' id='roomNum'>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+            </select>
+            ";
+            } else if ($roomCount == '5') {
+            echo "
+            <select name = 'roomNum' id='roomNum'>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+            </select>
+            ";
+            } else if ($roomCount == '6') {
+            echo "
+            <select name = 'roomNum' id='roomNum'>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+            </select>
+            ";    
+            } else if ($roomCount == '7') {
+            echo "
+            <select name = 'roomNum' id='roomNum'>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+            </select>
+            ";
+            } else if ($roomCount == '8') {
+            echo "
+            <select name = 'roomNum' id='roomNum'>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+            </select>
+            ";
+            } else if ($roomCount == '9') {
+            echo "
+            <select name = 'roomNum' id='roomNum'>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+            </select>
+            ";
+            } else if ($roomCount == '10') {
+            echo "
+            <select name = 'roomNum' id='roomNum'>
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4</option>
+                <option value='5'>5</option>
+                <option value='6'>6</option>
+                <option value='7'>7</option>
+                <option value='8'>8</option>
+                <option value='9'>9</option>
+                <option value='10'>10</option>
+            </select>
+            ";
+            }
+        } else {
+            echo "
+            No More Rooms Available
             </table>
-            <td><b><p style = font-size:18px;margin-left:125px;mergin-bottom:-50px>Nearby Food Places</p></b></td>
+                <td><b><p style = font-size:18px;margin-left:125px;mergin-bottom:-50px>Nearby Food Places</p></b></td>
             </div>
             ";
-
+            }
+            if($roomCount > 0) {
+            echo "
+                <tr>
+                    <td>
+                    ";
+                    if($hotelsId == $bookedId) {
+                    echo"
+                    </form>
+                    <form action = '?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
+                    ";
+                    $x = 69;
+                    $startDate = 1;
+                    echo "
+                    <script>
+                    function alertBox() {
+                        alert('You Can Not Book 2 Hotels on the Same Dates!');
+                    }
+                    </script>
+                        <input style = width:110px;margin-bottom:-300px;margin-left:40px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Pay Now!' onclick='alertBox()' />
+                    </form>
+                    ";
+                    } else {
+                    echo"
+                        <input style = width:110px;margin-bottom:-300px;margin-left:40px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Pay Now!' />
+                        </form>
+                    ";
+                    }
+                    echo"
+                    </td>
+                </tr>
+                </td>
+                </table>
+                    <td><b><p style = font-size:18px;margin-left:125px;mergin-bottom:-50px>Nearby Food Places</p></b></td>
+                </div>
+            ";
+            }
             $stmt3 = mysqli_query($conn,"SELECT * FROM restaurant INNER JOIN hotel ON restaurant.hotel_id = hotel.hotel_id WHERE restaurant.hotel_id = '$hotelID'");
             while ($row3 = mysqli_fetch_array($stmt3)) {
                 $restaurantName = $row3['restaurant_name'];
@@ -102,3 +248,11 @@
         }
 
 ?>
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Booked Room</title>
+    </head>
+</html>
