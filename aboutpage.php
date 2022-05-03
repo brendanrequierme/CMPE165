@@ -29,7 +29,7 @@ if (!$_SESSION) {
         
         <!-- Brendan is Evil and He Killed Us All Please Help-->
         <div>
-            <b><p>Who are the creators of the website SpartanDeathHotel.com?</p></b>
+            <b><p>Who are the creators of the website Spartan Hotel?</p></b>
             <p>The website was created by 10 students are currently attending San José State University.</p>
             <b><p>List of Students:</p></b>
             <p><b>Brendan Requierme</b> (Project Manager)</p>
@@ -52,7 +52,7 @@ if (!$_SESSION) {
         <!-- This div is for contact part -->
         <div>
             <h3 class = "noBotMargin">Phone Number</h3>
-            <p class = "noTopMargin">+1 (678)-999-8212
+            <p class = "noTopMargin">+1 (678) 999-8212
         </div>
 
         <!-- This div is for the attempt on an email box -->
