@@ -30,7 +30,7 @@
     }
 
     if($rewardPoints > 0) {
-        $query2 = "UPDATE userinfo SET reward_points = '$rewardPoints'-'$hotelsPrice'*0.10 WHERE user_id = $userId";
+        $query2 = "UPDATE userinfo SET reward_points = '$rewardPoints'-'$hotelsPrice'*'$roomNumber'*0.10 WHERE user_id = $userId";
         $data2 = mysqli_query($conn,$query2);
     } else {
         $query2 = "UPDATE userinfo SET reward_points = '$rewardPoints'+'$hotelsPrice'*'$roomNumber' WHERE user_id = $userId";

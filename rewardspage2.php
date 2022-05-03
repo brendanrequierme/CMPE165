@@ -14,6 +14,7 @@
         $stmt = mysqli_query($conn,"SELECT * FROM userinfo");
         while ($row = mysqli_fetch_array($stmt)) {
             $rewardPoints = $row['reward_points'];
+            $rewardPoitns = 0;
             }
         echo "
             <h1 style = margin:0px>Reward Points: $rewardPoints</h1>

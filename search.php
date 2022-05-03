@@ -16,12 +16,8 @@
         <table class = 'test'>
         <form method='post' action = 'search.php'>
         <div class='searchBox'>
-                <td><input type='text' class='search2' placeholder='Search...' name='inputHere' style = margin-right:180px></td>
+                <td><input type='text' class='search2' placeholder='Search...' name='inputHere' style = margin-right:20px;margin-left:65px></td>
         </div>
-        <td><label for='start'>Choose Date: </label></td>
-        <td>
-            <input type='text' name='datefilter' value=''  style = margin-right:30px;/>
-        </td>
         <td><input type='submit' class = 'searchButton' name = 'searchs' value = 'SEARCH'></td>
         </form>
     </table>

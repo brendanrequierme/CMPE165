@@ -39,10 +39,8 @@
         echo "
         <div>
         <table style = margin-left:400px>
-            <p for='start'>Choose Start Date: </p>
-            <input type='date' name='startDate' value = 'startDATE' style = margin-right:30px;/>
-            <p for='start'>Choose End Date: </p>
-            <input type='date' name='endDate' style = margin-right:30px;/>
+        <tr>
+        <td>
             <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='280' height='280'/></td>
             <td>
             <h1 style = margin:0px>$hotelName</h1>
@@ -60,7 +58,21 @@
         <form action = 'delete.php?hotelID=$hotelID&hotelPRICE=$hotelPrice&roomNUMBER=$roomNumber&bookedID=$bookedID' method='POST' name='RemoveHotel'>
         <td><input style = width:130px;margin-left:215px; name = 'remove' type = 'submit' class = 'bookButton' onclick='remove();' value = 'Cancel Hotel' /></td>
         </form>
-        <td><input style = width:130px;margin-left:10px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Reschedule Hotel' /></td>
+        <div>
+        <form action = 'reschedule.php?bookedID=$bookedID' method='post' name='RescheduleHotel'>
+        <tr>
+        <td>
+            <p style = margin-left:215px; for='start'>Choose Start Date: </p>
+            <input type='date' name='startDate' value = 'startDATE' style = margin-left:215px;/>
+        </td>
+        <td>
+            <p style = margin-left:50px; for='start'>Choose End Date: </p>
+            <input type='date' name='endDate' style = margin-left:50px;/>
+        </td>
+        </tr>
+        <td><input style = width:130px;margin-left:215px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Reschedule Hotel' /></td>
+        </form>
+        </div>
         </div>
         "; 
     }

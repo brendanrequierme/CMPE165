@@ -19,7 +19,7 @@
     $hotelsImage = $_GET['hotelIMAGE'];
     $hotelsRating = $_GET['hotelRATING'];
     $bookedId = 0;
-    
+    $x = 0;
 ?>
 
 <?php
@@ -37,7 +37,7 @@
             echo "
             <div>
             <table style = margin-left:300px>
-                <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='260' height='260'/></td>
+                <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='220' height='220'/></td>
                 <td>
                 <h1 style = margin:0px>$hotelName</h1>
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
@@ -64,14 +64,14 @@
             <div>
             <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
             <table style = margin-left:300px>
-            <td><img style = margin-right:15px class = 'picBorder' src = 'images/basic room.jpg' width='180' height='180'/></td>
+            <td><img style = margin-right:15px class = 'picBorder' src = 'images/basic room.jpg' width='200' height='200'/></td>
             <td>
-            <p style = margin:0px;font-size:18px>$roomName</p>
-            <p style = font-size:18px>Room Count: $roomCount</p>
-            <p for='start'>Choose Start Date: </p>
-            <input type='date' name='startDate' value = 'startDATE' style = margin-right:30px;/>
-            <p for='start'>Choose End Date: </p>
-            <input type='date' name='endDate' style = margin-right:30px;/>
+            <p style = margin-top:2px;margin-bottom:0px;font-size:18px>$roomName</p>
+            <p style = font-size:18px;margin-top:2px;margin-bottom:0px>Room Count: $roomCount</p>
+            <p style = margin-top:2px;margin-bottom:0px for='start'>Choose Start Date: </p>
+            <input required type='date' name='startDate' value = 'startDATE' style = padding-right:-150px/>
+            <p style = margin-top:2px;margin-bottom:0px for='start'>Choose End Date: </p>
+            <input  require type='date' name='endDate'/>
             ";
             #SCUFFED BUT IT'LL WORK?!?!?
             if($roomCount != '0') {
@@ -199,21 +199,25 @@
                 <tr>
                     <td>
                     ";
-                    if($hotelsId == 15) {
+                    if($hotelsId == $bookedId) {
                     echo"
                     </form>
                     <form action = '?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
+                    ";
+                    $x = 69;
+                    $startDate = 1;
+                    echo "
                     <script>
                     function alertBox() {
                         alert('You Can Not Book 2 Hotels on the Same Dates!');
                     }
                     </script>
-                        <input style = width:110px;margin-bottom:-300px;margin-left:20px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Pay Now!' onclick='alertBox()' />
+                        <input style = width:110px;margin-bottom:-300px;margin-left:40px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Pay Now!' onclick='alertBox()' />
                     </form>
                     ";
                     } else {
                     echo"
-                        <input style = width:110px;margin-bottom:-300px;margin-left:20px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Pay Now!' />
+                        <input style = width:110px;margin-bottom:-300px;margin-left:40px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Pay Now!' />
                         </form>
                     ";
                     }

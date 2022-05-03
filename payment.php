@@ -60,7 +60,6 @@
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
                 <p style = font-size:18px>Rating: $hotelRating</p>
                 <p style = font-size:18px>Number of Rooms: $roomNumber</p>
-                <p style = font-size:18px>Number of Rooms: $startDate</p>
                 <p style = font-size:18px>Room Price: $".($hotelPrice*$roomNumber).".00</p>
                 </td>
             </table>
