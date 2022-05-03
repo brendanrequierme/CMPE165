@@ -393,7 +393,7 @@ INSERT INTO `restaurant` (`restaurant_id`, `restaurant_name`, `restaurant_image`
 (117, 'Hash House A Go Go', 'Hash House A Go Go.jpg', 39),
 (118, 'Bistro 39', 'Bistro 39.jpg', 40),
 (119, 'NY Garden Deli & Cafe', 'NY Garden.jpg', 40),
-(120, 'Mom's Pizza and Pasta', 'Moms Pizza.jpg', 40),
+(120, 'Moms Pizza and Pasta', 'Moms Pizza.jpg', 40),
 (121, 'Sushi Ota', 'Sushi Ota.jpg', 41),
 (122, 'Snooze, an A.M. Eatery', 'Snooze, an A.M. Eatery.jpg', 41),
 (123, 'Hash House A Go Go', 'Hash House A Go Go.jpg', 41),
