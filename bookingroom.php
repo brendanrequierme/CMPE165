@@ -19,9 +19,13 @@
     $hotelsImage = $_GET['hotelIMAGE'];
     $hotelsRating = $_GET['hotelRATING'];
     $bookedId = 0;
+    $startDate = 0;
+    $endDate = 0;
     $x = 0;
     if(isset($_POST['checkDate'])){ // Check if form was submitted
-    $input = $_POST['startDate']; // Get input text
+    $startDate = $_POST['startDate']; // Get input text
+    $endDate = $_POST['endDate'];
+    $x = 1;
     }
 ?>
 
@@ -38,19 +42,24 @@
             }
 
             echo "
-            <div>
-            <table style = margin-left:300px>
-                <form action='#?$x = '1'' method='post' onsubmit='dateConfirmation()'>
-                <p style = margin-top:2px;margin-bottom:0px for='start'>Choose Start Date: </p>
-                <input required type='date' name='startDate' value = 'startDATE' style = padding-right:-150px/>
-                <p style = margin-top:2px;margin-bottom:0px for='start'>Choose End Date: </p>
-                <input  require type='date' name='endDate'/>
-                <input style = width:110px;margin-bottom:-300px;margin-left:40px; name = 'checkDate' type = 'submit' class = 'bookButton'  value = 'Check Date!' />
+            <div style = padding-left:60px;>
+            <table>
+                <form action='#' method='post' onsubmit='dateConfirmation()'>
+                <tr><p style = margin-top:2px;margin-bottom:0px for='start'>Choose Start Date: </p></tr>
+                <tr><input required type='date' name='startDate' value = 'startDATE' style = padding-right:-150px/></tr>
+                <tr><p style = margin-top:2px;margin-bottom:0px for='start'>Choose End Date: </p></tr>
+                <tr><input  require type='date' name='endDate'/></tr>
+                <tr><input style = width:110px;margin-bottom:-300px;margin-left:40px; name = 'checkDate' type = 'submit' class = 'bookButton'  value = 'Check Date!' /></tr>
                 <script>
                 function dateConfirmation() {
                     alert('Date Confirmed!');
                 }
                 </script>
+                </form>
+            </table>
+            </div>
+            <div>
+            <table style = margin-left:300px>
                 <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='220' height='220'/></td>
                 <td>
                 <h1 style = margin:0px>$hotelName</h1>
@@ -88,7 +97,7 @@
             if ($x == 1) {
             echo "
             <div>
-            <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
+            <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&startDate=$startDate&endDate=$endDate' method = 'post'>
             ";
             };
             echo "
@@ -98,6 +107,13 @@
             <p style = margin-top:2px;margin-bottom:0px;font-size:18px>$roomName</p>
             <p style = font-size:18px;margin-top:2px;margin-bottom:0px>Room Count: $roomCount</p>
             ";
+            if(isset($_POST['checkDate'])){
+            echo "
+            <p>Date Confirmed</p>
+            <p>Beginning Date: $startDate</p>
+            <p>End Date: $endDate</p>
+            ";
+            }
             #SCUFFED BUT IT'LL WORK?!?!?
             if($roomCount != '0') {
             echo "
@@ -222,14 +238,10 @@
                 <tr>
                     <td>
                     ";
-                    if($hotelsId == $bookedId) {
+                    if(($hotelsId == $bookedId) && ($startDate == '2022-05-03')) {
                     echo"
                     </form>
                     <form action = '?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
-                    ";
-                    $x = 69;
-                    $startDate = 1;
-                    echo "
                     <script>
                     function alertBox() {
                         alert('You Can Not Book 2 Hotels on the Same Dates!');
