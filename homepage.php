@@ -19,14 +19,6 @@
         <title>Spartan Death Hotel</title>
     </head>
 
-    <style>
-    #footer {
-        position: absolute;
-        bottom: 0%;
-        width: 99%;
-    }
-    </style>
-
     <body class = "home">
 
         <!-- This is for body/searchbar -->

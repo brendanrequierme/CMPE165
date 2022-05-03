@@ -25,7 +25,7 @@
                     <td><a class = "clearDecorAndRPad" href = "homepage.php">Home</a></td>
                     <td><a class = "clearDecorAndRPad" href = "bookingpage.php">Booking</a></td>
                     <td><a class = "clearDecorAndRPad" href = "booked.php">Booked</a></td>
-                    <td><a class = "clearDecorAndRPad" href = "payment.php">Rewards</a></td>
+                    <td><a class = "clearDecorAndRPad" href = "rewardspage.php">Rewards</a></td>
                     <td><a class = "clearDecorAndRPad" style = margin-right:220px href = "aboutpage.php">About Us</a></td>
                     <td class = redTextRPad2><a class = "clearDecor" href = "login.php">Sign In</a></td>
                 </tr> 

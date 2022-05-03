@@ -16,7 +16,9 @@
     $hotelsPrice = $_GET['hotelPRICE'];
     $hotelsImage = $_GET['hotelIMAGE'];
     $hotelsRating = $_GET['hotelRATING'];
+    $rewardTotal = $_GET['rewardTOTAL'];
     $roomNumber = $_GET['roomNUMBER'];
+
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +38,7 @@
         while ($row = mysqli_fetch_array($stmt)) {
             $userId = $row['user_id'];
             $rewardPoints = $row['reward_points'];
-        if($rewardPoints >= ($hotelsPrice*$roomNumber)) {
+        if($rewardTotal >= ($hotelsPrice*$roomNumber)) {
             $totalPriceToPay = 0;
         } else {
             $totalPriceToPay = $hotelsPrice * $roomNumber - $rewardPoints;
@@ -60,11 +62,12 @@
                 <h1 style = margin:0px>$hotelName</h1>
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
                 <p style = font-size:18px>Rating: $hotelRating</p>
+                <p style = font-size:18px>Number of Rooms: $roomNumber</p>
                 <p style = font-size:18px>Room Price: $$totalPriceToPay.00</p>
                 </td>
             </table>
             </div>
-            <form action='finishbookingpage2.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardPOINTS=$rewardPoints&roomNUMBER=$roomNumber' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
+            <form action='finishbookingpage2.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardPOINTS=$rewardPoints&roomNUMBER=$roomNumber&rewardTOTAL=$rewardTotal' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
             ";
         }
         ?>
