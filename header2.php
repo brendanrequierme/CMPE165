@@ -27,7 +27,7 @@
                     <td><a class = "clearDecorAndRPad" href = "booked.php">Booked</a></td>
                     <td><a class = "clearDecorAndRPad" href = "rewardspage.php">Rewards</a></td>
                     <td><a class = "clearDecorAndRPad" style = margin-right:220px href = "aboutpage.php">About Us</a></td>
-                    <td class = redTextRPad2><a class = "clearDecor" href = "login.php">Sign In</a></td>
+                    <td class = redTextRPad2><a class = "clearDecor" href = "logout.php">Sign Out</a></td>
                 </tr> 
             </table>
             <hr class = "lineHeight" class = "noTopMargin" color = "gray">

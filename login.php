@@ -58,7 +58,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location: homepage.php");
                         } else{
                             // Display an error message if password is not valid
-                            $password_err = "The password you entered was not valid.";
+                            $password_err = "The password you entered did not match the username.";
                         }
                     }
                 } else{
@@ -81,25 +81,31 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="./styleStart.css" />
 </head>
 <body>
-        <h2>Login</h2>
-        <p>Please fill in your credentials to login.</p>
+    <div class = "content">
+        <h2><center>Spartan Hotel Login</center></h2>
+        <p><center>Please fill in your credentials to login.</center></p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" autocomplete="off">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
+                <label><b>Username:</b></label>
                 <input type="text" name="username" class="form-control" value="<?php echo $username; ?>" placeholder = "Enter your Username">
-                <span class="help-block" style = color:red><?php echo $username_err; ?></span>
+                <br>
+                <span class="help-block" style = color:red><center><?php echo $username_err; ?></center></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label>Password</label>
+                <label><b>Password:</b></label>
                 <input type="password" name="password" class="form-control" placeholder = "Enter your Password">
-                <span class="help-block" style = color:red><?php echo $password_err; ?></span>
+                <br>
+                <span class="help-block" style = color:red><center><?php echo $password_err; ?></center></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p><center>Don't have an account? <a href="register.php">Sign up now</a>.</center>
+            <br>
+            </p><p><center><a href="homepage.php">Return home</a></center></p>
         </form>
     </div>    
 </body>

@@ -1,126 +1,63 @@
 <?php
-    include 'header.php';
+    // Initialize the session
+    session_start();
+
+    if (!$_SESSION) {
+        include 'header.php';
+    } else {
+        include 'header2.php';
+    }
+
 ?>
 
 <!DOCTYPE html>
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- https://fonts.google.com/icons?selected=Material+Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>Spartan Death Hotel</title>
     </head>
 
-    <body>
+    <body class = "home">
 
-        <img src = "images/lakePicture.jpg" width = 100% height = "500"/>
         <!-- This is for body/searchbar -->
         
-        <table>
-            <tr>
-            <td><label for="start">Check-In Date:</td>
-            <td><input type="date" id="start" name="res-start">
-            </td></label>
+        <div class = "searchBarOuter">
+            <table class = "test">
+                <form method="post" action = "search.php">
+                    <div class="searchBox">
+                            <td><input type="text" class="search" placeholder="Search..." name="inputHere"></td>
+                    </div>
+                    <td><label for="start">Choose Date: </label></td>
+                    <td>
+                        <input type="text" name="datefilter" value=""  style = margin-right:30px;/>
+                    </td>
+                    <script type="text/javascript">
+                        $(function() {
 
-            <tr>
-            <td><label for="end">Check-Out Date:</td>
-            <td><input type="date" id="end" name="res-end">
-            </td></label>
-        </table>
+                        $('input[name="datefilter"]').daterangepicker({
+                            autoUpdateInput: false,
+                            locale: {
+                                cancelLabel: 'Clear'
+                            }
+                        });
 
-        <div>
-            <table align = "center">
-                <tr>
-                    <h3>Why book with Spartan Death Hotel?</h3>
-                </tr>
-                <tr>
-                    <td class = "rPad">Free Cancelation</td>
-                    <td class = "rPad">Our price guarantee</td>
-                    <td class = "rPad">Get a reward night</td>
-                </tr>
+                        $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+                            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+                        });
+
+                        $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+                            $(this).val('');
+                        });
+
+                        });
+                    </script>
+                    
+                    <td><input type="submit" class = "searchButton" name = "searchs" value = "SEARCH"></td>
+                    </form>
             </table>
         </div>
-
-        <div>
-            <table align = "center">
-                <tr>
-                    <h3>A snapshot of the world's most picture-perfect properties</h3>
-                    <td>Check out some of our favorite unique stays</td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- Links for the hotels 
-        https://www.hotelgalvez.com/
-        https://www.baglionihotels.com/branches/baglioni-hotel-london/
-        https://www.agoda.com/l-hotel/hotel/khon-kaen-th.html?cid=1844104
-        https://www.omnihotels.com/hotels/atlanta-cnn-center
-        -->
-
-        <!-- This div is for the the hotel examples -->
-        <div>
-            <table align = "center">
-                <tr>
-                    <td><img src = "images/hotel1.jpg" width = "300" height = "300"/></td>
-                    <td><img src = "images/hotel2.jpg" width = "300" height = "300"/></td>
-                    <td><img src = "images/hotel3.jpg" width = "300" height = "300"/></td>
-                    <td><img src = "images/hotel4.jpeg" width = "300" height = "300"/></td>
-                </tr>
-                    <td><h4 class = "noMargin">Grand Calvez</h4></td>
-                    <td><h4 class = "noMargin">Baglioni Hotel</h4></td>
-                    <td><h4 class = "noMargin">L Hotel</h4></td>
-                    <td><h4 class = "noMargin">Omni Hotels & Resorts</h4></td>
-                </tr>
-                <tr>
-                    <td>Galveston, Texas</td>
-                    <td>London, UK</td>
-                    <td>Khon Kaen, Thailand</td>
-                    <td>Atlanta, Georgia</td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- This div is for ... -->
-        <div>
-            <table align = "center">
-                <h3>Travel with Confidence</h3>
-                <tr>
-                    <td>Many properties have updated us about their enhanced health and safety measures. So, during your search, you may find details like:</td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- This div is for the ... -->
-        <div>
-            <table align = "center">
-                <tr>
-                    <td><h4 class = "noBotMargin">Official health standards</h4></td>
-                    <td><h4 class = "noBotMargin">Social distancing</h4></td>
-                </tr>
-                <tr>
-                    <td class = "rPad2">Properties adhering to corporate/organization <br>
-                    sanitization guidelines.</td>
-                    <td>Contactless check-in and check-out along with other social 
-                    <br>distancing measure.</td>
-                </tr>
-                <tr>
-                    <td><h4 class = "noBotMargin">Hygiene and sanitization</h4></td>
-                    <td><h4 class = "noBotMargin">Essentials at the property</h4></td>
-                </tr>
-                <tr>
-                    <td class = "rPad2">The use of disinfectant and whether properties <br>
-                    enforce a gap period between stays.</td>
-                    <td>Free hand sanitizer for guests and individually wrapped food.</td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- This div is for ... -->
-        <div>
-            <h3 class = noBotMargin>Overheard from our loyalty members</h3>
-            <p class = noTopMargin>We have over 50 million happy members and have given away over 25 million reward nights around the world. Here's what our members have to say</p>
-        </div>
-
-        <?php include 'footer.php'?>
-
+        
     </body>
 </html>

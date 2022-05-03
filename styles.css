@@ -1,12 +1,23 @@
 body {
-    background-color: rgba(197, 235, 254);
-    height: 100%;
-    width: 100%;
-    max-width: 1895px;
-    min-width: 480px;
-    height: 200px;
-    background-size: 200%;
-    text-indent: 400px;
+    background-color: #E5D3B3;
+    /*text-indent: 400px;*/
+    text-indent: 10%;
+    font-family: 'Orelega One', cursive;
+ }
+
+ .header {
+    background-color: #987554c0;
+    padding-top: 25px;
+    position: relative;
+ }
+
+.home {
+    background-image: url("./images/1920x1080-6062500-brown-sofa-style-interior-room-design (2).jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 a:visited:not(.logo):not(.clearDecorAndRed):not(.redTextRPad) { 
@@ -14,7 +25,7 @@ a:visited:not(.logo):not(.clearDecorAndRed):not(.redTextRPad) {
 }
    
 a:not(.logo):not(.clearDecorAndRed):not(.redTextRPad) { 
-    color: black; 
+    color: black;
 }
 
 hr {
@@ -23,8 +34,9 @@ hr {
     width: 100%;
 }
 
-table, input, button, textarea {
-    margin-left: 400px;
+table:not(.searchContainer):not(.test), input:not(.search):not(.bookButton), button, textarea {
+    /* margin-left: 400px; */
+    margin-left: 10%;
 }
 
 .noMargin {
@@ -39,21 +51,26 @@ table, input, button, textarea {
     margin-top: 0px;
 }
 
-
 /* homepage */
 
 .bottom {
     padding-top: 20px;
 }
 
+.clearDecor {
+    text-decoration:none;
+    color: black;
+}
+
 .clearDecorAndRed {
     text-decoration:none;
-    color: red;
+    color: rgba(26, 77, 41, 0.842);
 }
 
 .clearDecorAndRPad {
     text-decoration: none;
     padding-right: 30px;
+    font-size: 18px;
 }
 
 .hotels {
@@ -63,8 +80,6 @@ table, input, button, textarea {
 
 .logo {
     font-size: 30px;
-    font-family: Nosifer;
-    padding-right: 380px;
 }
 
 .redTextRPad {
@@ -76,6 +91,7 @@ table, input, button, textarea {
     text-decoration: none;
     color: red;
     padding-right: 40px;
+    font-size:18px;
 }
 
 .rPad {
@@ -86,6 +102,45 @@ table, input, button, textarea {
     padding-right: 170px;
 }
 
+.picBorder {
+    border: 2px solid black;
+}
+
+.checkicon {
+    color: green;
+}
+
+.material-icons.verifiedicon {
+    color: green;
+    padding-right: 5px;
+}
+
+.material-icons.cancelicon {
+    color: red;
+    padding-right: 3px;
+}
+
+.material-icons.rewardicon {
+    color: purple;
+    padding-right: 5px;
+}
+
+.searchBarOuter {
+    margin: auto;
+    position: relative;
+    display: flex;
+    margin-top: 345px;
+    border: 2px solid black;
+    background: rgba(218, 218, 218, 0.74);
+    border-radius: 50px;
+    width: 900px;
+    height: 70px;
+}
+
+.searchButton {
+    height: 25px;
+    background: linear-gradient(to bottom right, #cfcfcf 15%, #33ccff 100%);
+}
 
 /* Payment Page */
 
@@ -95,7 +150,6 @@ table, input, button, textarea {
 .specialText {
     font-size: 11px;
     font-family: nosifer;
-    color: red;
 }
 
 /* Contact Page */
@@ -112,4 +166,89 @@ table, input, button, textarea {
 
 .submitButton:hover {
     background-color: rgb(214, 226, 236);
+}
+
+/* Booking Page */
+
+.bookButton {
+    width: 5%;
+    font-weight: bold;
+    outline: none;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Search Page */
+.searchBarOuter2 {
+    margin-left: 433px;
+    border-radius: 50px;
+    width: 900px;
+    height: 70px;
+}
+
+/*
+.searchBox {
+    margin: auto;
+    margin-top: 1%;
+    position: relative;
+    border: 2px solid black;
+    width: 500px;
+    height: 42px;
+    border-radius: 50px;
+}
+*/
+
+.searchText {
+    margin: auto;
+    position: relative;
+    padding-left: 38.5%;
+}
+
+.searchContainer {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.search {
+    border: 1px solid black;
+    background-color:rgba(248, 248, 248);
+    height: 40px;
+    width: 470px;
+    padding: 0px 5px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: "Nunito";
+    color: #424242;
+    font-weight: 500;
+}
+
+.search2 {
+    border: 1px solid black;
+    background-color:rgb(248, 248, 248);
+    height: 40px;
+    width: 470px;
+    padding: 0px 5px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: "Nunito";
+    color: #424242;
+    font-weight: 500;
+}
+
+.search:focus {
+    outline: none;
+}
+
+.card-body {
+    margin-bottom: 400px;
+}
+
+#restaurantAlign {
+    float: left;
+	padding:10px;
+    margin-left:230px;
+    margin-top:-35px;
 }

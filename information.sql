@@ -9,7 +9,7 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
+SELECT @@system_time_zone;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -28,7 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `bookedhotel` (
-  `hotel_id` int(11) NOT NULL,
+  `booked_id` int(11) NOT NULL,
+  `hotel_id` int(11) DEFAULT NULL,
   `hotel_name` varchar(255) DEFAULT NULL,
   `description` text DEFAULT NULL,
   `city_id` int(11) NOT NULL,
@@ -91,11 +92,11 @@ CREATE TABLE `hotel` (
 
 INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`, `image`, `rating`, `start_date`, `end_date`) VALUES
 (1, 'Best Western Plus South Bay Hotel LAX', '15000 Hawthorne Boulevard Lawndale, California, LAX Los Angeles International Airport, Los Angeles (CA), United States, 90260', 2, '140.00', '1.jpg', '7.7', NOW(), '2022-05-26'),
-(2, 'JW Marriott Santa Monica Le Merigot', '1740 Ocean Avenue, Santa Monica, Los Angeles (CA), United States, 90401', 2, '431.00', '2.jpg', '8.3', '2022-05-04', '2022-05-21'),
-(3, 'Andaz West Hollywood', '8401 Sunset Boulevard, West Hollywood, Los Angeles (CA), United States, 90069', 2, '272.00', '3.jpg', '9.0', '2022-05-04', '2022-05-23'),
+(2, 'JW Marriott Santa Monica Le Merigot', '1740 Ocean Avenue, Santa Monica, Los Angeles (CA), United States, 90401', 2, '431.00', '2.jpg', '8.3', '2022-06-04', '2022-07-21'),
+(3, 'Andaz West Hollywood', '8401 Sunset Boulevard, West Hollywood, Los Angeles (CA), United States, 90069', 2, '272.00', '3.jpg', '9.0', '2022-05-24', '2022-05-31'),
 (4, 'Alhambra Hotel', '2221 W Commonwealth Ave, East Los Angeles, Los Angeles (CA), United States, 91803', 2, '92.00', '4.jpg', '8.4', NOW(), '2022-06-26'),
 (5, 'Hollywood Celebrity Hotel', '1775 Orchid Avenue, Hollywood, Los Angeles (CA), United States, 90028', 2, '162.00', '5.jpg', '8.8', NOW(), '2022-07-21'),
-(6, 'Marina del Rey Hotel', '13534 Bali Way, Marina Del Rey, Los Angeles (CA), United States, 90292', 2, '287.00', '6.jpg', '8.4', NOW(), '2022-08-15'),
+(6, 'Marina del Rey Hotel', '13534 Bali Way, Marina Del Rey, Los Angeles (CA), United States, 90292', 2, '287.00', '6.jpg', '8.4', '2022-07-13', '2022-08-15'),
 (7, 'Tommie Hollywood', '6516 W Selma Ave, Hollywood, Los Angeles (CA), United States, 90028', 2, '228.00', '7.jpg', '8.4', '2022-05-06', '2022-10-05'),
 (8, 'The London West Hollywood at Beverly Hills', '1020 N. San Vicente Blvd, West Hollywood, Los Angeles (CA), United States, 90069', 2, '459.00', '8.jpg', '8.9', NOW(), '2022-05-14'),
 (9, 'Peacock Suites', '1745 South Anaheim Blvd., Anaheim, Los Angeles (CA), United States, 92805', 2, '199.00', '9.jpg', '8.6', NOW(), '2022-06-01'),
@@ -105,9 +106,9 @@ INSERT INTO `hotel` (`hotel_id`, `hotel_name`, `description`, `city_id`, `usd`, 
 (13, 'Howard Johnson by Wyndham Anaheim Hotel & Water Playground', '1380 South Harbor Blvd, Anaheim, Los Angeles (CA), United States, 92802-2310', 2, '168.00', '13.jpg', '8.8', NOW(), '2022-06-15'),
 (14, 'LEXEN HOTEL - NORTH HOLLYWOOD NEAR UNIVERSAL STUDIOS', '5268 TUJUNGA AVENUE, Burbank, Los Angeles (CA), United States, 91601', 2, '229.00', '14.jpg', '9.8', NOW(), '2022-05-30'),
 (15, 'Wyndham Santa Monica At The Pier Hotel', '120 Colorado Avenue, Santa Monica, Los Angeles (CA), United States, 90401', 2, '283.00', '15.jpg', '7.6', NOW(), '2022-05-31'),
-(16, 'JW Marriott Los Angeles L.A. LIVE', '900 West Olympic Boulevard, Downtown Los Angeles, Los Angeles (CA), United States, 90015', 2, '599.00', '16.jpg', '8.8', NOW(), '2022-05-22'),
+(16, 'JW Marriott Los Angeles L.A. LIVE', '900 West Olympic Boulevard, Downtown Los Angeles, Los Angeles (CA), United States, 90015', 2, '599.00', '16.jpg', '8.8', '2022-05-13', '2022-05-22'),
 (17, 'Maison 140', '140 South Lasky Drive, Beverly Hills, California, Beverly Hills, Los Angeles (CA), United States, 90212', 2, '209.00', '17.jpg', '7.4', NOW(), '2022-05-26'),
-(18, 'Delta Hotels by Marriott Anaheim Garden Grove', '12021 Harbor Boulevard, Anaheim, Los Angeles (CA), United States, 92840', 2, '209.00', '18.jpg', '8.3', NOW(), '2022-05-26'),
+(18, 'Delta Hotels by Marriott Anaheim Garden Grove', '12021 Harbor Boulevard, Anaheim, Los Angeles (CA), United States, 92840', 2, '209.00', '18.jpg', '8.3', '2022-05-21', '2022-05-26'),
 (19, 'Hilton Los Angeles Universal City Hotel', '555 Universal Hollywood Drive, Universal City, Los Angeles (CA), United States, 91608', 2, '292.00', '19.jpg', '8.5', NOW(), '2022-05-26'),
 (20, 'The Ritz-Carlton, Marina del Rey', '4375 Admiralty Way, Marina Del Rey, Los Angeles (CA), United States, 90292', 2, '368.00', '20.jpg', '10.0', NOW(), '2022-05-19'),
 (21, 'Sixty Beverly Hills Hotel', '9360 Wilshire Blvd, Beverly Hills, Los Angeles (CA), United States, 90212', 2, '359.00', '21.jpg', '7.9', NOW(), '2022-07-28'),
@@ -958,8 +959,8 @@ INSERT INTO `userinfo` (`user_id`, `username`, `password`, `reward_points`) VALU
 -- Indexes for table `bookedhotel`
 --
 ALTER TABLE `bookedhotel`
-  ADD PRIMARY KEY (`hotel_id`),
-  ADD UNIQUE KEY `hotel_id` (`hotel_id`),
+  ADD PRIMARY KEY (`booked_id`),
+  ADD UNIQUE KEY `hotel_id` (`booked_id`),
   ADD KEY `city_id` (`city_id`);
 
 --
@@ -1032,7 +1033,7 @@ ALTER TABLE `userinfo`
 -- AUTO_INCREMENT for table `bookedhotel`
 --
 ALTER TABLE `bookedhotel`
-  MODIFY `hotel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `booked_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `city`
@@ -1062,7 +1063,7 @@ ALTER TABLE `restaurant`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `room_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT for table `room_reserved`

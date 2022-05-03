@@ -1,0 +1,81 @@
+.center {
+	padding: 20px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.content { 
+	/*width: 25%;*/
+	padding: 45px; 
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+	background: rgba(192, 192, 192, .75);
+	border-radius: 20px;
+	/*height:50%;*/
+}
+
+.form-group {
+	text-align: center;
+}
+
+
+h2 {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+body { 
+	font-size: 14px; 
+	font: sans-serif; 
+	background-image: url("images/registerBack.jpg");
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+button, select {
+	text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+	-webkit-appearance: button;
+	background: #4666b0;
+	color: white;
+	border: none;
+	text-align: center;
+	padding: 15px 30px;
+	font-size: 15px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+button[disabled], html input[disabled] {
+	cursor: default;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 20;
+	font: inherit;
+	color: inherit;
+}
+
+input[type=text], input[type=password] {
+	border-radius: 4px;
+	padding: 5px 20px;
+	border-color: #c7c7c7;
+}
+
+p {
+	font-size: 30px;
+}

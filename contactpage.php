@@ -1,5 +1,12 @@
 <?php
-    include 'header.php';
+    // Initialize the session
+    session_start();
+
+    if (!$_SESSION) {
+        include 'header.php';
+    } else {
+        include 'header2.php';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +44,6 @@
         </form>
 
         <script src = "script.js"></script>
-        <?php include 'footer.php'?>
 
     </body>
 </html>
