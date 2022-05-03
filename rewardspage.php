@@ -124,8 +124,6 @@
                                         <td>
                                         <h1 style = margin:0px>$hotelName</h1>
                                         <p style = margin:0px;font-size:18px>$hotelDescription</p>
-                                        <p style = margin:0px;font-size:18px>Date of Booking: $hotelStartDate</p>
-                                        <p style = margin:0px;font-size:18px>End Date of Booking: $hotelEndDate</p>
                                         <p style = font-size:18px>Rating: $hotelRating</p>
                                         <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
                                         <form action = 'bookingroom.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
@@ -182,8 +180,6 @@
                                         <td>
                                         <h1 style = margin:0px>$hotelName</h1>
                                         <p style = margin:0px;font-size:18px>$hotelDescription</p>
-                                        <p style = margin-bottom:0px;font-size:18px>Date of Booking: $hotelStartDate</p>
-                                        <p style = margin-top:0px;font-size:18px>End Date of Booking: $hotelEndDate</p>
                                         <p style = font-size:18px>Rating: $hotelRating</p>
                                         <p style = font-size:18px>Hotel Price: $$hotelPrice</p>
                                         <form action = 'bookingroom.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
