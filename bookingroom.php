@@ -20,6 +20,9 @@
     $hotelsRating = $_GET['hotelRATING'];
     $bookedId = 0;
     $x = 0;
+    if(isset($_POST['checkDate'])){ // Check if form was submitted
+    $input = $_POST['startDate']; // Get input text
+    }
 ?>
 
 <?php
@@ -37,6 +40,12 @@
             echo "
             <div>
             <table style = margin-left:300px>
+                <form action='#' method='post'>
+                <p style = margin-top:2px;margin-bottom:0px for='start'>Choose Start Date: </p>
+                <input required type='date' name='startDate' value = 'startDATE' style = padding-right:-150px/>
+                <p style = margin-top:2px;margin-bottom:0px for='start'>Choose End Date: </p>
+                <input  require type='date' name='endDate'/>
+                <input style = width:110px;margin-bottom:-300px;margin-left:40px; name = 'checkDate' type = 'submit' class = 'bookButton'  value = 'Check Date!' />
                 <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='220' height='220'/></td>
                 <td>
                 <h1 style = margin:0px>$hotelName</h1>
@@ -68,10 +77,6 @@
             <td>
             <p style = margin-top:2px;margin-bottom:0px;font-size:18px>$roomName</p>
             <p style = font-size:18px;margin-top:2px;margin-bottom:0px>Room Count: $roomCount</p>
-            <p style = margin-top:2px;margin-bottom:0px for='start'>Choose Start Date: </p>
-            <input required type='date' name='startDate' value = 'startDATE' style = padding-right:-150px/>
-            <p style = margin-top:2px;margin-bottom:0px for='start'>Choose End Date: </p>
-            <input  require type='date' name='endDate'/>
             ";
             #SCUFFED BUT IT'LL WORK?!?!?
             if($roomCount != '0') {
