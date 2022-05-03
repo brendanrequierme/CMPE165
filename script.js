@@ -44,3 +44,7 @@ function remove() {
 function alertBox() {
     alert("You can not book 2 hotels on the same dates!");
 }
+
+function dateRequired() {
+    alert("You need to confirm a date first!");   
+}
