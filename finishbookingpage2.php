@@ -70,6 +70,6 @@ $data3 = mysqli_query($conn,$query3);
         <h2>Thank you for booking with Spartan Death Hotel.</h2>
         <b>We hope you enjoy your stay.</b>
         </br>
-        <h2 style = margin-left:22%;>You will be redirected back to the homepage in 5 seconds.</h2>
+        <h2 style = margin-left:22%;>You will be redirected back to the Booked in 5 seconds.</h2>
     </body>
 </html>
