@@ -27,17 +27,8 @@
             <table class = "test">
                 <form method="post" action = "search.php">
                     <div class="searchBox">
-                            <td><input type="text" class="search" placeholder="Search..." name="inputHere"></td>
+                            <td><input type="text" class="search" placeholder="Search for Hotel Names Here" name="inputHere"></td>
                     </div>
-                    <td><label for="start">Choose Start Date: </label></td>
-                    <td>
-                        <input type="date" name="startDate" style = margin-right:30px;/>
-                    </td>
-                    <td><label for="start">Choose End Date: </label></td>
-                    <td>
-                        <input type="date" name="endDate" style = margin-right:30px;/>
-                    </td>
-                    
                     <td><input type="submit" class = "searchButton" name = "searchs" value = "SEARCH"></td>
                     </form>
             </table>

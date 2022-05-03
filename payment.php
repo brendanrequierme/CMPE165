@@ -17,6 +17,8 @@
     $hotelsImage = $_GET['hotelIMAGE'];
     $hotelsRating = $_GET['hotelRATING'];
     $roomNumber = $_POST['roomNum'];
+    $startDate = $_POST['startDate'];
+    $endDate = $_POST['endDate'];
 
 ?>
 
@@ -58,6 +60,7 @@
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
                 <p style = font-size:18px>Rating: $hotelRating</p>
                 <p style = font-size:18px>Number of Rooms: $roomNumber</p>
+                <p style = font-size:18px>Number of Rooms: $startDate</p>
                 <p style = font-size:18px>Room Price: $".($hotelPrice*$roomNumber).".00</p>
                 </td>
             </table>
@@ -71,10 +74,10 @@
             <h2 class = "noBotMargin"><span style = color:purple>Pay with Rewards Now!</span></h2>
             <?php
             echo"
-                <form action='paymentRewards.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardTOTAL=$rewardTotal&roomNUMBER=$roomNumber' method = 'POST'>
+                <form action='paymentRewards.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardTOTAL=$rewardTotal&roomNUMBER=$roomNumber&startDATE=$startDate&endDATE=$endDate' method = 'POST'>
                     <input style = width:110px;margin-top:10px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Pay Now!' />
                 </form>
-                <form action='finishbookingpage.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardTOTAL=$rewardTotal&roomNUMBER=$roomNumber' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
+                <form action='finishbookingpage.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardTOTAL=$rewardTotal&roomNUMBER=$roomNumber&startDATE=$startDate&endDATE=$endDate' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
             ";
             ?>
         </div>
