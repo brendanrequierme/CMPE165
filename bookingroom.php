@@ -188,7 +188,7 @@
             }
         } else {
             echo "
-            No More Rooms Available
+            <p>No More Rooms Available</p>
             </table>
                 <td><b><p style = font-size:18px;margin-left:125px;mergin-bottom:-50px>Nearby Food Places</p></b></td>
             </div>
