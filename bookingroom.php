@@ -40,7 +40,7 @@
             echo "
             <div>
             <table style = margin-left:300px>
-                <form action='#' method='post'>
+                <form action='#?$x = '1'' method='post'>
                 <p style = margin-top:2px;margin-bottom:0px for='start'>Choose Start Date: </p>
                 <input required type='date' name='startDate' value = 'startDATE' style = padding-right:-150px/>
                 <p style = margin-top:2px;margin-bottom:0px for='start'>Choose End Date: </p>
@@ -69,9 +69,13 @@
                 $bookedId = $row3['hotel_id'];
             }
 
+            if ($x == 1) {
             echo "
             <div>
             <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
+            ";
+            };
+            echo "
             <table style = margin-left:300px>
             <td><img style = margin-right:15px class = 'picBorder' src = 'images/basic room.jpg' width='200' height='200'/></td>
             <td>
