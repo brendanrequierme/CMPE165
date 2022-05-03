@@ -19,7 +19,14 @@
     $hotelsImage = $_GET['hotelIMAGE'];
     $hotelsRating = $_GET['hotelRATING'];
     $bookedId = 0;
+    $startDate = 0;
+    $endDate = 0;
     $x = 0;
+    if(isset($_POST['checkDate'])){ // Check if form was submitted
+    $startDate = $_POST['startDate']; // Get input text
+    $endDate = $_POST['endDate'];
+    $x = 1;
+    }
 ?>
 
 <?php
@@ -35,6 +42,22 @@
             }
 
             echo "
+            <div style = padding-left:90px;>
+            <table>
+                <td><form action='#' method='post' onsubmit='dateConfirmation()'></td>
+                <td><p style = margin-top:2px;margin-bottom:0px for='start'>Choose Start Date: </p></td>
+                <td><input required type='date' name='startDate' value = 'startDATE'/></td>
+                <td><p style = margin-top:2px;margin-bottom:0px;margin-left:50px for='start'>Choose End Date: </p></td>
+                <td><input  require type='date' name='endDate'/></td>
+                <td><input style = width:110px;margin-bottom:-300px;margin-left:40px; name = 'checkDate' type = 'submit' class = 'bookButton'  value = 'Check Date!' /></td>
+                <script>
+                function dateConfirmation() {
+                    alert('Date Confirmed!');
+                }
+                </script>
+                </form>
+            </table>
+            </div>
             <div>
             <table style = margin-left:300px>
                 <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='220' height='220'/></td>
@@ -60,19 +83,37 @@
                 $bookedId = $row3['hotel_id'];
             }
 
+            if ($x == 0) {
             echo "
             <div>
-            <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
+            <form action = '' method = 'post' onsubmit = 'dateRequired()'>
+            <script>
+            function dateRequired() {
+                alert('You Need to Confirm A Date First!');
+            }
+            </script>
+            ";
+            };
+            if ($x == 1) {
+            echo "
+            <div>
+            <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&startDate=$startDate&endDate=$endDate' method = 'post'>
+            ";
+            };
+            echo "
             <table style = margin-left:300px>
             <td><img style = margin-right:15px class = 'picBorder' src = 'images/basic room.jpg' width='200' height='200'/></td>
             <td>
             <p style = margin-top:2px;margin-bottom:0px;font-size:18px>$roomName</p>
             <p style = font-size:18px;margin-top:2px;margin-bottom:0px>Room Count: $roomCount</p>
-            <p style = margin-top:2px;margin-bottom:0px for='start'>Choose Start Date: </p>
-            <input required type='date' name='startDate' value = 'startDATE' style = padding-right:-150px/>
-            <p style = margin-top:2px;margin-bottom:0px for='start'>Choose End Date: </p>
-            <input  require type='date' name='endDate'/>
             ";
+            if(isset($_POST['checkDate'])){
+            echo "
+            <p>Date Confirmed</p>
+            <p>Beginning Date: $startDate</p>
+            <p>End Date: $endDate</p>
+            ";
+            }
             #SCUFFED BUT IT'LL WORK?!?!?
             if($roomCount != '0') {
             echo "
@@ -197,14 +238,10 @@
                 <tr>
                     <td>
                     ";
-                    if($hotelsId == $bookedId) {
+                    if(($hotelsId == $bookedId) && ($startDate == '2022-05-03')) {
                     echo"
                     </form>
                     <form action = '?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
-                    ";
-                    $x = 69;
-                    $startDate = 1;
-                    echo "
                     <script>
                     function alertBox() {
                         alert('You Can Not Book 2 Hotels on the Same Dates!');
