@@ -8,8 +8,6 @@
         include 'header2.php';
     }
     include 'database.php';
-
-    global $datefilter;
     
     echo "
         <div class = 'searchBarOuter2'>
@@ -63,28 +61,9 @@
 ?>
 
 <!DOCTYPE HTML>
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Search Page</title>
     </head>
-    
-    <script type='text/javascript'>
-        $(function() {
-        $('input[name="datefilter"]').daterangepicker({
-                autoUpdateInput: false,
-                locale: {
-                            cancelLabel: 'Clear'
-                        }
-                    });
-                $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-                $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-            });
-
-            $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-                $(this).val('');
-            });
-        });
-    </script>
 </html>
