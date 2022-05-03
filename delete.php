@@ -10,10 +10,11 @@
     include 'database.php';
 
     $hotelsId = $_GET['hotelID'];
+    $bookedId = $_GET['bookedID'];
     $hotelsPrice = $_GET['hotelPRICE'];
     $roomNumber = $_GET['roomNUMBER'];
 
-    $query = "DELETE FROM bookedhotel WHERE hotel_id = '$hotelsId' ";
+    $query = "DELETE FROM bookedhotel WHERE booked_id = '$bookedId' ";
     $data = mysqli_query($conn,$query);
 
     if($data) {

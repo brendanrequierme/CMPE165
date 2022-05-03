@@ -26,7 +26,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Payment Page</title>
+        <title>Payment with Rewards Page</title>
     </head>
 
     <script src="script.js"></script>

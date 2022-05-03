@@ -37,7 +37,7 @@
             echo "
             <div>
             <table style = margin-left:300px>
-                <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='280' height='280'/></td>
+                <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='260' height='260'/></td>
                 <td>
                 <h1 style = margin:0px>$hotelName</h1>
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
@@ -62,23 +62,29 @@
 
             echo "
             <div>
+            <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
             <table style = margin-left:300px>
-            <td><img style = margin-right:15px class = 'picBorder' src = 'images/basic room.jpg' width='150' height='150'/></td>
+            <td><img style = margin-right:15px class = 'picBorder' src = 'images/basic room.jpg' width='180' height='180'/></td>
             <td>
             <p style = margin:0px;font-size:18px>$roomName</p>
             <p style = font-size:18px>Room Count: $roomCount</p>
+            <p for='start'>Choose Start Date: </p>
+            <input type='date' name='startDate' style = margin-right:30px;/>
+            <p for='start'>Choose End Date: </p>
+            <input type='date' name='endDate' style = margin-right:30px;/>
             ";
             #SCUFFED BUT IT'LL WORK?!?!?
             if($roomCount != '0') {
             echo "
-            <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>   
-            <label for = 'roomNum'>Choose # Rooms to Book:</label>
+            <p for = 'roomNum'>Choose # Rooms to Book:</p>
             ";
             if($roomCount == '1') { 
             echo "
+            <tr>
             <select name = 'roomNum' id='roomNum'>
                 <option value='1'>1</option>
             </select>
+            </tr>
             ";
             } else if ($roomCount == '2') { 
             echo "
@@ -193,7 +199,7 @@
                 <tr>
                     <td>
                     ";
-                    if($hotelsId == $bookedId) {
+                    if($hotelsId == 15) {
                     echo"
                     </form>
                     <form action = '?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
@@ -238,3 +244,11 @@
         }
 
 ?>
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Booked Room</title>
+    </head>
+</html>
