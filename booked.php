@@ -18,33 +18,6 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <title>Booked Page</title>
     </head>
-
-    <div style = margin-left:240px;margin-bottom:5px;>
-    <p for="start">Choose Date: </p>
-
-        <input type="text" name="datefilter" value="" />
-      
-        <script type="text/javascript">
-            $(function() {
-
-            $('input[name="datefilter"]').daterangepicker({
-                autoUpdateInput: false,
-                locale: {
-                        cancelLabel: 'Clear'
-                        }
-                    });
-
-                $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
-                    $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
-                });
-
-                $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
-                    $(this).val('');
-                });
-
-                });
-            </script>
-        </div>
 </html>
 
 <?php
@@ -66,6 +39,10 @@
         echo "
         <div>
         <table style = margin-left:400px>
+            <p for='start'>Choose Start Date: </p>
+            <input type='date' name='startDate' value = 'startDATE' style = margin-right:30px;/>
+            <p for='start'>Choose End Date: </p>
+            <input type='date' name='endDate' style = margin-right:30px;/>
             <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='280' height='280'/></td>
             <td>
             <h1 style = margin:0px>$hotelName</h1>
@@ -73,7 +50,7 @@
             <p style = font-size:18px>Rating: $hotelRating</p>
             <p style = font-size:18px>Room Price: $$hotelPrice</p>
             <p style = font-size:18px>Date of Booking: $startDate</p>
-            <p style = font-size:18px>End Date of Booking: $$endDate</p>
+            <p style = font-size:18px>End Date of Booking: $endDate</p>
             <p style = font-size:18px>Number of Rooms: $roomNumber</p>
             </td>
         </table>

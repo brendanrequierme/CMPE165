@@ -69,7 +69,7 @@
             <p style = margin:0px;font-size:18px>$roomName</p>
             <p style = font-size:18px>Room Count: $roomCount</p>
             <p for='start'>Choose Start Date: </p>
-            <input type='date' name='startDate' style = margin-right:30px;/>
+            <input type='date' name='startDate' value = 'startDATE' style = margin-right:30px;/>
             <p for='start'>Choose End Date: </p>
             <input type='date' name='endDate' style = margin-right:30px;/>
             ";
