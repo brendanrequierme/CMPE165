@@ -80,11 +80,9 @@
             ";
             if($roomCount == '1') { 
             echo "
-            <tr>
             <select name = 'roomNum' id='roomNum'>
                 <option value='1'>1</option>
             </select>
-            </tr>
             ";
             } else if ($roomCount == '2') { 
             echo "
