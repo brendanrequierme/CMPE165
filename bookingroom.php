@@ -40,12 +40,17 @@
             echo "
             <div>
             <table style = margin-left:300px>
-                <form action='#?$x = '1'' method='post'>
+                <form action='#?$x = '1'' method='post' onsubmit='dateConfirmation()'>
                 <p style = margin-top:2px;margin-bottom:0px for='start'>Choose Start Date: </p>
                 <input required type='date' name='startDate' value = 'startDATE' style = padding-right:-150px/>
                 <p style = margin-top:2px;margin-bottom:0px for='start'>Choose End Date: </p>
                 <input  require type='date' name='endDate'/>
                 <input style = width:110px;margin-bottom:-300px;margin-left:40px; name = 'checkDate' type = 'submit' class = 'bookButton'  value = 'Check Date!' />
+                <script>
+                function dateConfirmation() {
+                    alert('Date Confirmed!');
+                }
+                </script>
                 <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='220' height='220'/></td>
                 <td>
                 <h1 style = margin:0px>$hotelName</h1>
