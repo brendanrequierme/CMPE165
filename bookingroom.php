@@ -69,6 +69,12 @@
                 $bookedId = $row3['hotel_id'];
             }
 
+            if ($x == 0) {
+            echo "
+            <div>
+            <form action = '' method = 'post' onsubmit = 'dateRequired()'>
+            ";
+            };
             if ($x == 1) {
             echo "
             <div>
