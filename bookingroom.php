@@ -18,6 +18,7 @@
     $hotelsPrice = $_GET['hotelPRICE'];
     $hotelsImage = $_GET['hotelIMAGE'];
     $hotelsRating = $_GET['hotelRATING'];
+    $todayDate = '2022-05-0';
     $bookedId = 0;
     $startDate = 0;
     $endDate = 0;
@@ -26,6 +27,7 @@
     $startDate = $_POST['startDate']; // Get input text
     $endDate = $_POST['endDate'];
     $x = 1;
+    $y = 3;
     }
 ?>
 
@@ -42,7 +44,7 @@
             }
 
             echo "
-            <div style = padding-left:90px;>
+            <div style = padding-left:118px;>
             <table>
                 <td><form action='#' method='post' onsubmit='dateConfirmation()'></td>
                 <td><p style = margin-top:2px;margin-bottom:0px for='start'>Choose Start Date: </p></td>
@@ -238,7 +240,7 @@
                 <tr>
                     <td>
                     ";
-                    if(($hotelsId == $bookedId) && ($startDate == '2022-05-03')) {
+                    if(($hotelsId == $bookedId) && ($startDate <= '2022-05-03') && ('2022-05-03' <= $endDate)) {
                     echo"
                     </form>
                     <form action = '?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
