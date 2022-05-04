@@ -71,7 +71,7 @@
                 </td>
             </table>
             </div>
-            <form action='finishbookingpage2.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardPOINTS=$rewardPoints&roomNUMBER=$roomNumber&rewardTOTAL=$rewardTotal&startDATE=$startDate&endDATE=$endDate' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
+            <form action='finishbookingpage2.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardPOINTS=$rewardPoints&roomNUMBER=$roomNumber&rewardTOTAL=$rewardTotal&startDATE=$startDate&endDATE=$endDate&days=$days' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
             ";
         }
         ?>

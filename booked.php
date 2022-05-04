@@ -46,7 +46,6 @@
             <h1 style = margin:0px>$hotelName</h1>
             <p style = margin:0px;font-size:18px>$hotelDescription</p>
             <p style = font-size:18px>Rating: $hotelRating</p>
-            <p style = font-size:18px>Room Price: $$hotelPrice</p>
             <p style = font-size:18px>Date of Booking: $startDate</p>
             <p style = font-size:18px>End Date of Booking: $endDate</p>
             <p style = font-size:18px>Number of Rooms: $roomNumber</p>
