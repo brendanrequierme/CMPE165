@@ -24,6 +24,7 @@ $rewardsTotal = $_GET['rewardTOTAL'];
 $roomNumber = $_GET['roomNUMBER'];
 $startDate = $_GET['startDATE'];
 $endDate = $_GET['endDATE'];
+$days = $_GET['days'];
 
 $query = "INSERT INTO bookedhotel (booked_id, hotel_id, hotel_name, description, city_id, usd, image, rating, start_date, end_date, room_number) VALUES (DEFAULT, $hotelsId, '$hotelsName', '$hotelsDescription', $hotelsId, '$hotelsPrice', '$hotelsImage', '$hotelsRating', '$startDate', '$endDate', '$roomNumber')";
 $data = mysqli_query($conn,$query);
