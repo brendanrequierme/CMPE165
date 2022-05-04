@@ -98,9 +98,13 @@
             ";
             };
             if ($x == 1) {
+                $datetime1 = strtotime($startDate2);
+                $datetime2 = strtotime($endDate);
+                $secs = $datetime2 - $datetime1;
+                $days = $secs / 86400;
             echo "
             <div>
-            <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&startDate=$startDate2&endDate=$endDate' method = 'post'>
+            <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&startDate=$startDate2&endDate=$endDate&days=$days' method = 'post'>
             ";
             };
             echo "
@@ -242,9 +246,13 @@
                     <td>
                     ";
                     if(($hotelsId == $bookedId) && ($startDate2 == $startDate) && ('2022-05-03' <= $endDate)) {
+                    $datetime1 = strtotime($startDate2);
+                    $datetime2 = strtotime($endDate);
+                    $secs = $datetime2 - $datetime1;
+                    $days = $secs / 86400;
                     echo"
                     </form>
-                    <form action = '?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
+                    <form action = '?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&days=$days' method = 'post'>
                     <script>
                     function alertBox() {
                         alert('You Can Not Book 2 Hotels on the Same Dates!');
