@@ -174,8 +174,7 @@
             <h3>Basic Room, 2 Twin Beds, Non Smoking</h3>
             <p>Non-refundable rate</p>
             <!-- Eventually turn this into a drop down -->
-            <p class = "noMargin">If you change or cancel your booking you will not get a refund or credit to use for a future stay. This policy</p>
-            <p class = "noTopMargin">will apply regardless of COVID-19, subject to any local consumer laws.</p>
+            <p>If you cancel your booking within 24 hrs, you will be charged 25% of the booking's total.</p>
         </div>
 
         <input type = "submit" name = "submit" value = "Book Now" />
