@@ -14,12 +14,19 @@
         $stmt = mysqli_query($conn,"SELECT * FROM userinfo");
         while ($row = mysqli_fetch_array($stmt)) {
             $rewardPoints = $row['reward_points'];
-            $rewardPoitns = 0;
             }
+
+        if ($rewardPoints < 0) {
         echo "
+            <h1 style = margin:0px>Reward Points: 0</h1>
+            <h2> No Hotels Available </h2>
+            ";
+        } else {
+            echo "
             <h1 style = margin:0px>Reward Points: $rewardPoints</h1>
             <h2> No Hotels Available </h2>
             ";
+        }
 ?>
 
 <!DOCTYPE html>

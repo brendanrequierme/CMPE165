@@ -18,9 +18,15 @@
         while ($row = mysqli_fetch_array($stmt)) {
             $rewardPoints = $row['reward_points'];
             }
+        if ($rewardPoints < 0) {
+            echo "
+            <h1 style = margin:0px>Reward Points: $rewardPoints</h1>
+            ";
+        } else {
         echo "
             <h1 style = margin:0px>Reward Points: $rewardPoints</h1>
             ";
+        }
 ?>
 
 <!DOCTYPE HTML>
