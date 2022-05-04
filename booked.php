@@ -4,6 +4,9 @@
 
     if (!$_SESSION) {
         include 'header.php';
+        echo "
+            <meta http-equiv = 'refresh' content = '0; url = booked2.php'>
+        ";
     } else {
         include 'header2.php';
     }
