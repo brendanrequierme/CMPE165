@@ -40,7 +40,7 @@
         while ($row = mysqli_fetch_array($stmt)) {
             $userId = $row['user_id'];
             $rewardPoints = $row['reward_points'];
-            $rewardTotal = $rewardPoints + ($hotelsPrice*$roomNumber) * 0.10;
+            $rewardTotal = $rewardPoints + ($hotelsPrice*$roomNumber*$days) * 0.10;
         }
 
         $stmt2 = mysqli_query($conn,"SELECT * FROM room INNER JOIN hotel ON room.hotel_id = hotel.hotel_id WHERE room.hotel_id = $hotelsId");
@@ -55,13 +55,14 @@
             echo "
             <div>
             <table>
-            <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='170' height='170'/></td>
+            <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='200' height='200'/></td>
             <td>
                 <h1 style = margin:0px>$hotelName</h1>
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
                 <p style = font-size:18px>Rating: $hotelRating</p>
                 <p style = font-size:18px>Number of Rooms: $roomNumber</p>
-                <p style = font-size:18px>Room Price: $".($hotelPrice*$roomNumber*$days).".00</p>
+                <p style = font-size:18px>Room Price: $".($hotelPrice)."</p>
+                <p style = font-size:18px>Room Price: $".($hotelPrice*$roomNumber*$days).".00 For ".$days." days</p>
                 </td>
             </table>
             </div>
@@ -74,10 +75,10 @@
             <h2 class = "noBotMargin"><span style = color:purple>Pay with Rewards Now!</span></h2>
             <?php
             echo"
-                <form action='paymentRewards.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardTOTAL=$rewardTotal&roomNUMBER=$roomNumber&startDATE=$startDate&endDATE=$endDate' method = 'POST'>
+                <form action='paymentRewards.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardTOTAL=$rewardTotal&roomNUMBER=$roomNumber&startDATE=$startDate&endDATE=$endDate&days=$days' method = 'POST'>
                     <input style = width:110px;margin-top:10px; name = 'mainName' type = 'submit' class = 'bookButton'  value = 'Pay Now!' />
                 </form>
-                <form action='finishbookingpage.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardTOTAL=$rewardTotal&roomNUMBER=$roomNumber&startDATE=$startDate&endDATE=$endDate' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
+                <form action='finishbookingpage.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&userID=$userId&rewardTOTAL=$rewardTotal&roomNUMBER=$roomNumber&startDATE=$startDate&endDATE=$endDate&days=$days' method = 'POST' name = 'form1' autocomplete='off' onsubmit='return required()'>
             ";
             ?>
         </div>

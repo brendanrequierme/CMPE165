@@ -20,6 +20,7 @@
     $roomNumber = $_GET['roomNUMBER'];
     $startDate = $_GET['startDATE'];
     $endDate = $_GET['endDATE'];
+    $days = $_GET['days'];
 
 ?>
 
@@ -40,7 +41,7 @@
         while ($row = mysqli_fetch_array($stmt)) {
             $userId = $row['user_id'];
             $rewardPoints = $row['reward_points'];
-        if($rewardTotal >= ($hotelsPrice*$roomNumber)) {
+        if($rewardTotal >= ($hotelsPrice*$roomNumber*$days)) {
             $totalPriceToPay = 0;
         } else {
             $totalPriceToPay = $hotelsPrice * $roomNumber * $days - $rewardPoints;
@@ -59,13 +60,14 @@
             echo "
             <div>
             <table>
-            <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='170' height='170'/></td>
+            <td><img style = margin-right:15px class = 'picBorder' src = 'images/$hotelImage' width='200' height='200'/></td>
             <td>
                 <h1 style = margin:0px>$hotelName</h1>
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
                 <p style = font-size:18px>Rating: $hotelRating</p>
                 <p style = font-size:18px>Number of Rooms: $roomNumber</p>
-                <p style = font-size:18px>Room Price: $$totalPriceToPay.00</p>
+                <p style = font-size:18px>Room Price: $".($hotelPrice)."</p>
+                <p style = font-size:18px>Total Price: $$totalPriceToPay.00 For ".$days." days</p>
                 </td>
             </table>
             </div>
