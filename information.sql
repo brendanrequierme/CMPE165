@@ -38,7 +38,8 @@ CREATE TABLE `bookedhotel` (
   `rating` decimal(10,1) DEFAULT NULL,
   `start_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL,
-  `room_number` int DEFAULT 0
+  `room_number` int DEFAULT 0,
+  `days` int DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

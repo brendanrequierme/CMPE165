@@ -35,6 +35,7 @@
         $endDate = $row['end_date'];
         $hotelImage = $row['image'];
         $roomNumber = $row['room_number'];
+        $days = $row['days'];
 
         echo "
         <div>
@@ -54,7 +55,7 @@
         </div>
         <table>
         <div>
-        <form action = 'delete.php?hotelID=$hotelID&hotelPRICE=$hotelPrice&roomNUMBER=$roomNumber&bookedID=$bookedID' method='POST' name='RemoveHotel''>
+        <form action = 'delete.php?hotelID=$hotelID&hotelPRICE=$hotelPrice&roomNUMBER=$roomNumber&bookedID=$bookedID&days=$days' method='POST' name='RemoveHotel''>
         ";
         if (($startDate == '2022-05-03') || ($startDate == '2022-05-04')) {
             echo "
