@@ -26,7 +26,7 @@ $startDate = $_GET['startDATE'];
 $endDate = $_GET['endDATE'];
 $days = $_GET['days'];
 
-$query = "INSERT INTO bookedhotel (booked_id, hotel_id, hotel_name, description, city_id, usd, image, rating, start_date, end_date, room_number) VALUES (DEFAULT, $hotelsId, '$hotelsName', '$hotelsDescription', $hotelsId, '$hotelsPrice', '$hotelsImage', '$hotelsRating', '$startDate', '$endDate', '$roomNumber')";
+$query = "INSERT INTO bookedhotel (booked_id, hotel_id, hotel_name, description, city_id, usd, image, rating, start_date, end_date, room_number, days) VALUES (DEFAULT, $hotelsId, '$hotelsName', '$hotelsDescription', $hotelsId, '$hotelsPrice', '$hotelsImage', '$hotelsRating', '$startDate', '$endDate', '$roomNumber', '$days')";
 $data = mysqli_query($conn,$query);
 $query2 = "UPDATE userinfo SET reward_points = '$rewardsTotal' WHERE user_id = $usersId";
 $data2 = mysqli_query($conn,$query2);

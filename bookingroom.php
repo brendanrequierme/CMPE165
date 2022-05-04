@@ -51,7 +51,7 @@
                 <td><input required type='date' name='startDate' value = 'startDATE'/></td>
                 <td><p style = margin-top:2px;margin-bottom:0px;margin-left:50px for='start'>Choose End Date: </p></td>
                 <td><input  require type='date' name='endDate'/></td>
-                <td><input style = width:110px;margin-bottom:-300px;margin-left:40px; name = 'checkDate' type = 'submit' class = 'bookButton'  value = 'Check Date!' /></td>
+                <td><input style = width:110px;margin-bottom:-300px;margin-left:40px; name = 'checkDate' type = 'submit' class = 'bookButton'  value = 'Add Date!' /></td>
                 <script>
                 function dateConfirmation() {
                     alert('Date Confirmed!');

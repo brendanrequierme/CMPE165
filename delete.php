@@ -13,6 +13,7 @@
     $bookedId = $_GET['bookedID'];
     $hotelsPrice = $_GET['hotelPRICE'];
     $roomNumber = $_GET['roomNUMBER'];
+    $days = $_GET['days'];
 
     $query = "DELETE FROM bookedhotel WHERE booked_id = '$bookedId' ";
     $data = mysqli_query($conn,$query);
@@ -30,10 +31,10 @@
     }
 
     if($rewardPoints > 0) {
-        $query2 = "UPDATE userinfo SET reward_points = '$rewardPoints'-'$hotelsPrice'*'$roomNumber'*0.10 WHERE user_id = $userId";
+        $query2 = "UPDATE userinfo SET reward_points = '$rewardPoints'-'$hotelsPrice'*'$roomNumber'*'$days'*0.10 WHERE user_id = $userId";
         $data2 = mysqli_query($conn,$query2);
     } else {
-        $query2 = "UPDATE userinfo SET reward_points = '$rewardPoints'+'$hotelsPrice'*'$roomNumber' WHERE user_id = $userId";
+        $query2 = "UPDATE userinfo SET reward_points = '$rewardPoints'+'$hotelsPrice'*'$roomNumber'*'$days' WHERE user_id = $userId";
         $data2 = mysqli_query($conn,$query2);
     }
 
