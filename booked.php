@@ -55,8 +55,23 @@
         </div>
         <table>
         <div>
-        <form action = 'delete.php?hotelID=$hotelID&hotelPRICE=$hotelPrice&roomNUMBER=$roomNumber&bookedID=$bookedID' method='POST' name='RemoveHotel'>
-        <td><input style = width:130px;margin-left:215px; name = 'remove' type = 'submit' class = 'bookButton' onclick='remove();' value = 'Cancel Hotel' /></td>
+        <form action = 'delete.php?hotelID=$hotelID&hotelPRICE=$hotelPrice&roomNUMBER=$roomNumber&bookedID=$bookedID' method='POST' name='RemoveHotel''>
+        ";
+        if (($startDate == '2022-05-03') || ($startDate == '2022-05-04')) {
+            echo "
+            <td><input style = width:130px;margin-left:215px; name = 'remove' type = 'submit' class = 'bookButton' onclick = 'cancelFee()' value = 'Cancel Hotel''/></td>
+            <script>
+                function cancelFee() {
+                    alert('Due to cancelation one day before or day of a fee of $".$hotelPrice*0.25." has been charged to your credit card!');
+                }
+            </script>
+            ";
+        } else {
+        echo "
+            <td><input style = width:130px;margin-left:215px; name = 'remove' type = 'submit' class = 'bookButton' value = 'Cancel Hotel'/></td>
+            ";
+        }
+        echo "
         </form>
         <div>
         <form action = 'reschedule.php?bookedID=$bookedID' method='post' name='RescheduleHotel'>
