@@ -18,7 +18,6 @@
     $hotelsPrice = $_GET['hotelPRICE'];
     $hotelsImage = $_GET['hotelIMAGE'];
     $hotelsRating = $_GET['hotelRATING'];
-    $todayDate = '2022-05-0';
     $bookedId = 0;
     $startDate = 0;
     $endDate = 0;
