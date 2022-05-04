@@ -20,10 +20,11 @@
     $hotelsRating = $_GET['hotelRATING'];
     $bookedId = 0;
     $startDate = 0;
+    $startDate2 = 0;
     $endDate = 0;
     $x = 0;
     if(isset($_POST['checkDate'])){ // Check if form was submitted
-    $startDate = $_POST['startDate']; // Get input text
+    $startDate2 = $_POST['startDate']; // Get input text
     $endDate = $_POST['endDate'];
     $x = 1;
     $y = 3;
@@ -82,6 +83,7 @@
             $stmt3 = mysqli_query($conn,"SELECT * FROM bookedhotel");
             while ($row3 = mysqli_fetch_array($stmt3)) {
                 $bookedId = $row3['hotel_id'];
+                $startDate = $row3['start_date'];
             }
 
             if ($x == 0) {
@@ -98,7 +100,7 @@
             if ($x == 1) {
             echo "
             <div>
-            <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&startDate=$startDate&endDate=$endDate' method = 'post'>
+            <form action = 'payment.php?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating&startDate=$startDate2&endDate=$endDate' method = 'post'>
             ";
             };
             echo "
@@ -111,7 +113,7 @@
             if(isset($_POST['checkDate'])){
             echo "
             <p>Date Confirmed</p>
-            <p>Beginning Date: $startDate</p>
+            <p>Beginning Date: $startDate2</p>
             <p>End Date: $endDate</p>
             ";
             }
@@ -239,7 +241,7 @@
                 <tr>
                     <td>
                     ";
-                    if(($hotelsId == $bookedId) && ($startDate <= '2022-05-03') && ('2022-05-03' <= $endDate)) {
+                    if(($hotelsId == $bookedId) && ($startDate2 <= $startDate) && ('2022-05-03' <= $endDate)) {
                     echo"
                     </form>
                     <form action = '?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
