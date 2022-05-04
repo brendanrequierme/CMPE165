@@ -241,7 +241,7 @@
                 <tr>
                     <td>
                     ";
-                    if(($hotelsId == $bookedId) && ($startDate2 <= $startDate) && ('2022-05-03' <= $endDate)) {
+                    if(($hotelsId == $bookedId) && ($startDate2 == $startDate) && ('2022-05-03' <= $endDate)) {
                     echo"
                     </form>
                     <form action = '?hotelID=$hotelID&hotelNAME=$hotelName&hotelDESCRIPTION=$hotelDescription&hotelCITY=$hotelCity&hotelPRICE=$hotelPrice&hotelIMAGE=$hotelImage&hotelRATING=$hotelRating' method = 'post'>
