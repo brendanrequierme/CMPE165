@@ -19,6 +19,7 @@
     $roomNumber = $_POST['roomNum'];
     $startDate = $_GET['startDate'];
     $endDate = $_GET['endDate'];
+    $days = $_GET['days'];
 
 ?>
 
@@ -60,7 +61,7 @@
                 <p style = margin:0px;font-size:18px>$hotelDescription</p>
                 <p style = font-size:18px>Rating: $hotelRating</p>
                 <p style = font-size:18px>Number of Rooms: $roomNumber</p>
-                <p style = font-size:18px>Room Price: $".($hotelPrice*$roomNumber).".00</p>
+                <p style = font-size:18px>Room Price: $".($hotelPrice*$roomNumber*$days).".00</p>
                 </td>
             </table>
             </div>

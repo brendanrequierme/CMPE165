@@ -43,7 +43,7 @@
         if($rewardTotal >= ($hotelsPrice*$roomNumber)) {
             $totalPriceToPay = 0;
         } else {
-            $totalPriceToPay = $hotelsPrice * $roomNumber - $rewardPoints;
+            $totalPriceToPay = $hotelsPrice * $roomNumber * $days - $rewardPoints;
             }
         }
 
